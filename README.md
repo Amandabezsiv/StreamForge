@@ -2,6 +2,8 @@
 
 Distributed Media Processing Platform
 
+Project changes are recorded in [CHANGELOG.md](CHANGELOG.md).
+
 StreamForge is a backend engineering project focused on studying how systems behave as load, concurrency, processing cost, and infrastructure complexity increase.
 
 ## Local Development — Step 1
