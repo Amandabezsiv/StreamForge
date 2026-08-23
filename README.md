@@ -4,6 +4,111 @@ Distributed Media Processing Platform
 
 StreamForge is a backend engineering project focused on studying how systems behave as load, concurrency, processing cost, and infrastructure complexity increase.
 
+## Local Development — Step 1
+
+This first implementation step provides the FastAPI foundation, PostgreSQL,
+the initial domain tables, local video upload, and a Python worker that uses
+FFmpeg and ffprobe to produce the required v0.1 media outputs.
+
+Prerequisites:
+
+```text
+Python 3.13+
+uv
+Docker with Docker Compose
+```
+
+Install the Python dependencies:
+
+```bash
+uv sync
+```
+
+Start PostgreSQL and worker:
+
+```bash
+docker compose up -d --build postgres worker
+```
+
+Apply the database migration:
+
+```bash
+uv run alembic upgrade head
+```
+
+Start the API:
+
+```bash
+uv run streamforge
+```
+
+Start the media worker in a second terminal (requires `ffmpeg` and `ffprobe`):
+
+```bash
+uv run streamforge-worker
+```
+
+Alternatively, run PostgreSQL and the worker together. The worker image already
+contains FFmpeg:
+
+```bash
+docker compose up -d --build postgres worker
+```
+
+The API is then available at:
+
+```text
+API:     http://localhost:8000
+Swagger: http://localhost:8000/docs
+```
+
+Run the automated tests:
+
+```bash
+uv run pytest
+```
+
+Endpoints available in this step:
+
+```text
+GET /health
+POST /api/v1/videos
+GET /api/v1/videos/{video_id}
+GET /api/v1/videos/{video_id}/outputs
+GET /api/v1/videos/{video_id}/jobs
+```
+
+Upload a video with curl:
+
+```bash
+curl -X POST http://localhost:8000/api/v1/videos \
+  -F "file=@/path/to/video.mp4"
+```
+
+The accepted formats are `.mp4`, `.mov`, and `.mkv`. The default upload limit
+is 1 GiB and can be changed with `MAX_UPLOAD_SIZE_BYTES` in `.env`.
+
+After upload, the worker performs this sequence:
+
+```text
+claim PENDING job with a PostgreSQL row lock
+  -> mark video and job PROCESSING
+  -> extract duration, dimensions, codec, bitrate, and FPS with ffprobe
+  -> generate thumbnail.jpg
+  -> transcode 720p.mp4
+  -> register both outputs
+  -> mark job COMPLETED and video READY
+```
+
+If any processing command fails, the job and video become `FAILED`, and the
+error is stored on the job and as a `JOB_FAILED` processing event.
+
+Stop the database without deleting its data:
+
+```bash
+docker compose stop
+```
+
 The goal is not to build a YouTube clone or to add technologies simply because they are commonly associated with scalable systems.
 
 The project is designed as an engineering laboratory for exploring:
