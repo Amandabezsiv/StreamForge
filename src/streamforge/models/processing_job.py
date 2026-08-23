@@ -1,0 +1,35 @@
+import uuid
+from datetime import datetime
+
+from sqlalchemy import DateTime, ForeignKey, Integer, String, Text, Uuid, func
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+
+from streamforge.core.database import Base
+from streamforge.models.types import JobStatus, JobType
+
+
+class ProcessingJob(Base):
+    __tablename__ = "processing_jobs"
+
+    id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=uuid.uuid4)
+    video_id: Mapped[uuid.UUID] = mapped_column(
+        ForeignKey("videos.id", ondelete="CASCADE"), index=True
+    )
+    type: Mapped[JobType] = mapped_column(String(30), default=JobType.PROCESS_VIDEO)
+    status: Mapped[JobStatus] = mapped_column(
+        String(20), default=JobStatus.PENDING, index=True
+    )
+    attempt: Mapped[int] = mapped_column(Integer, default=1)
+    started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    error_code: Mapped[str | None] = mapped_column(String(100))
+    error_message: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now()
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
+    )
+
+    video: Mapped["Video"] = relationship(back_populates="jobs")  # noqa: F821
+    events: Mapped[list["ProcessingEvent"]] = relationship(back_populates="job")  # noqa: F821
