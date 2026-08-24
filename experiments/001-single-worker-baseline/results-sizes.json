@@ -1,0 +1,106 @@
+{
+  "benchmark": "001-single-worker-size-comparison",
+  "recorded_at": "2026-08-24T00:28:22.540013+00:00",
+  "worker_count": 1,
+  "runs": [
+    {
+      "benchmark": "001-single-worker-baseline",
+      "recorded_at": "2026-08-24T00:27:54.398301+00:00",
+      "video_id": "d51b110f-de9b-4fcd-8455-21b406837762",
+      "fixture": {
+        "filename": "baseline-small.mp4",
+        "size_bytes": 1340597
+      },
+      "result": {
+        "video_status": "READY",
+        "job_status": "COMPLETED",
+        "metadata_complete": true,
+        "thumbnail_registered": true,
+        "transcoded_720p_registered": true
+      },
+      "metrics_seconds": {
+        "upload_duration": 0.04378329500104883,
+        "queue_wait_time": 1.291132,
+        "processing_duration": 1.2074560529999872,
+        "metadata_duration": 0.0683675790005509,
+        "thumbnail_duration": 0.08749332299885282,
+        "transcoding_duration": 1.0372380390017497,
+        "total_time_to_ready": 2.715612
+      },
+      "errors": [],
+      "profile": {
+        "name": "small",
+        "duration_seconds": 10,
+        "resolution": "640x360",
+        "frame_rate": 30,
+        "target_video_bitrate": "1M"
+      }
+    },
+    {
+      "benchmark": "001-single-worker-baseline",
+      "recorded_at": "2026-08-24T00:28:01.530247+00:00",
+      "video_id": "876c31d7-b629-4b5c-ba66-94777b0ca587",
+      "fixture": {
+        "filename": "baseline-medium.mp4",
+        "size_bytes": 11033920
+      },
+      "result": {
+        "video_status": "READY",
+        "job_status": "COMPLETED",
+        "metadata_complete": true,
+        "thumbnail_registered": true,
+        "transcoded_720p_registered": true
+      },
+      "metrics_seconds": {
+        "upload_duration": 0.024627101000078255,
+        "queue_wait_time": 0.371694,
+        "processing_duration": 3.265636481999536,
+        "metadata_duration": 0.07163032399876101,
+        "thumbnail_duration": 0.1748514190003334,
+        "transcoding_duration": 2.9989208150000195,
+        "total_time_to_ready": 3.647795
+      },
+      "errors": [],
+      "profile": {
+        "name": "medium",
+        "duration_seconds": 30,
+        "resolution": "1280x720",
+        "frame_rate": 30,
+        "target_video_bitrate": "3M"
+      }
+    },
+    {
+      "benchmark": "001-single-worker-baseline",
+      "recorded_at": "2026-08-24T00:28:22.539941+00:00",
+      "video_id": "c3178fe2-db79-48c6-8691-aa4f07ded22a",
+      "fixture": {
+        "filename": "baseline-large.mp4",
+        "size_bytes": 41609128
+      },
+      "result": {
+        "video_status": "READY",
+        "job_status": "COMPLETED",
+        "metadata_complete": true,
+        "thumbnail_registered": true,
+        "transcoded_720p_registered": true
+      },
+      "metrics_seconds": {
+        "upload_duration": 0.09163565400012885,
+        "queue_wait_time": 1.173994,
+        "processing_duration": 6.892526415998873,
+        "metadata_duration": 0.06249880299947108,
+        "thumbnail_duration": 0.2539160809992609,
+        "transcoding_duration": 6.481768805000684,
+        "total_time_to_ready": 8.074642
+      },
+      "errors": [],
+      "profile": {
+        "name": "large",
+        "duration_seconds": 60,
+        "resolution": "1920x1080",
+        "frame_rate": 30,
+        "target_video_bitrate": "6M"
+      }
+    }
+  ]
+}

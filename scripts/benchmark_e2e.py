@@ -13,7 +13,14 @@ DEFAULT_FIXTURE = Path("storage/benchmark-fixtures/baseline-10s.mp4")
 DEFAULT_RESULT = Path("experiments/001-single-worker-baseline/results.json")
 
 
-def generate_fixture(path: Path) -> None:
+def generate_fixture(
+    path: Path,
+    *,
+    duration_seconds: int = 10,
+    resolution: str = "1280x720",
+    frame_rate: int = 30,
+    video_bitrate: str = "2M",
+) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     container_path = f"/app/storage/{path.relative_to('storage').as_posix()}"
     subprocess.run(
@@ -31,15 +38,21 @@ def generate_fixture(path: Path) -> None:
             "-f",
             "lavfi",
             "-i",
-            "testsrc=size=1280x720:rate=30",
+            f"testsrc2=size={resolution}:rate={frame_rate}",
             "-f",
             "lavfi",
             "-i",
             "sine=frequency=1000:sample_rate=48000",
             "-t",
-            "10",
+            str(duration_seconds),
             "-c:v",
             "libx264",
+            "-b:v",
+            video_bitrate,
+            "-maxrate",
+            video_bitrate,
+            "-bufsize",
+            video_bitrate,
             "-pix_fmt",
             "yuv420p",
             "-c:a",

@@ -22,6 +22,7 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Persistent processing benchmark measurements on each job
 - Reproducible upload-to-ready benchmark runner and deterministic video fixture
 - Experiment 001 single-worker baseline result
+- Small, medium, and large deterministic benchmark fixture profiles
 
 - FastAPI application with OpenAPI and Swagger documentation
 - PostgreSQL 17 development database through Docker Compose

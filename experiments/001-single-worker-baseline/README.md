@@ -20,6 +20,17 @@ FastAPI -> PostgreSQL + local storage -> one Python worker -> FFmpeg/ffprobe
 - Video codec: H.264
 - Audio codec: AAC
 
+The size comparison uses three deterministic profiles:
+
+| Profile               | Duration | Resolution | Target video bitrate |
+| --------------------- | -------: | ---------: | -------------------: |
+| `baseline-small.mp4`  |     10 s |    640x360 |               1 Mbps |
+| `baseline-medium.mp4` |     30 s |   1280x720 |               3 Mbps |
+| `baseline-large.mp4`  |     60 s |  1920x1080 |               6 Mbps |
+
+Actual file sizes are recorded in the result because encoded size can vary
+slightly with FFmpeg version and content complexity.
+
 The fixture is generated under `storage/benchmark-fixtures/` and is not
 committed to Git.
 
@@ -32,6 +43,15 @@ uv run python scripts/benchmark_e2e.py --regenerate-fixture
 
 The command verifies the full upload-to-ready flow and writes the latest
 measurement to `results.json`.
+
+Run the three-size comparison:
+
+```bash
+uv run python scripts/benchmark_sizes.py --regenerate-fixtures
+```
+
+This writes `results-sizes.json`. The profiles run sequentially so they measure
+media-size cost without concurrent jobs affecting queue time.
 
 ## Metrics
 
@@ -50,17 +70,36 @@ Later runs should introduce fixed concurrency levels and report percentiles.
 
 Recorded on 2026-08-23 using the local Docker environment:
 
-| Measurement | Result |
-| --- | ---: |
-| Upload duration | 0.032 s |
-| Queue wait time | 1.208 s |
-| Processing duration | 1.015 s |
-| Metadata duration | 0.060 s |
-| Thumbnail duration | 0.139 s |
+| Measurement          |  Result |
+| -------------------- | ------: |
+| Upload duration      | 0.032 s |
+| Queue wait time      | 1.208 s |
+| Processing duration  | 1.015 s |
+| Metadata duration    | 0.060 s |
+| Thumbnail duration   | 0.139 s |
 | Transcoding duration | 0.755 s |
-| Total time to ready | 2.257 s |
-| Errors | 0 |
+| Total time to ready  | 2.257 s |
+| Errors               |       0 |
 
 The video reached `READY`, the job reached `COMPLETED`, all required metadata
 was populated, and both required outputs were registered. These numbers are a
 single-run functional baseline and do not yet describe system capacity.
+
+## Size comparison result
+
+Recorded on 2026-08-23 with one worker and sequential uploads:
+
+| Profile | Actual size | Queue wait | Processing | Metadata | Thumbnail | Transcoding | Total to ready | Errors |
+| ------- | ----------: | ---------: | ---------: | -------: | --------: | ----------: | -------------: | -----: |
+| Small   |     1.34 MB |    1.291 s |    1.207 s |  0.068 s |   0.087 s |     1.037 s |        2.716 s |      0 |
+| Medium  |    11.03 MB |    0.372 s |    3.266 s |  0.072 s |   0.175 s |     2.999 s |        3.648 s |      0 |
+| Large   |    41.61 MB |    1.174 s |    6.893 s |  0.062 s |   0.254 s |     6.482 s |        8.075 s |      0 |
+
+Every video reached `READY`, every job reached `COMPLETED`, all required
+metadata was extracted, and thumbnail and transcoded outputs were registered.
+
+The first observation is that ffprobe metadata time stayed nearly constant for
+these fixtures, while transcoding time increased with duration and resolution
+and represented most of the processing duration. Queue wait varies with the
+worker's polling position and should be examined over repeated runs before
+drawing a performance conclusion.

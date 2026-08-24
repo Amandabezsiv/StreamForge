@@ -77,6 +77,12 @@ docker compose up -d --build postgres api worker
 uv run python scripts/benchmark_e2e.py --regenerate-fixture
 ```
 
+Compare small, medium, and large fixtures:
+
+```bash
+uv run python scripts/benchmark_sizes.py --regenerate-fixtures
+```
+
 The result is stored in
 `experiments/001-single-worker-baseline/results.json`. See the experiment
 README for the environment, fixture, metric definitions, and interpretation.
