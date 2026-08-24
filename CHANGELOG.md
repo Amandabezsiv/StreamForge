@@ -23,6 +23,7 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Reproducible upload-to-ready benchmark runner and deterministic video fixture
 - Experiment 001 single-worker baseline result
 - Small, medium, and large deterministic benchmark fixture profiles
+- Repeated benchmark runner with mean, median, min, max, p50, and p95 statistics
 
 - FastAPI application with OpenAPI and Swagger documentation
 - PostgreSQL 17 development database through Docker Compose

@@ -1,0 +1,1784 @@
+{
+  "benchmark": "001-single-worker-repeated-size-comparison",
+  "recorded_at": "2026-08-24T00:51:16.646265+00:00",
+  "runs_requested_per_profile": 20,
+  "worker_count": 1,
+  "execution": "sequential",
+  "percentile_method": "nearest-rank",
+  "total_errors": 0,
+  "profiles": {
+    "small": {
+      "fixture": {
+        "filename": "baseline-small.mp4",
+        "size_bytes": 1340597,
+        "duration_seconds": 10,
+        "resolution": "640x360",
+        "frame_rate": 30,
+        "target_video_bitrate": "1M"
+      },
+      "completed_runs": 20,
+      "summary_seconds": {
+        "queue_wait_time": {
+          "count": 20,
+          "mean": 1.79800085,
+          "median": 1.7954634999999999,
+          "min": 1.262616,
+          "max": 1.97832,
+          "p50": 1.792828,
+          "p95": 1.97546
+        },
+        "processing_duration": {
+          "count": 20,
+          "mean": 1.2254300297498957,
+          "median": 1.2186852785007432,
+          "min": 1.173244233999867,
+          "max": 1.3051484070001607,
+          "p50": 1.2186398930007272,
+          "p95": 1.3046754959996179
+        },
+        "transcoding_duration": {
+          "count": 20,
+          "mean": 1.043331415800094,
+          "median": 1.0370564554996236,
+          "min": 1.0024277510001411,
+          "max": 1.1013487790005456,
+          "p50": 1.036182932999509,
+          "p95": 1.0901034380003694
+        },
+        "total_time_to_ready": {
+          "count": 20,
+          "mean": 3.03775765,
+          "median": 3.0212135,
+          "min": 2.575209,
+          "max": 3.266256,
+          "p50": 3.021167,
+          "p95": 3.177841
+        }
+      },
+      "raw_runs": [
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:08.144943+00:00",
+          "video_id": "15c18754-3708-43e9-93f5-e508dc53d737",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.1376146559996414,
+            "queue_wait_time": 1.262616,
+            "processing_duration": 1.3051484070001607,
+            "metadata_duration": 0.05744267599948216,
+            "thumbnail_duration": 0.09732188300040434,
+            "transcoding_duration": 1.1013487790005456,
+            "total_time_to_ready": 2.575209
+          },
+          "errors": [],
+          "run_number": 1
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:11.325857+00:00",
+          "video_id": "711b315c-8fef-433e-90ab-a1ec8c639ec7",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.01270776799901796,
+            "queue_wait_time": 1.798099,
+            "processing_duration": 1.2623199059999024,
+            "metadata_duration": 0.06580925800153636,
+            "thumbnail_duration": 0.09106260899898189,
+            "transcoding_duration": 1.0901034380003694,
+            "total_time_to_ready": 3.071593
+          },
+          "errors": [],
+          "run_number": 2
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:14.593860+00:00",
+          "video_id": "18a419ba-c943-4690-a722-2210037386a9",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.031445840000742464,
+            "queue_wait_time": 1.876039,
+            "processing_duration": 1.260429177998958,
+            "metadata_duration": 0.060672548999718856,
+            "thumbnail_duration": 0.09041574000002583,
+            "transcoding_duration": 1.089644944999236,
+            "total_time_to_ready": 3.148614
+          },
+          "errors": [],
+          "run_number": 3
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:17.816204+00:00",
+          "video_id": "f9d4c38f-2ba3-4aaf-85bc-36d5f70ce057",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.014118607999989763,
+            "queue_wait_time": 1.920781,
+            "processing_duration": 1.188451048999923,
+            "metadata_duration": 0.058697059999758494,
+            "thumbnail_duration": 0.09129899400068098,
+            "transcoding_duration": 1.0195806360006827,
+            "total_time_to_ready": 3.115887
+          },
+          "errors": [],
+          "run_number": 4
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:21.285366+00:00",
+          "video_id": "17d16d8f-962e-4446-910c-f6ee4124391c",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.03399154900034773,
+            "queue_wait_time": 1.905749,
+            "processing_duration": 1.2187306640007591,
+            "metadata_duration": 0.05491402299958281,
+            "thumbnail_duration": 0.09076600700063864,
+            "transcoding_duration": 1.058103506000407,
+            "total_time_to_ready": 3.131962
+          },
+          "errors": [],
+          "run_number": 5
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:24.480095+00:00",
+          "video_id": "1f9f3b2e-66f5-4a34-9b1c-2e726fa78290",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.01193947499996284,
+            "queue_wait_time": 1.772878,
+            "processing_duration": 1.173244233999867,
+            "metadata_duration": 0.05746717999863904,
+            "thumbnail_duration": 0.08789376400090987,
+            "transcoding_duration": 1.0118629810003767,
+            "total_time_to_ready": 2.964579
+          },
+          "errors": [],
+          "run_number": 6
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:27.711967+00:00",
+          "video_id": "cccefadd-1bcf-4d60-9212-d928fba8e0fe",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.012784329999703914,
+            "queue_wait_time": 1.802014,
+            "processing_duration": 1.2117918210005882,
+            "metadata_duration": 0.056148677998862695,
+            "thumbnail_duration": 0.08899464999922202,
+            "transcoding_duration": 1.0156132240008446,
+            "total_time_to_ready": 3.021167
+          },
+          "errors": [],
+          "run_number": 7
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:31.209370+00:00",
+          "video_id": "3f24702f-fc53-4f57-af07-915c480a5faa",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.011825751998912892,
+            "queue_wait_time": 1.823759,
+            "processing_duration": 1.1844240909995278,
+            "metadata_duration": 0.06104201199923409,
+            "thumbnail_duration": 0.0888534929999878,
+            "transcoding_duration": 1.0203881340003136,
+            "total_time_to_ready": 3.02025
+          },
+          "errors": [],
+          "run_number": 8
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:34.451044+00:00",
+          "video_id": "a64d9f0d-34c0-4cb2-9c10-0361191de881",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.011919255999600864,
+            "queue_wait_time": 1.713827,
+            "processing_duration": 1.2517452760002925,
+            "metadata_duration": 0.06240841599901614,
+            "thumbnail_duration": 0.0895311109998147,
+            "transcoding_duration": 1.0825739909996628,
+            "total_time_to_ready": 2.983693
+          },
+          "errors": [],
+          "run_number": 9
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:37.706557+00:00",
+          "video_id": "3edbcc9c-6d54-46aa-8d49-ea1eca0b5d61",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.014369006999913836,
+            "queue_wait_time": 1.713155,
+            "processing_duration": 1.1988839639998332,
+            "metadata_duration": 0.054211385000598966,
+            "thumbnail_duration": 0.09662481099985598,
+            "transcoding_duration": 1.030945716000133,
+            "total_time_to_ready": 2.922471
+          },
+          "errors": [],
+          "run_number": 10
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:40.695690+00:00",
+          "video_id": "146c6693-7534-4e43-9521-6b0a7414e85c",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.02797204399939801,
+            "queue_wait_time": 1.68208,
+            "processing_duration": 1.2186398930007272,
+            "metadata_duration": 0.06806442000015522,
+            "thumbnail_duration": 0.08646233599938569,
+            "transcoding_duration": 1.0442919180004537,
+            "total_time_to_ready": 2.921533
+          },
+          "errors": [],
+          "run_number": 11
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:44.141190+00:00",
+          "video_id": "42d23d3c-b7ea-43fd-8fb8-e3f94085a095",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.008272839999335702,
+            "queue_wait_time": 1.97832,
+            "processing_duration": 1.1789416060000804,
+            "metadata_duration": 0.06884605900086171,
+            "thumbnail_duration": 0.08967428399955679,
+            "transcoding_duration": 1.0024277510001411,
+            "total_time_to_ready": 3.177841
+          },
+          "errors": [],
+          "run_number": 12
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:47.316116+00:00",
+          "video_id": "566f18a3-8540-4c52-b083-b67400c7f096",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.012314829000388272,
+            "queue_wait_time": 1.767835,
+            "processing_duration": 1.2003353820000484,
+            "metadata_duration": 0.05527073899975221,
+            "thumbnail_duration": 0.08888564700100687,
+            "transcoding_duration": 1.0379299779997382,
+            "total_time_to_ready": 2.977789
+          },
+          "errors": [],
+          "run_number": 13
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:50.507622+00:00",
+          "video_id": "78ef2888-4a67-4df5-9817-54f575285133",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.011709955000696937,
+            "queue_wait_time": 1.880293,
+            "processing_duration": 1.226381828999365,
+            "metadata_duration": 0.06531483799881244,
+            "thumbnail_duration": 0.09482208899862599,
+            "transcoding_duration": 1.0272284090005996,
+            "total_time_to_ready": 3.120738
+          },
+          "errors": [],
+          "run_number": 14
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:53.706230+00:00",
+          "video_id": "90399890-6fcb-48e6-8291-6a34fffb0733",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.012290058000871795,
+            "queue_wait_time": 1.944103,
+            "processing_duration": 1.1955617959993106,
+            "metadata_duration": 0.06817363600021054,
+            "thumbnail_duration": 0.0871028359997581,
+            "transcoding_duration": 1.0217231819988228,
+            "total_time_to_ready": 3.162507
+          },
+          "errors": [],
+          "run_number": 15
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:45:57.192687+00:00",
+          "video_id": "bdff5f87-3c2f-4072-9ef2-014ee6a1bc23",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.00912373299979663,
+            "queue_wait_time": 1.97546,
+            "processing_duration": 1.2754788219990587,
+            "metadata_duration": 0.06528730100035318,
+            "thumbnail_duration": 0.08978608799952781,
+            "transcoding_duration": 1.036182932999509,
+            "total_time_to_ready": 3.266256
+          },
+          "errors": [],
+          "run_number": 16
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:00.415007+00:00",
+          "video_id": "706117ca-a470-46e4-838c-2c5d8bb3c27a",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.011769360000471352,
+            "queue_wait_time": 1.792624,
+            "processing_duration": 1.2079100179998932,
+            "metadata_duration": 0.055666004000158864,
+            "thumbnail_duration": 0.09154597399901832,
+            "transcoding_duration": 1.046309764000398,
+            "total_time_to_ready": 3.014076
+          },
+          "errors": [],
+          "run_number": 17
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:03.680317+00:00",
+          "video_id": "d4a1e817-9342-48b5-ad81-fb6e9db12419",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.013598655999885523,
+            "queue_wait_time": 1.775536,
+            "processing_duration": 1.2241342830002395,
+            "metadata_duration": 0.06490681800096354,
+            "thumbnail_duration": 0.08859974000006332,
+            "transcoding_duration": 1.0536053630003153,
+            "total_time_to_ready": 3.013384
+          },
+          "errors": [],
+          "run_number": 18
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:06.942187+00:00",
+          "video_id": "9a3d6505-0176-4a9d-8a72-fcd907990a94",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.07555972699992708,
+            "queue_wait_time": 1.782021,
+            "processing_duration": 1.2213728799997625,
+            "metadata_duration": 0.06909757599896693,
+            "thumbnail_duration": 0.09428918400044495,
+            "transcoding_duration": 1.0181971479996719,
+            "total_time_to_ready": 3.02126
+          },
+          "errors": [],
+          "run_number": 19
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:10.106448+00:00",
+          "video_id": "c18be403-0575-43e0-884f-c116fed5d658",
+          "fixture": {
+            "filename": "baseline-small.mp4",
+            "size_bytes": 1340597
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.01347745900056907,
+            "queue_wait_time": 1.792828,
+            "processing_duration": 1.3046754959996179,
+            "metadata_duration": 0.05545445600000676,
+            "thumbnail_duration": 0.08899722800015297,
+            "transcoding_duration": 1.0585665199996583,
+            "total_time_to_ready": 3.124344
+          },
+          "errors": [],
+          "run_number": 20
+        }
+      ]
+    },
+    "medium": {
+      "fixture": {
+        "filename": "baseline-medium.mp4",
+        "size_bytes": 11033920,
+        "duration_seconds": 30,
+        "resolution": "1280x720",
+        "frame_rate": 30,
+        "target_video_bitrate": "3M"
+      },
+      "completed_runs": 20,
+      "summary_seconds": {
+        "queue_wait_time": {
+          "count": 20,
+          "mean": 1.8187886,
+          "median": 1.8103995,
+          "min": 1.697075,
+          "max": 1.959639,
+          "p50": 1.808562,
+          "p95": 1.953714
+        },
+        "processing_duration": {
+          "count": 20,
+          "mean": 3.156647959050042,
+          "median": 3.150304077000328,
+          "min": 3.1036847600007604,
+          "max": 3.235525668000264,
+          "p50": 3.1444020130002173,
+          "p95": 3.2105491279999114
+        },
+        "transcoding_duration": {
+          "count": 20,
+          "mean": 2.9075230337499307,
+          "median": 2.9008338660005393,
+          "min": 2.8761911660003534,
+          "max": 3.0006249170000956,
+          "p50": 2.900749280001037,
+          "p95": 2.9532156309996935
+        },
+        "total_time_to_ready": {
+          "count": 20,
+          "mean": 5.01824745,
+          "median": 4.9943255,
+          "min": 4.846686,
+          "max": 5.443,
+          "p50": 4.97884,
+          "p95": 5.167029
+        }
+      },
+      "raw_runs": [
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:15.405781+00:00",
+          "video_id": "6eb8e8a3-a2af-4fc4-a324-086e8af4ee69",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.03226432099836529,
+            "queue_wait_time": 1.953714,
+            "processing_duration": 3.1724128869991546,
+            "metadata_duration": 0.06806200500068371,
+            "thumbnail_duration": 0.14886301099977572,
+            "transcoding_duration": 2.900749280001037,
+            "total_time_to_ready": 5.141861
+          },
+          "errors": [],
+          "run_number": 1
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:20.501171+00:00",
+          "video_id": "ab57bb36-972b-4abf-a4a4-e60a22514c91",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.05636596200019994,
+            "queue_wait_time": 1.831624,
+            "processing_duration": 3.167560298999888,
+            "metadata_duration": 0.06906943699868862,
+            "thumbnail_duration": 0.15502297000057297,
+            "transcoding_duration": 2.928823738000574,
+            "total_time_to_ready": 5.01866
+          },
+          "errors": [],
+          "run_number": 2
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:25.821111+00:00",
+          "video_id": "39bf7b9e-e88d-4d53-bdb0-81ccdcded015",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.026254004000293207,
+            "queue_wait_time": 1.959639,
+            "processing_duration": 3.20019467199927,
+            "metadata_duration": 0.05788482600110001,
+            "thumbnail_duration": 0.15075045000048704,
+            "transcoding_duration": 2.9532156309996935,
+            "total_time_to_ready": 5.167029
+          },
+          "errors": [],
+          "run_number": 3
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:31.146341+00:00",
+          "video_id": "14c17d27-6b6d-4270-91d3-d7a7b17e6a19",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.03130539599987969,
+            "queue_wait_time": 1.861259,
+            "processing_duration": 3.1354975670001295,
+            "metadata_duration": 0.05563881099988066,
+            "thumbnail_duration": 0.1524352340002224,
+            "transcoding_duration": 2.911147572000118,
+            "total_time_to_ready": 5.009811
+          },
+          "errors": [],
+          "run_number": 4
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:36.209715+00:00",
+          "video_id": "0982a2b3-3bc1-4fe3-8599-97529d3df2f6",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.027700681999704102,
+            "queue_wait_time": 1.697075,
+            "processing_duration": 3.1337336689994117,
+            "metadata_duration": 0.06670945100086101,
+            "thumbnail_duration": 0.14792159799981164,
+            "transcoding_duration": 2.9009184520000417,
+            "total_time_to_ready": 4.846686
+          },
+          "errors": [],
+          "run_number": 5
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:41.576909+00:00",
+          "video_id": "336a4bb6-a5da-45ac-8aff-db828437495a",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.02669065000009141,
+            "queue_wait_time": 1.759965,
+            "processing_duration": 3.235525668000264,
+            "metadata_duration": 0.06902404900029069,
+            "thumbnail_duration": 0.15024740700027905,
+            "transcoding_duration": 3.0006249170000956,
+            "total_time_to_ready": 5.01431
+          },
+          "errors": [],
+          "run_number": 6
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:46.870173+00:00",
+          "video_id": "8f610655-ba02-4476-b5a0-a0bc7a9c9e8f",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.03134035899893206,
+            "queue_wait_time": 1.808562,
+            "processing_duration": 3.1573873100005585,
+            "metadata_duration": 0.05916769299983571,
+            "thumbnail_duration": 0.16201134299990372,
+            "transcoding_duration": 2.921610042998509,
+            "total_time_to_ready": 4.97884
+          },
+          "errors": [],
+          "run_number": 7
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:51.955535+00:00",
+          "video_id": "4708574e-c0c0-4061-a9a2-59b65720ee68",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.02806778400008625,
+            "queue_wait_time": 1.713079,
+            "processing_duration": 3.156206141000439,
+            "metadata_duration": 0.06654834099936124,
+            "thumbnail_duration": 0.15848701899994921,
+            "transcoding_duration": 2.8952293239999563,
+            "total_time_to_ready": 4.884088
+          },
+          "errors": [],
+          "run_number": 8
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:46:57.000155+00:00",
+          "video_id": "1ae7955c-f3f0-48f3-9a6d-206fd8d2b2d9",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.028047423000316485,
+            "queue_wait_time": 1.804919,
+            "processing_duration": 3.1444020130002173,
+            "metadata_duration": 0.07014856000023428,
+            "thumbnail_duration": 0.1542318379997596,
+            "transcoding_duration": 2.9014605689990276,
+            "total_time_to_ready": 4.962757
+          },
+          "errors": [],
+          "run_number": 9
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:47:02.346845+00:00",
+          "video_id": "ad6e4a89-747c-4a7e-8262-b6034c7046bf",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.02849851299833972,
+            "queue_wait_time": 1.93551,
+            "processing_duration": 3.1586516959996516,
+            "metadata_duration": 0.07076730399967346,
+            "thumbnail_duration": 0.14906787700056157,
+            "transcoding_duration": 2.923595074000332,
+            "total_time_to_ready": 5.112427
+          },
+          "errors": [],
+          "run_number": 10
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:47:07.430697+00:00",
+          "video_id": "46c42654-5d7e-4f2f-9b57-a2fb1f66e617",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.028669119001278887,
+            "queue_wait_time": 1.773083,
+            "processing_duration": 3.1412979570013704,
+            "metadata_duration": 0.06494949199986877,
+            "thumbnail_duration": 0.147142163999888,
+            "transcoding_duration": 2.9117703049996635,
+            "total_time_to_ready": 4.926745
+          },
+          "errors": [],
+          "run_number": 11
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:47:13.071428+00:00",
+          "video_id": "eb708db3-a163-4773-a85f-f3aad5ae39d6",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.09363885299899266,
+            "queue_wait_time": 1.843913,
+            "processing_duration": 3.1823667680000653,
+            "metadata_duration": 0.06189720499969553,
+            "thumbnail_duration": 0.15117718799956492,
+            "transcoding_duration": 2.888209785000072,
+            "total_time_to_ready": 5.443
+          },
+          "errors": [],
+          "run_number": 12
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:47:18.146375+00:00",
+          "video_id": "dc9dde01-c0fc-4d8a-a6de-368a785aab5a",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.02594902000055299,
+            "queue_wait_time": 1.828847,
+            "processing_duration": 3.1036847600007604,
+            "metadata_duration": 0.06581543500033149,
+            "thumbnail_duration": 0.14695520600071177,
+            "transcoding_duration": 2.8761911660003534,
+            "total_time_to_ready": 4.949692
+          },
+          "errors": [],
+          "run_number": 13
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:47:23.289538+00:00",
+          "video_id": "30a32e69-b64b-4eb4-814c-01cc28df561e",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.03070234099868685,
+            "queue_wait_time": 1.832259,
+            "processing_duration": 3.124799635999807,
+            "metadata_duration": 0.07290387499961071,
+            "thumbnail_duration": 0.14810499300074298,
+            "transcoding_duration": 2.8871890529990196,
+            "total_time_to_ready": 4.974125
+          },
+          "errors": [],
+          "run_number": 14
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:47:28.652024+00:00",
+          "video_id": "4823eb5a-4f70-4ee9-95bd-d37bf7c7c4ed",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.036890536999635515,
+            "queue_wait_time": 1.86589,
+            "processing_duration": 3.2065394229994126,
+            "metadata_duration": 0.06282127000122273,
+            "thumbnail_duration": 0.14740050799991877,
+            "transcoding_duration": 2.8866098469989083,
+            "total_time_to_ready": 5.090316
+          },
+          "errors": [],
+          "run_number": 15
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:47:33.725056+00:00",
+          "video_id": "89b7fa45-1c9d-4ed7-bd01-7d0a49b7ff44",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.027773110999987694,
+            "queue_wait_time": 1.791793,
+            "processing_duration": 3.115657333000854,
+            "metadata_duration": 0.06329721800102561,
+            "thumbnail_duration": 0.14692963500056067,
+            "transcoding_duration": 2.8812955249995866,
+            "total_time_to_ready": 4.926126
+          },
+          "errors": [],
+          "run_number": 16
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:47:39.099986+00:00",
+          "video_id": "e403a6c9-e026-4dd5-9f4f-26ad0c12d075",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.0357035029992403,
+            "queue_wait_time": 1.808348,
+            "processing_duration": 3.1251101050002035,
+            "metadata_duration": 0.07123988499915868,
+            "thumbnail_duration": 0.14902158099903318,
+            "transcoding_duration": 2.8915204240001913,
+            "total_time_to_ready": 5.063978
+          },
+          "errors": [],
+          "run_number": 17
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:47:44.432436+00:00",
+          "video_id": "8345bf79-6f4e-42ee-9e10-02b5c77596a2",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.02735740500065731,
+            "queue_wait_time": 1.781412,
+            "processing_duration": 3.2105491279999114,
+            "metadata_duration": 0.07150183599878801,
+            "thumbnail_duration": 0.16279265800039866,
+            "transcoding_duration": 2.9036725540008774,
+            "total_time_to_ready": 5.030711
+          },
+          "errors": [],
+          "run_number": 18
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:47:49.497293+00:00",
+          "video_id": "0ff10a0e-4b48-4bd4-b122-1995497972f2",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.027157694999914384,
+            "queue_wait_time": 1.712644,
+            "processing_duration": 3.1329607049992774,
+            "metadata_duration": 0.07122872300169547,
+            "thumbnail_duration": 0.15135778799958644,
+            "transcoding_duration": 2.892522058000395,
+            "total_time_to_ready": 4.865663
+          },
+          "errors": [],
+          "run_number": 19
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:47:54.574532+00:00",
+          "video_id": "66628f9e-2c0d-4ce6-a261-0d62d91fd8d9",
+          "fixture": {
+            "filename": "baseline-medium.mp4",
+            "size_bytes": 11033920
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.026239439999699243,
+            "queue_wait_time": 1.812237,
+            "processing_duration": 3.128421444000196,
+            "metadata_duration": 0.07057015799910005,
+            "thumbnail_duration": 0.1478393249999499,
+            "transcoding_duration": 2.8941053580001608,
+            "total_time_to_ready": 4.958124
+          },
+          "errors": [],
+          "run_number": 20
+        }
+      ]
+    },
+    "large": {
+      "fixture": {
+        "filename": "baseline-large.mp4",
+        "size_bytes": 41609128,
+        "duration_seconds": 60,
+        "resolution": "1920x1080",
+        "frame_rate": 30,
+        "target_video_bitrate": "6M"
+      },
+      "completed_runs": 20,
+      "summary_seconds": {
+        "queue_wait_time": {
+          "count": 20,
+          "mean": 1.75102265,
+          "median": 1.7434385,
+          "min": 1.651748,
+          "max": 1.899754,
+          "p50": 1.742115,
+          "p95": 1.899158
+        },
+        "processing_duration": {
+          "count": 20,
+          "mean": 8.069548677699913,
+          "median": 8.280039379499613,
+          "min": 7.511384368999643,
+          "max": 8.813443097000345,
+          "p50": 8.279686360998312,
+          "p95": 8.613166721999733
+        },
+        "transcoding_duration": {
+          "count": 20,
+          "mean": 7.715047667000181,
+          "median": 7.909201357000711,
+          "min": 7.1754919000013615,
+          "max": 8.456008245999328,
+          "p50": 7.900196222000886,
+          "p95": 8.269231988000683
+        },
+        "total_time_to_ready": {
+          "count": 20,
+          "mean": 9.8405453,
+          "median": 9.996977000000001,
+          "min": 9.223478,
+          "max": 10.553146,
+          "p50": 9.963781,
+          "p95": 10.485164
+        }
+      },
+      "raw_runs": [
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:48:04.068305+00:00",
+          "video_id": "679b7adc-aa2a-4a86-a53d-2bb90cf29ab3",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.15535597699999926,
+            "queue_wait_time": 1.802446,
+            "processing_duration": 7.511384368999643,
+            "metadata_duration": 0.07534982399920409,
+            "thumbnail_duration": 0.24392395799986843,
+            "transcoding_duration": 7.1754919000013615,
+            "total_time_to_ready": 9.335048
+          },
+          "errors": [],
+          "run_number": 1
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:48:14.081791+00:00",
+          "video_id": "f0816274-04fd-48c9-9864-040abd56709e",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.07322049899994454,
+            "queue_wait_time": 1.899158,
+            "processing_duration": 7.837671242999932,
+            "metadata_duration": 0.05934780600000522,
+            "thumbnail_duration": 0.2509397869998793,
+            "transcoding_duration": 7.512152696001067,
+            "total_time_to_ready": 9.744118
+          },
+          "errors": [],
+          "run_number": 2
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:48:23.743638+00:00",
+          "video_id": "c79311d0-fe5a-4ab8-9481-3a4f4983f7a5",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.07330573199942592,
+            "queue_wait_time": 1.742115,
+            "processing_duration": 7.541472275999695,
+            "metadata_duration": 0.07184479100033059,
+            "thumbnail_duration": 0.2479322660001344,
+            "transcoding_duration": 7.205052510998939,
+            "total_time_to_ready": 9.299072
+          },
+          "errors": [],
+          "run_number": 3
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:48:33.382879+00:00",
+          "video_id": "4d5065fa-d3db-454d-b9c2-b4a794e8ddaf",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.07116236599904369,
+            "queue_wait_time": 1.653011,
+            "processing_duration": 7.586450907998369,
+            "metadata_duration": 0.07403443399925891,
+            "thumbnail_duration": 0.24382552800125268,
+            "transcoding_duration": 7.251692493999144,
+            "total_time_to_ready": 9.280118
+          },
+          "errors": [],
+          "run_number": 4
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:48:42.859452+00:00",
+          "video_id": "6168622c-5a5c-486d-879f-388b22d2babb",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.1301819059990521,
+            "queue_wait_time": 1.651748,
+            "processing_duration": 7.55277261899937,
+            "metadata_duration": 0.06345794200024102,
+            "thumbnail_duration": 0.24531109299823584,
+            "transcoding_duration": 7.186812918000214,
+            "total_time_to_ready": 9.223478
+          },
+          "errors": [],
+          "run_number": 5
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:48:52.534564+00:00",
+          "video_id": "d5c17d51-8477-4ae5-9433-a9da581eaa58",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.08896731499953603,
+            "queue_wait_time": 1.744762,
+            "processing_duration": 7.538136401000884,
+            "metadata_duration": 0.07324024199988344,
+            "thumbnail_duration": 0.24535106800067297,
+            "transcoding_duration": 7.1791838350000035,
+            "total_time_to_ready": 9.313007
+          },
+          "errors": [],
+          "run_number": 6
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:49:01.886640+00:00",
+          "video_id": "f5c5234e-58ad-4715-a90a-6485bc9fa0d2",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.08279707099973166,
+            "queue_wait_time": 1.67393,
+            "processing_duration": 7.547218284000337,
+            "metadata_duration": 0.07640671700028179,
+            "thumbnail_duration": 0.2431991029989149,
+            "transcoding_duration": 7.180998005998845,
+            "total_time_to_ready": 9.250261
+          },
+          "errors": [],
+          "run_number": 7
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:49:11.892945+00:00",
+          "video_id": "887fac3a-b183-4e9e-ac2b-5fc2309c51d7",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.1504565890008962,
+            "queue_wait_time": 1.884718,
+            "processing_duration": 7.697093085000233,
+            "metadata_duration": 0.06767685799968604,
+            "thumbnail_duration": 0.25683275400115235,
+            "transcoding_duration": 7.301640931000293,
+            "total_time_to_ready": 9.624095
+          },
+          "errors": [],
+          "run_number": 8
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:49:21.520161+00:00",
+          "video_id": "9635e1ef-9ae9-4bf7-b749-b36d4575a798",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.0695715330002713,
+            "queue_wait_time": 1.698978,
+            "processing_duration": 7.59037920099945,
+            "metadata_duration": 0.0736741759992583,
+            "thumbnail_duration": 0.24252033499942627,
+            "transcoding_duration": 7.228434841999842,
+            "total_time_to_ready": 9.315666
+          },
+          "errors": [],
+          "run_number": 9
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:49:31.826704+00:00",
+          "video_id": "1b6096f8-1509-4a15-9b57-ace3f15aad65",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.10909994499888853,
+            "queue_wait_time": 1.689202,
+            "processing_duration": 8.425859701999798,
+            "metadata_duration": 0.06677536200004397,
+            "thumbnail_duration": 0.2427549510011886,
+            "transcoding_duration": 8.056298726000023,
+            "total_time_to_ready": 10.150155
+          },
+          "errors": [],
+          "run_number": 10
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:49:42.322434+00:00",
+          "video_id": "40ed0ed4-c2e6-4435-b67d-6a43f8ea203b",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.0868752440001117,
+            "queue_wait_time": 1.861096,
+            "processing_duration": 8.279686360998312,
+            "metadata_duration": 0.06413144299949636,
+            "thumbnail_duration": 0.2643198109999503,
+            "transcoding_duration": 7.918206492000536,
+            "total_time_to_ready": 10.149611
+          },
+          "errors": [],
+          "run_number": 11
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:49:52.545244+00:00",
+          "video_id": "6a405e66-6370-48a8-8e19-5f04557a9bb0",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.08900606800125388,
+            "queue_wait_time": 1.65298,
+            "processing_duration": 8.282911582000452,
+            "metadata_duration": 0.06267814499915403,
+            "thumbnail_duration": 0.25524636099908093,
+            "transcoding_duration": 7.900196222000886,
+            "total_time_to_ready": 9.963781
+          },
+          "errors": [],
+          "run_number": 12
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:50:02.708903+00:00",
+          "video_id": "f0ea29c3-5696-4fda-8b32-1d55d338fd9d",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.08148324299872911,
+            "queue_wait_time": 1.760212,
+            "processing_duration": 8.280392398000913,
+            "metadata_duration": 0.06487270599973272,
+            "thumbnail_duration": 0.2545288960009202,
+            "transcoding_duration": 7.944236875999195,
+            "total_time_to_ready": 10.04967
+          },
+          "errors": [],
+          "run_number": 13
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:50:13.403634+00:00",
+          "video_id": "0174d3db-0a4d-4c63-8899-713c22c8fd9e",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.07611723000081838,
+            "queue_wait_time": 1.899754,
+            "processing_duration": 8.573424436001005,
+            "metadata_duration": 0.0742864580006426,
+            "thumbnail_duration": 0.25886414100023103,
+            "transcoding_duration": 8.223079156001404,
+            "total_time_to_ready": 10.485164
+          },
+          "errors": [],
+          "run_number": 14
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:50:24.129422+00:00",
+          "video_id": "91e1ec6b-b255-4851-b6dc-361e0b5255c1",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.07805343799918774,
+            "queue_wait_time": 1.800895,
+            "processing_duration": 8.613166721999733,
+            "metadata_duration": 0.06604036700082361,
+            "thumbnail_duration": 0.29203803400014294,
+            "transcoding_duration": 8.239092465000795,
+            "total_time_to_ready": 10.430168
+          },
+          "errors": [],
+          "run_number": 15
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:50:34.899889+00:00",
+          "video_id": "ba59133b-937f-4607-8b88-93197c60be04",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.08560985300027824,
+            "queue_wait_time": 1.717282,
+            "processing_duration": 8.813443097000345,
+            "metadata_duration": 0.06421389000024647,
+            "thumbnail_duration": 0.2748441030016693,
+            "transcoding_duration": 8.456008245999328,
+            "total_time_to_ready": 10.553146
+          },
+          "errors": [],
+          "run_number": 16
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:50:45.350040+00:00",
+          "video_id": "f65ca502-876d-4f6f-a2ca-24b9ee8d6c00",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.0787342580006225,
+            "queue_wait_time": 1.787985,
+            "processing_duration": 8.35969010000008,
+            "metadata_duration": 0.06367643999874417,
+            "thumbnail_duration": 0.2687567590000981,
+            "transcoding_duration": 8.010301672000423,
+            "total_time_to_ready": 10.155728
+          },
+          "errors": [],
+          "run_number": 17
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:50:56.060176+00:00",
+          "video_id": "0fbbb742-2b36-4def-8cff-3d0031182d3f",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.0872869590002665,
+            "queue_wait_time": 1.759547,
+            "processing_duration": 8.611235599000793,
+            "metadata_duration": 0.06522941000002902,
+            "thumbnail_duration": 0.2601604200008296,
+            "transcoding_duration": 8.269231988000683,
+            "total_time_to_ready": 10.382108
+          },
+          "errors": [],
+          "run_number": 18
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:51:06.491090+00:00",
+          "video_id": "27ad9177-4a91-431d-b456-fc69a64fea0a",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.09594349899998633,
+            "queue_wait_time": 1.676882,
+            "processing_duration": 8.39067755099859,
+            "metadata_duration": 0.06326561800051422,
+            "thumbnail_duration": 0.26377051700001175,
+            "transcoding_duration": 8.046601169000496,
+            "total_time_to_ready": 10.076339
+          },
+          "errors": [],
+          "run_number": 19
+        },
+        {
+          "benchmark": "001-single-worker-baseline",
+          "recorded_at": "2026-08-24T00:51:16.646117+00:00",
+          "video_id": "bb5e1674-cde9-4ac9-a1f5-753fa702cbfb",
+          "fixture": {
+            "filename": "baseline-large.mp4",
+            "size_bytes": 41609128
+          },
+          "result": {
+            "video_status": "READY",
+            "job_status": "COMPLETED",
+            "metadata_complete": true,
+            "thumbnail_registered": true,
+            "transcoded_720p_registered": true
+          },
+          "metrics_seconds": {
+            "upload_duration": 0.07821540999975696,
+            "queue_wait_time": 1.663752,
+            "processing_duration": 8.357907620000333,
+            "metadata_duration": 0.0633112239993352,
+            "thumbnail_duration": 0.2622458360001474,
+            "transcoding_duration": 8.016240195000137,
+            "total_time_to_ready": 10.030173
+          },
+          "errors": [],
+          "run_number": 20
+        }
+      ]
+    }
+  }
+}

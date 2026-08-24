@@ -83,6 +83,12 @@ Compare small, medium, and large fixtures:
 uv run python scripts/benchmark_sizes.py --regenerate-fixtures
 ```
 
+Collect distributions over 20 runs per size:
+
+```bash
+uv run python scripts/benchmark_repeated.py --runs 20
+```
+
 The result is stored in
 `experiments/001-single-worker-baseline/results.json`. See the experiment
 README for the environment, fixture, metric definitions, and interpretation.
