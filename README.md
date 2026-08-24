@@ -70,6 +70,17 @@ Run the automated tests:
 uv run pytest
 ```
 
+Run the first end-to-end benchmark:
+
+```bash
+docker compose up -d --build postgres api worker
+uv run python scripts/benchmark_e2e.py --regenerate-fixture
+```
+
+The result is stored in
+`experiments/001-single-worker-baseline/results.json`. See the experiment
+README for the environment, fixture, metric definitions, and interpretation.
+
 Endpoints available in this step:
 
 ```text

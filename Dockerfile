@@ -9,8 +9,9 @@ RUN apt-get update \
 
 WORKDIR /app
 
-COPY pyproject.toml uv.lock README.md ./
+COPY pyproject.toml uv.lock README.md alembic.ini ./
 COPY src ./src
+COPY migrations ./migrations
 
 RUN pip install --no-cache-dir .
 

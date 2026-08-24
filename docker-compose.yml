@@ -28,5 +28,19 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
+  api:
+    build: .
+    command: sh -c "alembic upgrade head && streamforge"
+    environment:
+      DATABASE_URL: postgresql+psycopg://streamforge:streamforge@postgres:5432/streamforge
+      STORAGE_PATH: /app/storage
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./storage:/app/storage
+    depends_on:
+      postgres:
+        condition: service_healthy
+
 volumes:
   postgres_data:

@@ -19,6 +19,10 @@ conclusions belong in `experiments/` and `docs/adr/`.
 
 ### Added
 
+- Persistent processing benchmark measurements on each job
+- Reproducible upload-to-ready benchmark runner and deterministic video fixture
+- Experiment 001 single-worker baseline result
+
 - FastAPI application with OpenAPI and Swagger documentation
 - PostgreSQL 17 development database through Docker Compose
 - SQLAlchemy models for videos, processing jobs, outputs, and events

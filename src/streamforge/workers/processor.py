@@ -21,6 +21,15 @@ from streamforge.models.video_output import VideoOutput
 logger = logging.getLogger("streamforge.worker")
 
 
+def elapsed_seconds(start: datetime, end: datetime) -> float:
+    """Return elapsed wall time while tolerating timezone-naive test databases."""
+    if start.tzinfo is None:
+        start = start.replace(tzinfo=timezone.utc)
+    if end.tzinfo is None:
+        end = end.replace(tzinfo=timezone.utc)
+    return max(0.0, (end - start).total_seconds())
+
+
 def record_event(
     db: Session, job: ProcessingJob, event_type: str, message: str | None = None
 ) -> None:
@@ -50,6 +59,7 @@ def acquire_pending_job(db: Session) -> uuid.UUID | None:
     now = datetime.now(timezone.utc)
     job.status = JobStatus.PROCESSING
     job.started_at = now
+    job.queue_wait_seconds = elapsed_seconds(job.created_at, now)
     job.video.status = VideoStatus.PROCESSING
     record_event(db, job, "JOB_STARTED")
     job_id = job.id
@@ -69,9 +79,12 @@ def process_job(db: Session, job_id: uuid.UUID, settings: Settings) -> None:
     video_directory = input_path.parent
     thumbnail_path = video_directory / "thumbnail.jpg"
     transcoded_path = video_directory / "720p.mp4"
+    processing_started = time.perf_counter()
 
     try:
+        stage_started = time.perf_counter()
         metadata = extract_metadata(input_path)
+        job.metadata_duration_seconds = time.perf_counter() - stage_started
         video.duration_seconds = metadata.duration_seconds
         video.width = metadata.width
         video.height = metadata.height
@@ -81,7 +94,9 @@ def process_job(db: Session, job_id: uuid.UUID, settings: Settings) -> None:
         record_event(db, job, "METADATA_EXTRACTED")
         db.commit()
 
+        stage_started = time.perf_counter()
         generate_thumbnail(input_path, thumbnail_path)
+        job.thumbnail_duration_seconds = time.perf_counter() - stage_started
         db.add(
             VideoOutput(
                 video_id=video.id,
@@ -96,7 +111,9 @@ def process_job(db: Session, job_id: uuid.UUID, settings: Settings) -> None:
 
         record_event(db, job, "TRANSCODING_STARTED")
         db.commit()
+        stage_started = time.perf_counter()
         transcode_720p(input_path, transcoded_path)
+        job.transcoding_duration_seconds = time.perf_counter() - stage_started
         db.add(
             VideoOutput(
                 video_id=video.id,
@@ -110,6 +127,10 @@ def process_job(db: Session, job_id: uuid.UUID, settings: Settings) -> None:
 
         job.status = JobStatus.COMPLETED
         job.finished_at = datetime.now(timezone.utc)
+        job.processing_duration_seconds = time.perf_counter() - processing_started
+        job.total_time_to_ready_seconds = elapsed_seconds(
+            video.created_at, job.finished_at
+        )
         video.status = VideoStatus.READY
         record_event(db, job, "JOB_COMPLETED")
         db.commit()
@@ -120,6 +141,7 @@ def process_job(db: Session, job_id: uuid.UUID, settings: Settings) -> None:
         if job is not None:
             job.status = JobStatus.FAILED
             job.finished_at = datetime.now(timezone.utc)
+            job.processing_duration_seconds = time.perf_counter() - processing_started
             job.error_code = type(exc).__name__
             job.error_message = str(exc)[:4000]
             job.video.status = VideoStatus.FAILED

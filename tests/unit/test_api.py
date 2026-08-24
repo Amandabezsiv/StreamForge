@@ -216,6 +216,12 @@ def test_worker_extracts_metadata_and_creates_required_outputs(
         assert job.status == JobStatus.COMPLETED
         assert job.started_at is not None
         assert job.finished_at is not None
+        assert job.queue_wait_seconds is not None
+        assert job.processing_duration_seconds is not None
+        assert job.metadata_duration_seconds is not None
+        assert job.thumbnail_duration_seconds is not None
+        assert job.transcoding_duration_seconds is not None
+        assert job.total_time_to_ready_seconds is not None
         assert {output.type for output in outputs} == {
             OutputType.THUMBNAIL,
             OutputType.TRANSCODED_VIDEO,
@@ -228,3 +234,42 @@ def test_worker_extracts_metadata_and_creates_required_outputs(
             "TRANSCODING_COMPLETED",
             "JOB_COMPLETED",
         }
+
+
+def test_worker_registers_processing_failure(tmp_path, monkeypatch) -> None:
+    video_id = uuid.uuid4()
+    video_directory = tmp_path / "videos" / str(video_id)
+    video_directory.mkdir(parents=True)
+    (video_directory / "original.mp4").write_bytes(b"invalid")
+
+    monkeypatch.setattr(
+        processor,
+        "extract_metadata",
+        lambda _path: (_ for _ in ()).throw(RuntimeError("ffprobe failed")),
+    )
+
+    with TestingSession() as session:
+        video = Video(
+            id=video_id,
+            original_filename="original.mp4",
+            storage_key=f"videos/{video_id}/original.mp4",
+            size_bytes=7,
+        )
+        job = ProcessingJob(video_id=video_id)
+        session.add_all([video, job])
+        session.commit()
+
+        job_id = processor.acquire_pending_job(session)
+        processor.process_job(session, job_id, Settings(storage_path=tmp_path))
+
+        session.refresh(video)
+        session.refresh(job)
+        events = session.query(ProcessingEvent).filter_by(job_id=job.id).all()
+
+        assert video.status == "FAILED"
+        assert job.status == JobStatus.FAILED
+        assert job.finished_at is not None
+        assert job.processing_duration_seconds is not None
+        assert job.error_code == "RuntimeError"
+        assert job.error_message == "ffprobe failed"
+        assert "JOB_FAILED" in {event.event_type for event in events}

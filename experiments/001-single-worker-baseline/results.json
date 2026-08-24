@@ -1,0 +1,26 @@
+{
+  "benchmark": "001-single-worker-baseline",
+  "recorded_at": "2026-08-24T00:07:02.214307+00:00",
+  "video_id": "4d966d91-8411-430a-aaa8-d50b31005ae2",
+  "fixture": {
+    "filename": "baseline-10s.mp4",
+    "size_bytes": 244378
+  },
+  "result": {
+    "video_status": "READY",
+    "job_status": "COMPLETED",
+    "metadata_complete": true,
+    "thumbnail_registered": true,
+    "transcoded_720p_registered": true
+  },
+  "metrics_seconds": {
+    "upload_duration": 0.008534565000445582,
+    "queue_wait_time": 1.852787,
+    "processing_duration": 0.9506845389987575,
+    "metadata_duration": 0.0658451920007792,
+    "thumbnail_duration": 0.1348266639997746,
+    "transcoding_duration": 0.7292405759999383,
+    "total_time_to_ready": 2.821308
+  },
+  "errors": []
+}
