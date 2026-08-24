@@ -89,6 +89,12 @@ Collect distributions over 20 runs per size:
 uv run python scripts/benchmark_repeated.py --runs 20
 ```
 
+Submit 10 medium videos concurrently to one worker:
+
+```bash
+uv run python scripts/benchmark_concurrent_queue.py --concurrency 10
+```
+
 The result is stored in
 `experiments/001-single-worker-baseline/results.json`. See the experiment
 README for the environment, fixture, metric definitions, and interpretation.

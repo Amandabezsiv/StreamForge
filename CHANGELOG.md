@@ -24,6 +24,7 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Experiment 001 single-worker baseline result
 - Small, medium, and large deterministic benchmark fixture profiles
 - Repeated benchmark runner with mean, median, min, max, p50, and p95 statistics
+- Experiment 002 concurrent-upload queue-growth benchmark
 
 - FastAPI application with OpenAPI and Swagger documentation
 - PostgreSQL 17 development database through Docker Compose
