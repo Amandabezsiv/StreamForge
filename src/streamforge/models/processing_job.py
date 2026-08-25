@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime
 
-from sqlalchemy import DateTime, ForeignKey, Integer, String, Text, Uuid, func
+from sqlalchemy import DateTime, Float, ForeignKey, Integer, String, Text, Uuid, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from streamforge.core.database import Base
@@ -24,6 +24,12 @@ class ProcessingJob(Base):
     finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     error_code: Mapped[str | None] = mapped_column(String(100))
     error_message: Mapped[str | None] = mapped_column(Text)
+    queue_wait_seconds: Mapped[float | None] = mapped_column(Float)
+    processing_duration_seconds: Mapped[float | None] = mapped_column(Float)
+    metadata_duration_seconds: Mapped[float | None] = mapped_column(Float)
+    thumbnail_duration_seconds: Mapped[float | None] = mapped_column(Float)
+    transcoding_duration_seconds: Mapped[float | None] = mapped_column(Float)
+    total_time_to_ready_seconds: Mapped[float | None] = mapped_column(Float)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now()
     )

@@ -50,5 +50,11 @@ class ProcessingJobResponse(BaseModel):
     finished_at: datetime | None
     error_code: str | None
     error_message: str | None
+    queue_wait_seconds: float | None
+    processing_duration_seconds: float | None
+    metadata_duration_seconds: float | None
+    thumbnail_duration_seconds: float | None
+    transcoding_duration_seconds: float | None
+    total_time_to_ready_seconds: float | None
     created_at: datetime
     updated_at: datetime

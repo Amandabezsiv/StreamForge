@@ -13,7 +13,7 @@ def _run_ffmpeg(command: list[str], operation: str) -> None:
         raise MediaCommandError(f"{operation} failed: {exc.stderr.strip()}") from exc
 
 
-def generate_thumbnail(input_path: Path, output_path: Path) -> None:
+def generate_thumbnail(input_path: Path, output_path: Path, threads: int = 0) -> None:
     _run_ffmpeg(
         [
             "ffmpeg",
@@ -24,13 +24,15 @@ def generate_thumbnail(input_path: Path, output_path: Path) -> None:
             "thumbnail",
             "-frames:v",
             "1",
+            "-threads",
+            str(threads),
             str(output_path),
         ],
         "thumbnail generation",
     )
 
 
-def transcode_720p(input_path: Path, output_path: Path) -> None:
+def transcode_720p(input_path: Path, output_path: Path, threads: int = 0) -> None:
     _run_ffmpeg(
         [
             "ffmpeg",
@@ -51,6 +53,8 @@ def transcode_720p(input_path: Path, output_path: Path) -> None:
             "aac",
             "-movflags",
             "+faststart",
+            "-threads",
+            str(threads),
             str(output_path),
         ],
         "720p transcoding",

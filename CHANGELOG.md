@@ -19,6 +19,18 @@ conclusions belong in `experiments/` and `docs/adr/`.
 
 ### Added
 
+- Persistent processing benchmark measurements on each job
+- Reproducible upload-to-ready benchmark runner and deterministic video fixture
+- Experiment 001 single-worker baseline result
+- Small, medium, and large deterministic benchmark fixture profiles
+- Repeated benchmark runner with mean, median, min, max, p50, and p95 statistics
+- Experiment 002 concurrent-upload queue-growth benchmark
+- Experiment 003 multi-worker throughput and resource benchmark
+- Experiment 004 three- and four-worker scaling comparison
+- Configurable FFmpeg threads and Experiment 005 thread-allocation matrix
+- Experiment 006 atomic PostgreSQL job-claim contention benchmark
+- Experiment 007 worker-crash database and filesystem consistency inspection
+
 - FastAPI application with OpenAPI and Swagger documentation
 - PostgreSQL 17 development database through Docker Compose
 - SQLAlchemy models for videos, processing jobs, outputs, and events

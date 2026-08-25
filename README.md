@@ -70,6 +70,62 @@ Run the automated tests:
 uv run pytest
 ```
 
+Run the first end-to-end benchmark:
+
+```bash
+docker compose up -d --build postgres api worker
+uv run python scripts/benchmark_e2e.py --regenerate-fixture
+```
+
+Compare small, medium, and large fixtures:
+
+```bash
+uv run python scripts/benchmark_sizes.py --regenerate-fixtures
+```
+
+Collect distributions over 20 runs per size:
+
+```bash
+uv run python scripts/benchmark_repeated.py --runs 20
+```
+
+Submit 10 medium videos concurrently to one worker:
+
+```bash
+uv run python scripts/benchmark_concurrent_queue.py --concurrency 10
+```
+
+Repeat the workload with two workers and collect resource metrics:
+
+```bash
+uv run python scripts/benchmark_multi_worker.py --workers 2 --concurrency 10
+```
+
+Compare explicit FFmpeg thread allocations:
+
+```bash
+docker compose build worker
+uv run python scripts/benchmark_ffmpeg_threads.py
+```
+
+Stress atomic PostgreSQL job acquisition with synchronized contenders:
+
+```bash
+docker compose stop worker
+uv run python scripts/benchmark_job_acquisition.py
+docker compose up -d --scale worker=4 worker
+```
+
+Kill a worker during transcoding and inspect PostgreSQL and local storage:
+
+```bash
+uv run python scripts/benchmark_worker_failure.py
+```
+
+The result is stored in
+`experiments/001-single-worker-baseline/results.json`. See the experiment
+README for the environment, fixture, metric definitions, and interpretation.
+
 Endpoints available in this step:
 
 ```text

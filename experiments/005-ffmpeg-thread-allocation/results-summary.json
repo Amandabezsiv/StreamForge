@@ -1,0 +1,328 @@
+{
+  "benchmark": "005-ffmpeg-thread-allocation",
+  "recorded_at": "2026-08-25T20:13:29.179292+00:00",
+  "configuration_count": 4,
+  "concurrent_uploads_per_configuration": 10,
+  "results": [
+    {
+      "configuration": {
+        "worker_count": 2,
+        "concurrent_uploads": 10,
+        "fixture_filename": "baseline-medium.mp4",
+        "fixture_size_bytes": 11033920,
+        "fixture_duration_seconds": 30,
+        "fixture_resolution": "1280x720",
+        "ffmpeg_threads_per_process": "auto"
+      },
+      "batch": {
+        "all_uploads_accepted_seconds": 0.30510619799997585,
+        "all_videos_ready_seconds": 33.496257827000136,
+        "completed": 10,
+        "failed": 0,
+        "batch_duration_seconds": 33.496257827000136,
+        "videos_per_minute": 17.912448700951945
+      },
+      "queue_wait": {
+        "count": 10,
+        "mean": 13.455731699999998,
+        "median": 13.151275,
+        "min": 1.186295,
+        "max": 26.328248,
+        "p50": 13.127979,
+        "p95": 26.328248
+      },
+      "processing_duration": {
+        "count": 10,
+        "mean": 6.3128879443000185,
+        "median": 6.535981304500183,
+        "min": 5.600320776999979,
+        "max": 6.617992983000022,
+        "p50": 6.515264798000317,
+        "p95": 6.617992983000022
+      },
+      "total_time_to_ready": {
+        "count": 10,
+        "mean": 19.7806366,
+        "median": 19.699768,
+        "min": 6.829628,
+        "max": 32.922095,
+        "p50": 19.695335,
+        "p95": 32.922095
+      },
+      "cpu_percent_workers_total": {
+        "count": 18,
+        "mean": 875.776111111111,
+        "median": 1077.7350000000001,
+        "min": 0.38,
+        "max": 1096.23,
+        "p50": 1075.5500000000002,
+        "p95": 1096.23
+      },
+      "memory_mib_workers_total": {
+        "count": 18,
+        "mean": 812.1733333333334,
+        "median": 1021.55,
+        "min": 102.16999999999999,
+        "max": 1027.0,
+        "p50": 1021.3,
+        "p95": 1027.0
+      },
+      "block_io_bytes_workers_total": {
+        "read_delta": 0.0,
+        "write_delta": 65200000.0,
+        "read_start": 0.0,
+        "read_end": 0.0,
+        "write_start": 0.0,
+        "write_end": 65200000.0
+      },
+      "errors": 0,
+      "duplicate_processing": {
+        "detected": false,
+        "duplicate_job_starts": [],
+        "duplicate_outputs": [],
+        "multiple_jobs_for_video": [],
+        "jobs_audited": 10
+      }
+    },
+    {
+      "configuration": {
+        "worker_count": 2,
+        "concurrent_uploads": 10,
+        "fixture_filename": "baseline-medium.mp4",
+        "fixture_size_bytes": 11033920,
+        "fixture_duration_seconds": 30,
+        "fixture_resolution": "1280x720",
+        "ffmpeg_threads_per_process": 4
+      },
+      "batch": {
+        "all_uploads_accepted_seconds": 0.2925203740001052,
+        "all_videos_ready_seconds": 36.04946926000002,
+        "completed": 10,
+        "failed": 0,
+        "batch_duration_seconds": 36.04946926000002,
+        "videos_per_minute": 16.643795659586907
+      },
+      "queue_wait": {
+        "count": 10,
+        "mean": 14.5845147,
+        "median": 14.327570999999999,
+        "min": 1.172866,
+        "max": 28.525132,
+        "p50": 14.301261,
+        "p95": 28.525132
+      },
+      "processing_duration": {
+        "count": 10,
+        "mean": 6.846049828499872,
+        "median": 7.011076935000347,
+        "min": 6.171750968999731,
+        "max": 7.123868208999738,
+        "p50": 7.004028118000406,
+        "p95": 7.123868208999738
+      },
+      "total_time_to_ready": {
+        "count": 10,
+        "mean": 21.4401725,
+        "median": 21.398364,
+        "min": 7.393747,
+        "max": 35.548198,
+        "p50": 21.391156,
+        "p95": 35.548198
+      },
+      "cpu_percent_workers_total": {
+        "count": 19,
+        "mean": 786.9605263157895,
+        "median": 929.69,
+        "min": 0.79,
+        "max": 951.5,
+        "p50": 929.69,
+        "p95": 951.5
+      },
+      "memory_mib_workers_total": {
+        "count": 19,
+        "mean": 582.3636842105263,
+        "median": 724.6,
+        "min": 102.03,
+        "max": 728.9000000000001,
+        "p50": 724.6,
+        "p95": 728.9000000000001
+      },
+      "block_io_bytes_workers_total": {
+        "read_delta": 0.0,
+        "write_delta": 41400000.0,
+        "read_start": 0.0,
+        "read_end": 0.0,
+        "write_start": 0.0,
+        "write_end": 41400000.0
+      },
+      "errors": 0,
+      "duplicate_processing": {
+        "detected": false,
+        "duplicate_job_starts": [],
+        "duplicate_outputs": [],
+        "multiple_jobs_for_video": [],
+        "jobs_audited": 10
+      }
+    },
+    {
+      "configuration": {
+        "worker_count": 3,
+        "concurrent_uploads": 10,
+        "fixture_filename": "baseline-medium.mp4",
+        "fixture_size_bytes": 11033920,
+        "fixture_duration_seconds": 30,
+        "fixture_resolution": "1280x720",
+        "ffmpeg_threads_per_process": 4
+      },
+      "batch": {
+        "all_uploads_accepted_seconds": 0.3036273560001064,
+        "all_videos_ready_seconds": 37.055645985999945,
+        "completed": 10,
+        "failed": 0,
+        "batch_duration_seconds": 37.055645985999945,
+        "videos_per_minute": 16.191864533320697
+      },
+      "queue_wait": {
+        "count": 10,
+        "mean": 12.7472677,
+        "median": 10.412256,
+        "min": 1.056308,
+        "max": 30.911251,
+        "p50": 10.323302,
+        "p95": 30.911251
+      },
+      "processing_duration": {
+        "count": 10,
+        "mean": 9.549489439999935,
+        "median": 10.391454215499834,
+        "min": 5.651870075000261,
+        "max": 10.4832236379998,
+        "p50": 10.379457774000002,
+        "p95": 10.4832236379998
+      },
+      "total_time_to_ready": {
+        "count": 10,
+        "mean": 22.3097864,
+        "median": 20.8370705,
+        "min": 10.06272,
+        "max": 36.574109,
+        "p50": 20.737522,
+        "p95": 36.574109
+      },
+      "cpu_percent_workers_total": {
+        "count": 20,
+        "mean": 785.042,
+        "median": 954.5899999999999,
+        "min": 0.61,
+        "max": 1077.3400000000001,
+        "p50": 945.51,
+        "p95": 1070.16
+      },
+      "memory_mib_workers_total": {
+        "count": 20,
+        "mean": 877.3534999999999,
+        "median": 1086.95,
+        "min": 151.57,
+        "max": 1092.1,
+        "p50": 1086.2,
+        "p95": 1090.8000000000002
+      },
+      "block_io_bytes_workers_total": {
+        "read_delta": 0.0,
+        "write_delta": 62100000.0,
+        "read_start": 0.0,
+        "read_end": 0.0,
+        "write_start": 0.0,
+        "write_end": 62100000.0
+      },
+      "errors": 0,
+      "duplicate_processing": {
+        "detected": false,
+        "duplicate_job_starts": [],
+        "duplicate_outputs": [],
+        "multiple_jobs_for_video": [],
+        "jobs_audited": 10
+      }
+    },
+    {
+      "configuration": {
+        "worker_count": 4,
+        "concurrent_uploads": 10,
+        "fixture_filename": "baseline-medium.mp4",
+        "fixture_size_bytes": 11033920,
+        "fixture_duration_seconds": 30,
+        "fixture_resolution": "1280x720",
+        "ffmpeg_threads_per_process": 3
+      },
+      "batch": {
+        "all_uploads_accepted_seconds": 0.3013905459997659,
+        "all_videos_ready_seconds": 35.118955791999724,
+        "completed": 10,
+        "failed": 0,
+        "batch_duration_seconds": 35.118955791999724,
+        "videos_per_minute": 17.084790434933232
+      },
+      "queue_wait": {
+        "count": 10,
+        "mean": 11.0694794,
+        "median": 13.076260999999999,
+        "min": 0.982526,
+        "max": 26.390683,
+        "p50": 12.996822,
+        "p95": 26.390683
+      },
+      "processing_duration": {
+        "count": 10,
+        "mean": 11.776753251599985,
+        "median": 12.274344254499965,
+        "min": 8.066478263000135,
+        "max": 13.311033509000026,
+        "p50": 12.212247628000114,
+        "p95": 13.311033509000026
+      },
+      "total_time_to_ready": {
+        "count": 10,
+        "mean": 22.8604569,
+        "median": 26.331148,
+        "min": 12.984019,
+        "max": 34.532982,
+        "p50": 26.282896,
+        "p95": 34.532982
+      },
+      "cpu_percent_workers_total": {
+        "count": 19,
+        "mean": 840.8463157894737,
+        "median": 1031.92,
+        "min": 0.35,
+        "max": 1085.49,
+        "p50": 1031.92,
+        "p95": 1085.49
+      },
+      "memory_mib_workers_total": {
+        "count": 19,
+        "mean": 1088.0857894736844,
+        "median": 1402.1000000000001,
+        "min": 200.92000000000002,
+        "max": 1410.3999999999999,
+        "p50": 1402.1000000000001,
+        "p95": 1410.3999999999999
+      },
+      "block_io_bytes_workers_total": {
+        "read_delta": 0.0,
+        "write_delta": 72500000.0,
+        "read_start": 0.0,
+        "read_end": 0.0,
+        "write_start": 0.0,
+        "write_end": 72500000.0
+      },
+      "errors": 0,
+      "duplicate_processing": {
+        "detected": false,
+        "duplicate_job_starts": [],
+        "duplicate_outputs": [],
+        "multiple_jobs_for_video": [],
+        "jobs_audited": 10
+      }
+    }
+  ]
+}
