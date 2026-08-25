@@ -27,6 +27,7 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Experiment 002 concurrent-upload queue-growth benchmark
 - Experiment 003 multi-worker throughput and resource benchmark
 - Experiment 004 three- and four-worker scaling comparison
+- Configurable FFmpeg threads and Experiment 005 thread-allocation matrix
 
 - FastAPI application with OpenAPI and Swagger documentation
 - PostgreSQL 17 development database through Docker Compose

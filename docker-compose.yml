@@ -21,6 +21,7 @@ services:
     environment:
       DATABASE_URL: postgresql+psycopg://streamforge:streamforge@postgres:5432/streamforge
       STORAGE_PATH: /app/storage
+      FFMPEG_THREADS: ${FFMPEG_THREADS:-0}
     volumes:
       - ./storage:/app/storage
     depends_on:

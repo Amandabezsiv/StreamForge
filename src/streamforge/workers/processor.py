@@ -95,7 +95,7 @@ def process_job(db: Session, job_id: uuid.UUID, settings: Settings) -> None:
         db.commit()
 
         stage_started = time.perf_counter()
-        generate_thumbnail(input_path, thumbnail_path)
+        generate_thumbnail(input_path, thumbnail_path, settings.ffmpeg_threads)
         job.thumbnail_duration_seconds = time.perf_counter() - stage_started
         db.add(
             VideoOutput(
@@ -112,7 +112,7 @@ def process_job(db: Session, job_id: uuid.UUID, settings: Settings) -> None:
         record_event(db, job, "TRANSCODING_STARTED")
         db.commit()
         stage_started = time.perf_counter()
-        transcode_720p(input_path, transcoded_path)
+        transcode_720p(input_path, transcoded_path, settings.ffmpeg_threads)
         job.transcoding_duration_seconds = time.perf_counter() - stage_started
         db.add(
             VideoOutput(

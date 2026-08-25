@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     )
     storage_path: Path = Path("storage")
     max_upload_size_bytes: int = 1024 * 1024 * 1024
+    ffmpeg_threads: int = 0
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 

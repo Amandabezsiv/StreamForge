@@ -101,6 +101,13 @@ Repeat the workload with two workers and collect resource metrics:
 uv run python scripts/benchmark_multi_worker.py --workers 2 --concurrency 10
 ```
 
+Compare explicit FFmpeg thread allocations:
+
+```bash
+docker compose build worker
+uv run python scripts/benchmark_ffmpeg_threads.py
+```
+
 The result is stored in
 `experiments/001-single-worker-baseline/results.json`. See the experiment
 README for the environment, fixture, metric definitions, and interpretation.

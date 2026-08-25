@@ -3,6 +3,7 @@
 import argparse
 import json
 import re
+import os
 import subprocess
 import threading
 import time
@@ -214,7 +215,9 @@ def audit_duplicates(video_ids: list[str]) -> dict:
     }
 
 
-def scale_workers(count: int) -> list[str]:
+def scale_workers(count: int, ffmpeg_threads: int) -> list[str]:
+    environment = os.environ.copy()
+    environment["FFMPEG_THREADS"] = str(ffmpeg_threads)
     subprocess.run(
         [
             "docker",
@@ -227,6 +230,7 @@ def scale_workers(count: int) -> list[str]:
             "worker",
         ],
         check=True,
+        env=environment,
     )
     time.sleep(1.0)
     return worker_container_ids(count)
@@ -236,12 +240,28 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--api-url", default="http://localhost:8000")
     parser.add_argument("--workers", type=int, default=2)
+    parser.add_argument(
+        "--ffmpeg-threads",
+        default="auto",
+        help="Threads per FFmpeg process: 'auto' or a positive integer",
+    )
     parser.add_argument("--concurrency", type=int, default=10)
     parser.add_argument("--timeout", type=float, default=600.0)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
     if args.workers < 1 or args.concurrency < 1:
         parser.error("--workers and --concurrency must be at least 1")
+    if args.ffmpeg_threads == "auto":
+        ffmpeg_threads = 0
+        ffmpeg_threads_label: str | int = "auto"
+    else:
+        try:
+            ffmpeg_threads = int(args.ffmpeg_threads)
+        except ValueError:
+            parser.error("--ffmpeg-threads must be 'auto' or a positive integer")
+        if ffmpeg_threads < 1:
+            parser.error("--ffmpeg-threads must be 'auto' or a positive integer")
+        ffmpeg_threads_label = ffmpeg_threads
 
     profile = FIXTURES["medium"]
     video_path = Path("storage/benchmark-fixtures") / profile["filename"]
@@ -254,7 +274,7 @@ def main() -> None:
             video_bitrate=profile["video_bitrate"],
         )
 
-    container_ids = scale_workers(args.workers)
+    container_ids = scale_workers(args.workers, ffmpeg_threads)
     monitor = ResourceMonitor(container_ids)
     monitor.start()
     try:
@@ -266,6 +286,7 @@ def main() -> None:
 
     result["benchmark"] = "003-multiple-workers"
     result["configuration"]["worker_count"] = args.workers
+    result["configuration"]["ffmpeg_threads_per_process"] = ffmpeg_threads_label
     batch_duration = result["batch"]["all_videos_ready_seconds"]
     result["batch"]["batch_duration_seconds"] = batch_duration
     result["batch"]["videos_per_minute"] = (

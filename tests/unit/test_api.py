@@ -165,10 +165,10 @@ def test_worker_extracts_metadata_and_creates_required_outputs(
     video_directory.mkdir(parents=True)
     (video_directory / "original.mp4").write_bytes(b"original")
 
-    def fake_thumbnail(_input, output) -> None:
+    def fake_thumbnail(_input, output, _threads) -> None:
         output.write_bytes(b"thumbnail")
 
-    def fake_transcode(_input, output) -> None:
+    def fake_transcode(_input, output, _threads) -> None:
         output.write_bytes(b"transcoded")
 
     monkeypatch.setattr(
