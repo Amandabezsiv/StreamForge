@@ -25,6 +25,8 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Small, medium, and large deterministic benchmark fixture profiles
 - Repeated benchmark runner with mean, median, min, max, p50, and p95 statistics
 - Experiment 002 concurrent-upload queue-growth benchmark
+- Experiment 003 multi-worker throughput and resource benchmark
+- Experiment 004 three- and four-worker scaling comparison
 
 - FastAPI application with OpenAPI and Swagger documentation
 - PostgreSQL 17 development database through Docker Compose

@@ -1,0 +1,872 @@
+{
+  "benchmark": "003-multiple-workers",
+  "recorded_at": "2026-08-25T19:59:37.644680+00:00",
+  "configuration": {
+    "worker_count": 4,
+    "concurrent_uploads": 10,
+    "fixture_filename": "baseline-medium.mp4",
+    "fixture_size_bytes": 11033920,
+    "fixture_duration_seconds": 30,
+    "fixture_resolution": "1280x720"
+  },
+  "batch": {
+    "all_uploads_accepted_seconds": 0.43129865000014433,
+    "all_videos_ready_seconds": 30.035930860000008,
+    "completed": 10,
+    "failed": 0,
+    "batch_duration_seconds": 30.035930860000008,
+    "videos_per_minute": 19.976074748495407
+  },
+  "summary_seconds": {
+    "queue_wait_time": {
+      "count": 10,
+      "mean": 10.058865299999999,
+      "median": 12.506481,
+      "min": 0.911831,
+      "max": 23.030869,
+      "p50": 12.247075,
+      "p95": 23.030869
+    },
+    "processing_duration": {
+      "count": 10,
+      "mean": 10.151432996499988,
+      "median": 10.96796826600007,
+      "min": 6.381603451000046,
+      "max": 11.744670065000037,
+      "p50": 10.949403125000117,
+      "p95": 11.744670065000037
+    },
+    "transcoding_duration": {
+      "count": 10,
+      "mean": 9.483450552500017,
+      "median": 10.373812752999925,
+      "min": 5.761878221000188,
+      "max": 10.822082207999983,
+      "p50": 10.247700772999906,
+      "p95": 10.822082207999983
+    },
+    "total_time_to_ready": {
+      "count": 10,
+      "mean": 20.2274967,
+      "median": 22.827917,
+      "min": 12.232093,
+      "max": 29.422421,
+      "p50": 22.63742,
+      "p95": 29.422421
+    }
+  },
+  "videos_by_queue_position": [
+    {
+      "request_number": 10,
+      "video_id": "e0c6e5ac-446c-4ae4-bf38-2af59553b22b",
+      "upload_duration_seconds": 0.276976126000136,
+      "job_id": "536becb1-7ad8-40ed-9b99-f66dd8790944",
+      "video_status": "READY",
+      "job_status": "COMPLETED",
+      "queue_wait_time": 0.911831,
+      "processing_duration": 11.254444525999816,
+      "transcoding_duration": 10.247700772999906,
+      "total_time_to_ready": 12.232093,
+      "thumbnail_registered": true,
+      "transcoded_720p_registered": true,
+      "error_code": null,
+      "error_message": null,
+      "queue_position": 1
+    },
+    {
+      "request_number": 6,
+      "video_id": "c1443cc3-55ff-410f-9822-5ffba4893c1f",
+      "upload_duration_seconds": 0.27810437399989496,
+      "job_id": "9c6a0287-9d30-474e-b82a-ff9ab84409bd",
+      "video_status": "READY",
+      "job_status": "COMPLETED",
+      "queue_wait_time": 0.998563,
+      "processing_duration": 11.744670065000037,
+      "transcoding_duration": 10.7643826179999,
+      "total_time_to_ready": 12.760192,
+      "thumbnail_registered": true,
+      "transcoded_720p_registered": true,
+      "error_code": null,
+      "error_message": null,
+      "queue_position": 2
+    },
+    {
+      "request_number": 8,
+      "video_id": "125e2695-723c-4a1e-a9e4-5f02edd9a383",
+      "upload_duration_seconds": 0.2815454999999929,
+      "job_id": "4bc333dd-62ab-400c-9eb9-d06770a95b7a",
+      "video_status": "READY",
+      "job_status": "COMPLETED",
+      "queue_wait_time": 1.138579,
+      "processing_duration": 11.599401386999943,
+      "transcoding_duration": 10.775356934000001,
+      "total_time_to_ready": 12.75365,
+      "thumbnail_registered": true,
+      "transcoded_720p_registered": true,
+      "error_code": null,
+      "error_message": null,
+      "queue_position": 3
+    },
+    {
+      "request_number": 1,
+      "video_id": "25569f9c-6422-4454-8971-60f7ffc73adf",
+      "upload_duration_seconds": 0.2780047219998778,
+      "job_id": "76ccfebd-7bac-437e-9ac9-a005a64cbb0a",
+      "video_status": "READY",
+      "job_status": "COMPLETED",
+      "queue_wait_time": 1.257498,
+      "processing_duration": 11.538600905000067,
+      "transcoding_duration": 10.822082207999983,
+      "total_time_to_ready": 12.812541,
+      "thumbnail_registered": true,
+      "transcoded_720p_registered": true,
+      "error_code": null,
+      "error_message": null,
+      "queue_position": 4
+    },
+    {
+      "request_number": 5,
+      "video_id": "5b68f197-da22-414a-9a82-25a2ecc4adcd",
+      "upload_duration_seconds": 0.2795071980001467,
+      "job_id": "3722782c-e13b-4527-9de2-e6c72c3c79a4",
+      "video_status": "READY",
+      "job_status": "COMPLETED",
+      "queue_wait_time": 12.247075,
+      "processing_duration": 10.378411243000073,
+      "transcoding_duration": 9.857952821000026,
+      "total_time_to_ready": 22.63742,
+      "thumbnail_registered": true,
+      "transcoded_720p_registered": true,
+      "error_code": null,
+      "error_message": null,
+      "queue_position": 5
+    },
+    {
+      "request_number": 3,
+      "video_id": "dfc73910-76db-4eb6-a2db-b5352d761c73",
+      "upload_duration_seconds": 0.28008529900012036,
+      "job_id": "c237ff2c-c466-4080-a9fe-f37e8bcc20fb",
+      "video_status": "READY",
+      "job_status": "COMPLETED",
+      "queue_wait_time": 12.765887,
+      "processing_duration": 10.986533407000024,
+      "transcoding_duration": 10.534104190000107,
+      "total_time_to_ready": 23.761693,
+      "thumbnail_registered": true,
+      "transcoded_720p_registered": true,
+      "error_code": null,
+      "error_message": null,
+      "queue_position": 6
+    },
+    {
+      "request_number": 9,
+      "video_id": "1b882377-6484-49a0-80f6-4efe2ffdfbd8",
+      "upload_duration_seconds": 0.2819624849998945,
+      "job_id": "e9fa3aac-ccc3-4067-854d-21934c2564bd",
+      "video_status": "READY",
+      "job_status": "COMPLETED",
+      "queue_wait_time": 12.770014,
+      "processing_duration": 10.949403125000117,
+      "transcoding_duration": 10.499924732999943,
+      "total_time_to_ready": 23.72898,
+      "thumbnail_registered": true,
+      "transcoded_720p_registered": true,
+      "error_code": null,
+      "error_message": null,
+      "queue_position": 7
+    },
+    {
+      "request_number": 7,
+      "video_id": "7ed22a2b-5b8c-447b-acf7-893c9a9ac191",
+      "upload_duration_seconds": 0.28288503399994624,
+      "job_id": "fbf95e25-8667-43b8-b7d4-cb0f809acfb3",
+      "video_status": "READY",
+      "job_status": "COMPLETED",
+      "queue_wait_time": 12.817842,
+      "processing_duration": 10.195248705999802,
+      "transcoding_duration": 9.67807516300013,
+      "total_time_to_ready": 23.018414,
+      "thumbnail_registered": true,
+      "transcoded_720p_registered": true,
+      "error_code": null,
+      "error_message": null,
+      "queue_position": 8
+    },
+    {
+      "request_number": 2,
+      "video_id": "9bca8910-b96d-4106-8c7b-dcae0eb5c9cc",
+      "upload_duration_seconds": 0.28112140400003227,
+      "job_id": "ee76ee6e-d7cf-4f5d-8533-a3cd7e4ed077",
+      "video_status": "READY",
+      "job_status": "COMPLETED",
+      "queue_wait_time": 22.650495,
+      "processing_duration": 6.4860131499999625,
+      "transcoding_duration": 5.893047863999982,
+      "total_time_to_ready": 29.147563,
+      "thumbnail_registered": true,
+      "transcoded_720p_registered": true,
+      "error_code": null,
+      "error_message": null,
+      "queue_position": 9
+    },
+    {
+      "request_number": 4,
+      "video_id": "618d92e7-888c-42b8-ae82-414a3943cb7c",
+      "upload_duration_seconds": 0.2812949550000212,
+      "job_id": "c2d40b31-8e3c-4da4-8ccf-0f261bd6de08",
+      "video_status": "READY",
+      "job_status": "COMPLETED",
+      "queue_wait_time": 23.030869,
+      "processing_duration": 6.381603451000046,
+      "transcoding_duration": 5.761878221000188,
+      "total_time_to_ready": 29.422421,
+      "thumbnail_registered": true,
+      "transcoded_720p_registered": true,
+      "error_code": null,
+      "error_message": null,
+      "queue_position": 10
+    }
+  ],
+  "resources": {
+    "sample_count": 16,
+    "requested_sample_interval_seconds": 0.5,
+    "observed_mean_sample_interval_seconds": 2.0304074838000057,
+    "cpu_percent_workers_total": {
+      "count": 16,
+      "mean": 896.44625,
+      "median": 1075.345,
+      "min": 1.4500000000000002,
+      "max": 1109.22,
+      "p50": 1065.73,
+      "p95": 1109.22
+    },
+    "memory_bytes_workers_total": {
+      "count": 16,
+      "mean": 1651975782.4,
+      "median": 2213386649.6,
+      "min": 269316259.84,
+      "max": 2225497702.4,
+      "p50": 2209873920.0,
+      "p95": 2225497702.4
+    },
+    "memory_mib_workers_total": {
+      "count": 16,
+      "mean": 1575.446875,
+      "median": 2110.85,
+      "min": 256.84,
+      "max": 2122.4,
+      "p50": 2107.5,
+      "p95": 2122.4
+    },
+    "block_io_bytes_workers_total": {
+      "read_delta": 17500000.0,
+      "write_delta": 86800000.0,
+      "read_start": 64000000.0,
+      "read_end": 81500000.0,
+      "write_start": 0.0,
+      "write_end": 86800000.0
+    },
+    "sampling_errors": [],
+    "raw_samples": [
+      {
+        "recorded_monotonic": 1396.843399874,
+        "cpu_percent": 29.45,
+        "memory_bytes": 269316259.84,
+        "block_read_bytes": 64000000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 8.77,
+            "memory_bytes": 69981962.24,
+            "block_read_bytes": 18100000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 0.0,
+            "memory_bytes": 51233423.36,
+            "block_read_bytes": 0.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 10.23,
+            "memory_bytes": 69761761.28,
+            "block_read_bytes": 18200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 10.45,
+            "memory_bytes": 78339112.96,
+            "block_read_bytes": 27700000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1398.918798867,
+        "cpu_percent": 1064.23,
+        "memory_bytes": 2209873920.0,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 271.97,
+            "memory_bytes": 553228697.6,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 237.01,
+            "memory_bytes": 545783808.0,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 261.07,
+            "memory_bytes": 551446118.4,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 294.18,
+            "memory_bytes": 559415296.0,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1400.935650372,
+        "cpu_percent": 979.51,
+        "memory_bytes": 2216899379.2,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 218.27,
+            "memory_bytes": 554591846.4,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 289.86,
+            "memory_bytes": 547776102.4,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 212.31,
+            "memory_bytes": 552704409.6,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 259.07,
+            "memory_bytes": 561827020.8,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1402.951624497,
+        "cpu_percent": 1105.5100000000002,
+        "memory_bytes": 2221303398.4,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 307.18,
+            "memory_bytes": 556059852.8,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 220.99,
+            "memory_bytes": 548929536.0,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 287.16,
+            "memory_bytes": 553752985.6,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 290.18,
+            "memory_bytes": 562561024.0,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1405.013771102,
+        "cpu_percent": 1092.54,
+        "memory_bytes": 2223505408.0,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 247.29,
+            "memory_bytes": 556479283.2,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 256.59,
+            "memory_bytes": 549558681.6,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 312.45,
+            "memory_bytes": 554277273.6,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 276.21,
+            "memory_bytes": 563190169.6,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1407.06508752,
+        "cpu_percent": 1094.31,
+        "memory_bytes": 2223610265.6,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 311.19,
+            "memory_bytes": 557423001.6,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 261.68,
+            "memory_bytes": 549768396.8,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 260.91,
+            "memory_bytes": 555011276.8,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 260.53,
+            "memory_bytes": 561407590.4,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1409.080348518,
+        "cpu_percent": 1038.35,
+        "memory_bytes": 2016831078.4,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 234.07,
+            "memory_bytes": 533200896.0,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 168.39,
+            "memory_bytes": 398563737.6,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 219.73,
+            "memory_bytes": 525022003.2,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 416.16,
+            "memory_bytes": 560044441.6,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1411.09867136,
+        "cpu_percent": 1107.9499999999998,
+        "memory_bytes": 2216899379.2,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 272.39,
+            "memory_bytes": 554801561.6,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 288.18,
+            "memory_bytes": 547985817.6,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 302.56,
+            "memory_bytes": 552809267.2,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 244.82,
+            "memory_bytes": 561302732.8,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1413.151594873,
+        "cpu_percent": 1109.02,
+        "memory_bytes": 2221408256.0,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 252.18,
+            "memory_bytes": 555325849.6,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 322.46,
+            "memory_bytes": 549348966.4,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 216.3,
+            "memory_bytes": 553543270.4,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 318.08,
+            "memory_bytes": 563190169.6,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1415.17627704,
+        "cpu_percent": 1106.08,
+        "memory_bytes": 2223924838.4,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 252.29,
+            "memory_bytes": 556269568.0,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 275.45,
+            "memory_bytes": 549453824.0,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 318.29,
+            "memory_bytes": 554696704.0,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 260.05,
+            "memory_bytes": 563504742.4,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1417.203453116,
+        "cpu_percent": 1109.22,
+        "memory_bytes": 2225497702.4,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 252.84,
+            "memory_bytes": 557213286.4,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 274.32,
+            "memory_bytes": 550187827.2,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 263.6,
+            "memory_bytes": 555116134.4,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 318.46,
+            "memory_bytes": 562980454.4,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1419.218485712,
+        "cpu_percent": 1065.73,
+        "memory_bytes": 1070533181.44,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 262.18,
+            "memory_bytes": 72760688.64,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 164.71,
+            "memory_bytes": 366582169.6,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 267.75,
+            "memory_bytes": 70831308.8,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 371.09,
+            "memory_bytes": 560359014.4,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1421.237689638,
+        "cpu_percent": 1084.96,
+        "memory_bytes": 1255816560.6399999,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 0.19,
+            "memory_bytes": 72760688.64,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 541.33,
+            "memory_bytes": 548929536.0,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 0.16,
+            "memory_bytes": 70831308.8,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 543.28,
+            "memory_bytes": 563295027.2,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1423.284402485,
+        "cpu_percent": 1049.15,
+        "memory_bytes": 1257703997.44,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 0.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 0.19,
+            "memory_bytes": 72760688.64,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 512.31,
+            "memory_bytes": 549768396.8,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 0.23,
+            "memory_bytes": 70831308.8,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 0.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 536.42,
+            "memory_bytes": 564343603.2,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 0.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1425.28775666,
+        "cpu_percent": 305.68,
+        "memory_bytes": 289270661.12,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 86800000.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 0.39,
+            "memory_bytes": 72760688.64,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 21700000.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 290.42,
+            "memory_bytes": 66165145.6,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 21700000.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 0.38,
+            "memory_bytes": 70831308.8,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 21700000.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 14.49,
+            "memory_bytes": 79513518.08,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 21700000.0
+          }
+        ]
+      },
+      {
+        "recorded_monotonic": 1427.299512131,
+        "cpu_percent": 1.4500000000000002,
+        "memory_bytes": 289218232.32,
+        "block_read_bytes": 81500000.0,
+        "block_write_bytes": 86800000.0,
+        "containers": [
+          {
+            "name": "streamforge-worker-1",
+            "cpu_percent": 0.35,
+            "memory_bytes": 72760688.64,
+            "block_read_bytes": 20700000.0,
+            "block_write_bytes": 21700000.0
+          },
+          {
+            "name": "streamforge-worker-2",
+            "cpu_percent": 0.39,
+            "memory_bytes": 66112716.8,
+            "block_read_bytes": 13200000.0,
+            "block_write_bytes": 21700000.0
+          },
+          {
+            "name": "streamforge-worker-3",
+            "cpu_percent": 0.4,
+            "memory_bytes": 70831308.8,
+            "block_read_bytes": 19000000.0,
+            "block_write_bytes": 21700000.0
+          },
+          {
+            "name": "streamforge-worker-4",
+            "cpu_percent": 0.31,
+            "memory_bytes": 79513518.08,
+            "block_read_bytes": 28600000.0,
+            "block_write_bytes": 21700000.0
+          }
+        ]
+      }
+    ]
+  },
+  "duplicate_processing": {
+    "detected": false,
+    "duplicate_job_starts": [],
+    "duplicate_outputs": [],
+    "multiple_jobs_for_video": [],
+    "jobs_audited": 10
+  }
+}

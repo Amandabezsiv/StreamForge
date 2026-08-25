@@ -102,6 +102,7 @@ def run_experiment(
         videos.append(
             {
                 **upload,
+                "job_id": job["id"],
                 "video_status": item["video"]["status"],
                 "job_status": job["status"],
                 "queue_wait_time": job["queue_wait_seconds"],
