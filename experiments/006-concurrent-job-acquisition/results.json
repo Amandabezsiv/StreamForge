@@ -1,0 +1,111 @@
+{
+  "experiment": "006-concurrent-job-acquisition",
+  "recorded_at": "2026-08-25T20:52:24.508029+00:00",
+  "configuration": {
+    "jobs": 2,
+    "contenders": 16,
+    "lock_hold_seconds": 1.0,
+    "database": "PostgreSQL",
+    "claim_strategy": "SELECT FOR UPDATE SKIP LOCKED"
+  },
+  "batch_duration_seconds": 1.0561141979997046,
+  "claims": {
+    "successful": 2,
+    "empty": 14,
+    "unique_job_ids": 2,
+    "duplicate_claims": {}
+  },
+  "database_audit": {
+    "job_statuses": {
+      "a9486c6a-286c-4288-a812-16d3a3a1dc52": "PROCESSING",
+      "60e1e298-63b1-4fda-86ca-0c0e8eecc3ec": "PROCESSING"
+    },
+    "job_started_events": {
+      "a9486c6a-286c-4288-a812-16d3a3a1dc52": 1,
+      "60e1e298-63b1-4fda-86ca-0c0e8eecc3ec": 1
+    }
+  },
+  "passed": true,
+  "attempts": [
+    {
+      "contender": 0,
+      "claimed_job_id": null,
+      "duration_seconds": 0.03664487400055805
+    },
+    {
+      "contender": 1,
+      "claimed_job_id": null,
+      "duration_seconds": 0.03381448200070736
+    },
+    {
+      "contender": 2,
+      "claimed_job_id": null,
+      "duration_seconds": 0.03453768199960905
+    },
+    {
+      "contender": 3,
+      "claimed_job_id": null,
+      "duration_seconds": 0.0351422880003156
+    },
+    {
+      "contender": 4,
+      "claimed_job_id": null,
+      "duration_seconds": 0.03621405900048558
+    },
+    {
+      "contender": 5,
+      "claimed_job_id": null,
+      "duration_seconds": 0.0342314660001648
+    },
+    {
+      "contender": 6,
+      "claimed_job_id": null,
+      "duration_seconds": 0.0334050629999183
+    },
+    {
+      "contender": 7,
+      "claimed_job_id": null,
+      "duration_seconds": 0.03709845000048517
+    },
+    {
+      "contender": 8,
+      "claimed_job_id": null,
+      "duration_seconds": 0.035998834000565694
+    },
+    {
+      "contender": 9,
+      "claimed_job_id": null,
+      "duration_seconds": 0.03246815799957403
+    },
+    {
+      "contender": 10,
+      "claimed_job_id": null,
+      "duration_seconds": 0.03255331899981684
+    },
+    {
+      "contender": 11,
+      "claimed_job_id": null,
+      "duration_seconds": 0.03530649500044092
+    },
+    {
+      "contender": 12,
+      "claimed_job_id": null,
+      "duration_seconds": 0.032203843999923265
+    },
+    {
+      "contender": 13,
+      "claimed_job_id": null,
+      "duration_seconds": 0.03347021300032793
+    },
+    {
+      "contender": 14,
+      "claimed_job_id": "60e1e298-63b1-4fda-86ca-0c0e8eecc3ec",
+      "duration_seconds": 1.0500732130003598
+    },
+    {
+      "contender": 15,
+      "claimed_job_id": "a9486c6a-286c-4288-a812-16d3a3a1dc52",
+      "duration_seconds": 1.0503986610001448
+    }
+  ]
+}

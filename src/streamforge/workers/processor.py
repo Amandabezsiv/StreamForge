@@ -43,8 +43,14 @@ def record_event(
     )
 
 
-def acquire_pending_job(db: Session) -> uuid.UUID | None:
-    """Atomically claim the oldest pending job without blocking other workers."""
+def acquire_pending_job(
+    db: Session, *, diagnostic_lock_hold_seconds: float = 0.0
+) -> uuid.UUID | None:
+    """Atomically claim the oldest pending job without blocking other workers.
+
+    The optional delay makes lock contention observable in diagnostics. Normal
+    workers leave it at zero.
+    """
     job = db.scalar(
         select(ProcessingJob)
         .where(ProcessingJob.status == JobStatus.PENDING)
@@ -63,6 +69,8 @@ def acquire_pending_job(db: Session) -> uuid.UUID | None:
     job.video.status = VideoStatus.PROCESSING
     record_event(db, job, "JOB_STARTED")
     job_id = job.id
+    if diagnostic_lock_hold_seconds > 0:
+        time.sleep(diagnostic_lock_hold_seconds)
     db.commit()
     return job_id
 

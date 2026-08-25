@@ -28,6 +28,8 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Experiment 003 multi-worker throughput and resource benchmark
 - Experiment 004 three- and four-worker scaling comparison
 - Configurable FFmpeg threads and Experiment 005 thread-allocation matrix
+- Experiment 006 atomic PostgreSQL job-claim contention benchmark
+- Experiment 007 worker-crash database and filesystem consistency inspection
 
 - FastAPI application with OpenAPI and Swagger documentation
 - PostgreSQL 17 development database through Docker Compose

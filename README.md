@@ -108,6 +108,20 @@ docker compose build worker
 uv run python scripts/benchmark_ffmpeg_threads.py
 ```
 
+Stress atomic PostgreSQL job acquisition with synchronized contenders:
+
+```bash
+docker compose stop worker
+uv run python scripts/benchmark_job_acquisition.py
+docker compose up -d --scale worker=4 worker
+```
+
+Kill a worker during transcoding and inspect PostgreSQL and local storage:
+
+```bash
+uv run python scripts/benchmark_worker_failure.py
+```
+
 The result is stored in
 `experiments/001-single-worker-baseline/results.json`. See the experiment
 README for the environment, fixture, metric definitions, and interpretation.
