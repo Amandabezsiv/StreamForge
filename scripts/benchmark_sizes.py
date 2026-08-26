@@ -2,7 +2,7 @@
 
 import argparse
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from benchmark_e2e import generate_fixture, run_benchmark
@@ -73,7 +73,7 @@ def main() -> None:
 
     report = {
         "benchmark": "001-single-worker-size-comparison",
-        "recorded_at": datetime.now(timezone.utc).isoformat(),
+        "recorded_at": datetime.now(UTC).isoformat(),
         "worker_count": 1,
         "runs": runs,
     }

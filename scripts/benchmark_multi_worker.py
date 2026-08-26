@@ -2,25 +2,32 @@
 
 import argparse
 import json
-import re
 import os
+import re
 import subprocess
 import threading
 import time
 from pathlib import Path
 
-from sqlalchemy import func, select
-
 from benchmark_concurrent_queue import run_experiment
 from benchmark_e2e import generate_fixture
 from benchmark_repeated import summarize
 from benchmark_sizes import FIXTURES
+from sqlalchemy import func, select
+
 from streamforge.core.database import SessionLocal
 from streamforge.models.processing_event import ProcessingEvent
 from streamforge.models.processing_job import ProcessingJob
 from streamforge.models.video_output import VideoOutput
 
 DEFAULT_OUTPUT = Path("experiments/003-two-workers/results.json")
+RESOURCE_READ_ERRORS = (
+    OSError,
+    subprocess.SubprocessError,
+    json.JSONDecodeError,
+    KeyError,
+    ValueError,
+)
 SIZE_UNITS = {
     "B": 1,
     "KB": 1000,
@@ -115,14 +122,14 @@ class ResourceMonitor:
         self._thread.join()
         try:
             self.samples.append(read_worker_resources(self.container_ids))
-        except Exception as exc:
+        except RESOURCE_READ_ERRORS as exc:
             self.errors.append(str(exc))
 
     def _run(self) -> None:
         while not self._stop.is_set():
             try:
                 self.samples.append(read_worker_resources(self.container_ids))
-            except Exception as exc:
+            except RESOURCE_READ_ERRORS as exc:
                 self.errors.append(str(exc))
             self._stop.wait(self.interval)
 
@@ -169,7 +176,9 @@ class ResourceMonitor:
 def audit_duplicates(video_ids: list[str]) -> dict:
     with SessionLocal() as db:
         jobs = list(
-            db.scalars(select(ProcessingJob).where(ProcessingJob.video_id.in_(video_ids)))
+            db.scalars(
+                select(ProcessingJob).where(ProcessingJob.video_id.in_(video_ids))
+            )
         )
         job_ids = [job.id for job in jobs]
         starts = db.execute(

@@ -1,11 +1,16 @@
 import uuid
 from datetime import datetime
+from typing import TYPE_CHECKING
 
 from sqlalchemy import BigInteger, DateTime, Float, Integer, String, Uuid, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from streamforge.core.database import Base
 from streamforge.models.types import VideoStatus
+
+if TYPE_CHECKING:
+    from streamforge.models.processing_job import ProcessingJob
+    from streamforge.models.video_output import VideoOutput
 
 
 class Video(Base):
@@ -31,5 +36,5 @@ class Video(Base):
         DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
     )
 
-    jobs: Mapped[list["ProcessingJob"]] = relationship(back_populates="video")  # noqa: F821
-    outputs: Mapped[list["VideoOutput"]] = relationship(back_populates="video")  # noqa: F821
+    jobs: Mapped[list["ProcessingJob"]] = relationship(back_populates="video")
+    outputs: Mapped[list["VideoOutput"]] = relationship(back_populates="video")

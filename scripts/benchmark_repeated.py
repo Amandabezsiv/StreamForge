@@ -4,7 +4,7 @@ import argparse
 import json
 import math
 import statistics
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from benchmark_e2e import generate_fixture, run_benchmark
@@ -44,9 +44,7 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path(
-            "experiments/001-single-worker-baseline/results-repeated-20.json"
-        ),
+        default=Path("experiments/001-single-worker-baseline/results-repeated-20.json"),
     )
     parser.add_argument("--regenerate-fixtures", action="store_true")
     args = parser.parse_args()
@@ -107,7 +105,7 @@ def main() -> None:
 
     report = {
         "benchmark": "001-single-worker-repeated-size-comparison",
-        "recorded_at": datetime.now(timezone.utc).isoformat(),
+        "recorded_at": datetime.now(UTC).isoformat(),
         "runs_requested_per_profile": args.runs,
         "worker_count": 1,
         "execution": "sequential",

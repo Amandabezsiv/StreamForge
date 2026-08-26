@@ -4,7 +4,7 @@ import argparse
 import json
 import subprocess
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import httpx
@@ -133,7 +133,7 @@ def run_benchmark(api_url: str, video_path: Path, timeout: float) -> dict:
 
         return {
             "benchmark": "001-single-worker-baseline",
-            "recorded_at": datetime.now(timezone.utc).isoformat(),
+            "recorded_at": datetime.now(UTC).isoformat(),
             "video_id": video_id,
             "fixture": {
                 "filename": video_path.name,

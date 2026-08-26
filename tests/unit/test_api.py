@@ -13,7 +13,6 @@ from streamforge.models import ProcessingEvent, ProcessingJob, Video, VideoOutpu
 from streamforge.models.types import JobStatus, OutputType
 from streamforge.workers import processor
 
-
 engine = create_engine(
     "sqlite://",
     connect_args={"check_same_thread": False},
