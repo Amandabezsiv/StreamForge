@@ -1,6 +1,7 @@
-import uuid
 import shutil
+import uuid
 from pathlib import Path
+from typing import Annotated
 
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status
 from sqlalchemy import select
@@ -10,9 +11,9 @@ from streamforge.core.config import Settings, get_settings
 from streamforge.core.database import get_db
 from streamforge.models.processing_event import ProcessingEvent
 from streamforge.models.processing_job import ProcessingJob
+from streamforge.models.types import JobStatus, VideoStatus
 from streamforge.models.video import Video
 from streamforge.models.video_output import VideoOutput
-from streamforge.models.types import JobStatus, VideoStatus
 from streamforge.schemas.video import (
     ProcessingJobResponse,
     VideoOutputResponse,
@@ -40,9 +41,9 @@ def get_video_or_404(video_id: uuid.UUID, db: Session) -> Video:
     status_code=status.HTTP_202_ACCEPTED,
 )
 def upload_video(
-    file: UploadFile = File(...),
-    db: Session = Depends(get_db),
-    settings: Settings = Depends(get_settings),
+    file: Annotated[UploadFile, File()],
+    db: Annotated[Session, Depends(get_db)],
+    settings: Annotated[Settings, Depends(get_settings)],
 ) -> VideoUploadResponse:
     """Store an original video and enqueue its first processing job."""
     if not file.filename:
@@ -117,13 +118,13 @@ def upload_video(
 
 
 @router.get("/{video_id}", response_model=VideoResponse)
-def get_video(video_id: uuid.UUID, db: Session = Depends(get_db)) -> Video:
+def get_video(video_id: uuid.UUID, db: Annotated[Session, Depends(get_db)]) -> Video:
     return get_video_or_404(video_id, db)
 
 
 @router.get("/{video_id}/outputs", response_model=list[VideoOutputResponse])
 def get_video_outputs(
-    video_id: uuid.UUID, db: Session = Depends(get_db)
+    video_id: uuid.UUID, db: Annotated[Session, Depends(get_db)]
 ) -> list[VideoOutput]:
     get_video_or_404(video_id, db)
     return list(
@@ -137,7 +138,7 @@ def get_video_outputs(
 
 @router.get("/{video_id}/jobs", response_model=list[ProcessingJobResponse])
 def get_video_jobs(
-    video_id: uuid.UUID, db: Session = Depends(get_db)
+    video_id: uuid.UUID, db: Annotated[Session, Depends(get_db)]
 ) -> list[ProcessingJob]:
     get_video_or_404(video_id, db)
     return list(

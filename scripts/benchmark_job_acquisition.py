@@ -9,7 +9,7 @@ import time
 import uuid
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from sqlalchemy import func, select
@@ -18,7 +18,6 @@ from streamforge.core.database import SessionLocal
 from streamforge.models import ProcessingEvent, ProcessingJob, Video
 from streamforge.models.types import JobStatus
 from streamforge.workers.processor import acquire_pending_job
-
 
 DEFAULT_OUTPUT = Path("experiments/006-concurrent-job-acquisition/results.json")
 
@@ -46,9 +45,7 @@ def contend(
     barrier.wait()
     started = time.perf_counter()
     with SessionLocal() as db:
-        job_id = acquire_pending_job(
-            db, diagnostic_lock_hold_seconds=lock_hold_seconds
-        )
+        job_id = acquire_pending_job(db, diagnostic_lock_hold_seconds=lock_hold_seconds)
     return {
         "contender": contender,
         "claimed_job_id": str(job_id) if job_id else None,
@@ -115,9 +112,7 @@ def main() -> None:
     ]
     counts = Counter(claimed)
     database_audit = audit(job_ids)
-    duplicate_claims = {
-        job_id: count for job_id, count in counts.items() if count > 1
-    }
+    duplicate_claims = {job_id: count for job_id, count in counts.items() if count > 1}
     duplicate_events = {
         job_id: count
         for job_id, count in database_audit["job_started_events"].items()
@@ -129,12 +124,11 @@ def main() -> None:
         and len(set(claimed)) == expected_claims
         and not duplicate_claims
         and not duplicate_events
-        and set(database_audit["job_statuses"].values())
-        == {JobStatus.PROCESSING}
+        and set(database_audit["job_statuses"].values()) == {JobStatus.PROCESSING}
     )
     result = {
         "experiment": "006-concurrent-job-acquisition",
-        "recorded_at": datetime.now(timezone.utc).isoformat(),
+        "recorded_at": datetime.now(UTC).isoformat(),
         "configuration": {
             "jobs": args.jobs,
             "contenders": args.contenders,

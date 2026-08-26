@@ -2,8 +2,7 @@ import argparse
 import logging
 import time
 import uuid
-from datetime import datetime, timezone
-from pathlib import Path
+from datetime import UTC, datetime
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -24,9 +23,9 @@ logger = logging.getLogger("streamforge.worker")
 def elapsed_seconds(start: datetime, end: datetime) -> float:
     """Return elapsed wall time while tolerating timezone-naive test databases."""
     if start.tzinfo is None:
-        start = start.replace(tzinfo=timezone.utc)
+        start = start.replace(tzinfo=UTC)
     if end.tzinfo is None:
-        end = end.replace(tzinfo=timezone.utc)
+        end = end.replace(tzinfo=UTC)
     return max(0.0, (end - start).total_seconds())
 
 
@@ -62,7 +61,7 @@ def acquire_pending_job(
         db.rollback()
         return None
 
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     job.status = JobStatus.PROCESSING
     job.started_at = now
     job.queue_wait_seconds = elapsed_seconds(job.created_at, now)
@@ -110,7 +109,9 @@ def process_job(db: Session, job_id: uuid.UUID, settings: Settings) -> None:
                 video_id=video.id,
                 type=OutputType.THUMBNAIL,
                 resolution=None,
-                storage_key=thumbnail_path.relative_to(settings.storage_path).as_posix(),
+                storage_key=thumbnail_path.relative_to(
+                    settings.storage_path
+                ).as_posix(),
                 size_bytes=thumbnail_path.stat().st_size,
             )
         )
@@ -127,14 +128,16 @@ def process_job(db: Session, job_id: uuid.UUID, settings: Settings) -> None:
                 video_id=video.id,
                 type=OutputType.TRANSCODED_VIDEO,
                 resolution="720p",
-                storage_key=transcoded_path.relative_to(settings.storage_path).as_posix(),
+                storage_key=transcoded_path.relative_to(
+                    settings.storage_path
+                ).as_posix(),
                 size_bytes=transcoded_path.stat().st_size,
             )
         )
         record_event(db, job, "TRANSCODING_COMPLETED")
 
         job.status = JobStatus.COMPLETED
-        job.finished_at = datetime.now(timezone.utc)
+        job.finished_at = datetime.now(UTC)
         job.processing_duration_seconds = time.perf_counter() - processing_started
         job.total_time_to_ready_seconds = elapsed_seconds(
             video.created_at, job.finished_at
@@ -142,13 +145,16 @@ def process_job(db: Session, job_id: uuid.UUID, settings: Settings) -> None:
         video.status = VideoStatus.READY
         record_event(db, job, "JOB_COMPLETED")
         db.commit()
-        logger.info("video processing completed", extra={"video_id": str(video.id), "job_id": str(job.id)})
+        logger.info(
+            "video processing completed",
+            extra={"video_id": str(video.id), "job_id": str(job.id)},
+        )
     except Exception as exc:
         db.rollback()
         job = db.get(ProcessingJob, job_id)
         if job is not None:
             job.status = JobStatus.FAILED
-            job.finished_at = datetime.now(timezone.utc)
+            job.finished_at = datetime.now(UTC)
             job.processing_duration_seconds = time.perf_counter() - processing_started
             job.error_code = type(exc).__name__
             job.error_message = str(exc)[:4000]

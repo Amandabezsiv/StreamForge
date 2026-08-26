@@ -9,7 +9,7 @@ import shutil
 import subprocess
 import time
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import httpx
@@ -19,14 +19,18 @@ from streamforge.core.database import SessionLocal
 from streamforge.models import ProcessingEvent, ProcessingJob, Video, VideoOutput
 from streamforge.models.types import JobStatus
 
-
 DEFAULT_FIXTURE = Path("storage/benchmark-fixtures/baseline-large.mp4")
 DEFAULT_OUTPUT = Path("experiments/007-worker-failure/results.json")
 
 
-def compose(*arguments: str, env: dict[str, str] | None = None) -> subprocess.CompletedProcess:
+def compose(
+    *arguments: str, env: dict[str, str] | None = None
+) -> subprocess.CompletedProcess:
     return subprocess.run(
-        ["docker", "compose", *arguments], check=True, text=True, capture_output=True,
+        ["docker", "compose", *arguments],
+        check=True,
+        text=True,
+        capture_output=True,
         env=env,
     )
 
@@ -75,10 +79,17 @@ def inspect_file(path: Path) -> dict:
     else:
         container_path = f"/app/storage/{path.relative_to('storage').as_posix()}"
         probe_command = [
-            "docker", "compose", "run", "--rm", "--no-deps", "worker",
-            "ffprobe", *probe_arguments, container_path,
+            "docker",
+            "compose",
+            "run",
+            "--rm",
+            "--no-deps",
+            "worker",
+            "ffprobe",
+            *probe_arguments,
+            container_path,
         ]
-    probe = subprocess.run(probe_command, text=True, capture_output=True)
+    probe = subprocess.run(probe_command, text=True, capture_output=True, check=False)
     result["ffprobe_valid"] = probe.returncode == 0
     if probe.returncode != 0:
         result["ffprobe_error"] = probe.stderr.strip()[:1000]
@@ -158,7 +169,9 @@ def main() -> None:
 
     with SessionLocal() as db:
         pending = db.scalar(
-            select(ProcessingJob).where(ProcessingJob.status == JobStatus.PENDING).limit(1)
+            select(ProcessingJob)
+            .where(ProcessingJob.status == JobStatus.PENDING)
+            .limit(1)
         )
     if pending is not None:
         raise RuntimeError("Refusing to run while an unrelated PENDING job exists")
@@ -180,14 +193,14 @@ def main() -> None:
             video_id = uuid.UUID(response.json()["video_id"])
 
         wait_for_event(video_id, "TRANSCODING_STARTED", args.timeout)
-        observed_at = datetime.now(timezone.utc)
+        observed_at = datetime.now(UTC)
         compose("kill", "-s", "SIGKILL", "worker")
         compose("stop", "worker")
         time.sleep(0.5)
         state = inspect_state(video_id, Path("storage"))
         result = {
             "experiment": "007-worker-failure-during-processing",
-            "recorded_at": datetime.now(timezone.utc).isoformat(),
+            "recorded_at": datetime.now(UTC).isoformat(),
             "failure_injection": {
                 "signal": "SIGKILL",
                 "trigger_event": "TRANSCODING_STARTED",
@@ -205,7 +218,11 @@ def main() -> None:
     finally:
         if args.restore_workers > 0:
             compose(
-                "up", "-d", "--scale", f"worker={args.restore_workers}", "worker",
+                "up",
+                "-d",
+                "--scale",
+                f"worker={args.restore_workers}",
+                "worker",
                 env=worker_env,
             )
 

@@ -5,11 +5,10 @@ import json
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import httpx
-
 from benchmark_e2e import generate_fixture, wait_for_api
 from benchmark_repeated import summarize
 from benchmark_sizes import FIXTURES
@@ -128,7 +127,7 @@ def run_experiment(
     )
     return {
         "benchmark": "002-concurrent-medium-queue",
-        "recorded_at": datetime.now(timezone.utc).isoformat(),
+        "recorded_at": datetime.now(UTC).isoformat(),
         "configuration": {
             "worker_count": 1,
             "concurrent_uploads": concurrency,
@@ -173,9 +172,7 @@ def main() -> None:
             video_bitrate=profile["video_bitrate"],
         )
 
-    result = run_experiment(
-        args.api_url, video_path, args.concurrency, args.timeout
-    )
+    result = run_experiment(args.api_url, video_path, args.concurrency, args.timeout)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2))

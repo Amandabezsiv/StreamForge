@@ -4,7 +4,7 @@ import argparse
 import json
 import subprocess
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 CONFIGURATIONS = (
@@ -69,7 +69,7 @@ def main() -> None:
 
     report = {
         "benchmark": "005-ffmpeg-thread-allocation",
-        "recorded_at": datetime.now(timezone.utc).isoformat(),
+        "recorded_at": datetime.now(UTC).isoformat(),
         "configuration_count": len(CONFIGURATIONS),
         "concurrent_uploads_per_configuration": args.concurrency,
         "results": summaries,

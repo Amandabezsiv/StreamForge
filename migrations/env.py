@@ -3,9 +3,9 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
+from streamforge import models  # noqa: F401
 from streamforge.core.config import get_settings
 from streamforge.core.database import Base
-from streamforge import models  # noqa: F401
 
 config = context.config
 config.set_main_option("sqlalchemy.url", get_settings().database_url)

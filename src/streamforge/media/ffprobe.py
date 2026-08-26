@@ -51,6 +51,11 @@ def extract_metadata(input_path: Path) -> VideoMetadata:
         )
     except FileNotFoundError as exc:
         raise MediaCommandError("ffprobe is not installed or not in PATH") from exc
-    except (subprocess.CalledProcessError, KeyError, ValueError, json.JSONDecodeError) as exc:
+    except (
+        subprocess.CalledProcessError,
+        KeyError,
+        ValueError,
+        json.JSONDecodeError,
+    ) as exc:
         detail = getattr(exc, "stderr", "") or str(exc)
         raise MediaCommandError(f"ffprobe failed: {detail.strip()}") from exc
