@@ -19,6 +19,7 @@ def _publish_atomically(
     output_path: Path,
     operation: str,
     build_command: Callable[[Path], list[str]],
+    verify_before_publish: Callable[[], None] | None = None,
 ) -> None:
     """Write beside the destination and expose it only after FFmpeg succeeds."""
     temporary_path = output_path.with_name(
@@ -26,12 +27,19 @@ def _publish_atomically(
     )
     try:
         _run_ffmpeg(build_command(temporary_path), operation)
+        if verify_before_publish is not None:
+            verify_before_publish()
         temporary_path.replace(output_path)
     finally:
         temporary_path.unlink(missing_ok=True)
 
 
-def generate_thumbnail(input_path: Path, output_path: Path, threads: int = 0) -> None:
+def generate_thumbnail(
+    input_path: Path,
+    output_path: Path,
+    threads: int = 0,
+    verify_before_publish: Callable[[], None] | None = None,
+) -> None:
     def command(temporary_path: Path) -> list[str]:
         return [
             "ffmpeg",
@@ -49,10 +57,17 @@ def generate_thumbnail(input_path: Path, output_path: Path, threads: int = 0) ->
             str(temporary_path),
         ]
 
-    _publish_atomically(output_path, "thumbnail generation", command)
+    _publish_atomically(
+        output_path, "thumbnail generation", command, verify_before_publish
+    )
 
 
-def transcode_720p(input_path: Path, output_path: Path, threads: int = 0) -> None:
+def transcode_720p(
+    input_path: Path,
+    output_path: Path,
+    threads: int = 0,
+    verify_before_publish: Callable[[], None] | None = None,
+) -> None:
     def command(temporary_path: Path) -> list[str]:
         return [
             "ffmpeg",
@@ -80,4 +95,4 @@ def transcode_720p(input_path: Path, output_path: Path, threads: int = 0) -> Non
             str(temporary_path),
         ]
 
-    _publish_atomically(output_path, "720p transcoding", command)
+    _publish_atomically(output_path, "720p transcoding", command, verify_before_publish)

@@ -46,6 +46,8 @@ class ProcessingJobResponse(BaseModel):
     type: JobType
     status: JobStatus
     attempt: int
+    claimed_by: str | None
+    lease_expires_at: datetime | None
     started_at: datetime | None
     finished_at: datetime | None
     error_code: str | None

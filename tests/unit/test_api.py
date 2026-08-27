@@ -1,4 +1,5 @@
 import uuid
+from datetime import UTC, datetime, timedelta
 from types import SimpleNamespace
 
 from fastapi.testclient import TestClient
@@ -164,10 +165,10 @@ def test_worker_extracts_metadata_and_creates_required_outputs(
     video_directory.mkdir(parents=True)
     (video_directory / "original.mp4").write_bytes(b"original")
 
-    def fake_thumbnail(_input, output, _threads) -> None:
+    def fake_thumbnail(_input, output, _threads, _verify) -> None:
         output.write_bytes(b"thumbnail")
 
-    def fake_transcode(_input, output, _threads) -> None:
+    def fake_transcode(_input, output, _threads, _verify) -> None:
         output.write_bytes(b"transcoded")
 
     monkeypatch.setattr(
@@ -272,3 +273,60 @@ def test_worker_registers_processing_failure(tmp_path, monkeypatch) -> None:
         assert job.error_code == "RuntimeError"
         assert job.error_message == "ffprobe failed"
         assert "JOB_FAILED" in {event.event_type for event in events}
+
+
+def test_recovery_fails_abandoned_attempt_and_creates_pending_retry(tmp_path) -> None:
+    video_id = uuid.uuid4()
+    video_directory = tmp_path / "videos" / str(video_id)
+    video_directory.mkdir(parents=True)
+    original = video_directory / "original.mp4"
+    temporary = video_directory / ".720p.mp4.abandoned.tmp"
+    original.write_bytes(b"original")
+    temporary.write_bytes(b"partial")
+
+    with TestingSession() as session:
+        video = Video(
+            id=video_id,
+            original_filename="original.mp4",
+            storage_key=f"videos/{video_id}/original.mp4",
+            size_bytes=8,
+            status="PROCESSING",
+        )
+        abandoned = ProcessingJob(
+            video_id=video_id,
+            status=JobStatus.PROCESSING,
+            attempt=1,
+            claimed_by="dead-worker",
+            lease_expires_at=datetime.now(UTC) - timedelta(seconds=1),
+            started_at=datetime.now(UTC) - timedelta(seconds=10),
+        )
+        session.add_all([video, abandoned])
+        session.commit()
+
+        recovered = processor.recover_expired_jobs(
+            session, Settings(storage_path=tmp_path)
+        )
+
+        jobs = list(
+            session.query(ProcessingJob)
+            .filter_by(video_id=video_id)
+            .order_by(ProcessingJob.attempt)
+        )
+        events = session.query(ProcessingEvent).filter_by(video_id=video_id).all()
+        session.refresh(video)
+
+        assert recovered == 1
+        assert len(jobs) == 2
+        assert jobs[0].status == JobStatus.FAILED
+        assert jobs[0].error_code == "WorkerLeaseExpired"
+        assert jobs[0].claimed_by is None
+        assert jobs[0].lease_expires_at is None
+        assert jobs[1].status == JobStatus.PENDING
+        assert jobs[1].attempt == 2
+        assert video.status == "UPLOADED"
+        assert {event.event_type for event in events} == {
+            "JOB_ABANDONED",
+            "JOB_CREATED",
+        }
+        assert original.exists()
+        assert not temporary.exists()

@@ -13,6 +13,9 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Atomic publication of FFmpeg outputs through same-directory temporary files,
   preventing partial thumbnails or transcodes from appearing at final paths.
 - Experiment 008 crash verification for atomic FFmpeg output publication.
+- Worker processing leases with ownership checks, heartbeat renewal, abandoned
+  attempt recovery, idempotent retry output registration, and temporary cleanup.
+- Experiment 009 worker lease crash-recovery verification.
 
 ### Planned
 

@@ -1,0 +1,72 @@
+{
+  "experiment": "009-worker-lease-recovery-failure",
+  "recorded_at": "2026-08-27T01:03:54.816321+00:00",
+  "failure_injection": {
+    "signal": "SIGKILL",
+    "trigger_event": "TRANSCODING_STARTED",
+    "trigger_observed_at": "2026-08-27T01:03:52.486527+00:00",
+    "fixture": "storage/benchmark-fixtures/baseline-large.mp4",
+    "fixture_size_bytes": 41609128,
+    "worker_count": 1,
+    "ffmpeg_threads": "3"
+  },
+  "database": {
+    "video_id": "d9555718-74f0-4fa7-80ab-7991e12eaf1c",
+    "video_status": "PROCESSING",
+    "metadata": {
+      "duration_seconds": 60.0,
+      "width": 1920,
+      "height": 1080,
+      "codec": "h264",
+      "bitrate": 5469816,
+      "fps": 30.0
+    },
+    "job_id": "5c8db702-8a11-463e-b920-6d6deb437778",
+    "job_status": "PROCESSING",
+    "started_at": "2026-08-27T01:03:52.069081+00:00",
+    "finished_at": null,
+    "error_code": null,
+    "error_message": null,
+    "events": [
+      "JOB_CREATED",
+      "JOB_STARTED",
+      "METADATA_EXTRACTED",
+      "THUMBNAIL_CREATED",
+      "TRANSCODING_STARTED"
+    ],
+    "outputs": [
+      {
+        "type": "THUMBNAIL",
+        "resolution": null,
+        "storage_key": "videos/d9555718-74f0-4fa7-80ab-7991e12eaf1c/thumbnail.jpg",
+        "size_bytes": 73325
+      }
+    ]
+  },
+  "filesystem": {
+    "directory": "storage/videos/d9555718-74f0-4fa7-80ab-7991e12eaf1c",
+    "files": [
+      {
+        "path": "storage/videos/d9555718-74f0-4fa7-80ab-7991e12eaf1c/.720p.mp4.dc297ec48fe04622871e7195b0e4b9b3.tmp",
+        "exists": true,
+        "size_bytes": 48,
+        "ffprobe_valid": false,
+        "ffprobe_error": "Container streamforge-worker-run-b51884081ca5 Creating \n Container streamforge-worker-run-b51884081ca5 Created \n[mov,mp4,m4a,3gp,3g2,mj2 @ 0x59bcb9e07f40] moov atom not found\n/app/storage/videos/d9555718-74f0-4fa7-80ab-7991e12eaf1c/.720p.mp4.dc297ec48fe04622871e7195b0e4b9b3.tmp: Invalid data found when processing input"
+      },
+      {
+        "path": "storage/videos/d9555718-74f0-4fa7-80ab-7991e12eaf1c/original.mp4",
+        "exists": true,
+        "size_bytes": 41609128,
+        "ffprobe_valid": true,
+        "ffprobe_error": null
+      },
+      {
+        "path": "storage/videos/d9555718-74f0-4fa7-80ab-7991e12eaf1c/thumbnail.jpg",
+        "exists": true,
+        "size_bytes": 73325,
+        "ffprobe_valid": true,
+        "ffprobe_error": null
+      }
+    ]
+  }
+}
