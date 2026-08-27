@@ -20,6 +20,7 @@ conclusions belong in `experiments/` and `docs/adr/`.
   atomic output publication and database commit.
 - Experiment 012 PostgreSQL queue acquisition concurrency and saturation sweep.
 - Experiment 013 PostgreSQL and worker overhead from polling an empty queue.
+- Experiment 014 job pickup latency versus PostgreSQL idle-polling cost.
 
 ### Planned
 
