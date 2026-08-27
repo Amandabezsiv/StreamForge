@@ -19,6 +19,7 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Experiments 010 and 011 for database loss during renewal and a crash between
   atomic output publication and database commit.
 - Experiment 012 PostgreSQL queue acquisition concurrency and saturation sweep.
+- Experiment 013 PostgreSQL and worker overhead from polling an empty queue.
 
 ### Planned
 

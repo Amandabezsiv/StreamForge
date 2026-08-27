@@ -1,0 +1,815 @@
+{
+  "experiment": "013-empty-queue-idle-polling",
+  "recorded_at": "2026-08-27T03:38:00.528969+00:00",
+  "configuration": {
+    "duration_seconds_per_configuration": 30.0,
+    "queue_state": "empty",
+    "matrix": [
+      {
+        "workers": 0,
+        "poll_interval_seconds": 2.0
+      },
+      {
+        "workers": 1,
+        "poll_interval_seconds": 2.0
+      },
+      {
+        "workers": 4,
+        "poll_interval_seconds": 2.0
+      },
+      {
+        "workers": 8,
+        "poll_interval_seconds": 2.0
+      },
+      {
+        "workers": 8,
+        "poll_interval_seconds": 1.0
+      },
+      {
+        "workers": 8,
+        "poll_interval_seconds": 0.5
+      },
+      {
+        "workers": 8,
+        "poll_interval_seconds": 0.1
+      },
+      {
+        "workers": 4,
+        "poll_interval_seconds": 0.1
+      },
+      {
+        "workers": 4,
+        "poll_interval_seconds": 0.5
+      },
+      {
+        "workers": 4,
+        "poll_interval_seconds": 1.0
+      },
+      {
+        "workers": 4,
+        "poll_interval_seconds": 5.0
+      }
+    ]
+  },
+  "runs": [
+    {
+      "workers": 0,
+      "poll_interval_seconds": 2.0,
+      "duration_seconds": 30.000074908995884,
+      "expected_polls_per_second": 0.0,
+      "observed_empty_polls": 0,
+      "observed_empty_polls_per_second": 0.0,
+      "database_transactions": {
+        "xact_commit": 13,
+        "xact_rollback": 0,
+        "tup_inserted": 298,
+        "tup_updated": 26,
+        "tup_deleted": 206
+      },
+      "database_transactions_per_second": {
+        "commits": 0.43333225131720565,
+        "rollbacks": 0.0,
+        "total": 0.43333225131720565
+      },
+      "database_connections": {
+        "before": 1,
+        "after": 1
+      },
+      "polling_query_latency": {
+        "calls": 0,
+        "total_exec_time_ms": 0.0,
+        "mean_exec_time_ms": null
+      },
+      "resources": {
+        "sample_count": 16,
+        "postgres_cpu_percent": {
+          "count": 16,
+          "mean": 0.619375,
+          "median": 0.02,
+          "min": 0.01,
+          "max": 2.67,
+          "p50": 0.02,
+          "p95": 2.67
+        },
+        "postgres_memory_mib": {
+          "count": 16,
+          "mean": 24.584374999999998,
+          "median": 24.56,
+          "min": 24.56,
+          "max": 24.72,
+          "p50": 24.56,
+          "p95": 24.72
+        },
+        "worker_cpu_percent_total": {
+          "count": 16,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "worker_memory_mib_total": {
+          "count": 16,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        }
+      },
+      "polling_transaction_overhead_per_second": 0.0
+    },
+    {
+      "workers": 1,
+      "poll_interval_seconds": 2.0,
+      "duration_seconds": 30.000070087000495,
+      "expected_polls_per_second": 0.5,
+      "observed_empty_polls": 16,
+      "observed_empty_polls_per_second": 0.5333320873451244,
+      "database_transactions": {
+        "xact_commit": 55,
+        "xact_rollback": 16,
+        "tup_inserted": 0,
+        "tup_updated": 0,
+        "tup_deleted": 0
+      },
+      "database_transactions_per_second": {
+        "commits": 1.8333290502488648,
+        "rollbacks": 0.5333320873451244,
+        "total": 2.366661137593989
+      },
+      "database_connections": {
+        "before": 2,
+        "after": 2
+      },
+      "polling_query_latency": {
+        "calls": 30,
+        "total_exec_time_ms": 0.83416,
+        "mean_exec_time_ms": 0.027805333333333335
+      },
+      "resources": {
+        "sample_count": 15,
+        "postgres_cpu_percent": {
+          "count": 15,
+          "mean": 0.4693333333333333,
+          "median": 0.02,
+          "min": 0.01,
+          "max": 2.34,
+          "p50": 0.02,
+          "p95": 2.34
+        },
+        "postgres_memory_mib": {
+          "count": 15,
+          "mean": 26.680666666666664,
+          "median": 26.66,
+          "min": 26.66,
+          "max": 26.79,
+          "p50": 26.66,
+          "p95": 26.79
+        },
+        "worker_cpu_percent_total": {
+          "count": 15,
+          "mean": 0.010666666666666666,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.16,
+          "p50": 0.0,
+          "p95": 0.16
+        },
+        "worker_memory_mib_total": {
+          "count": 15,
+          "mean": 48.948,
+          "median": 48.95,
+          "min": 48.94,
+          "max": 48.95,
+          "p50": 48.95,
+          "p95": 48.95
+        }
+      },
+      "polling_transaction_overhead_per_second": 1.9333288862767835
+    },
+    {
+      "workers": 4,
+      "poll_interval_seconds": 2.0,
+      "duration_seconds": 30.000092874994152,
+      "expected_polls_per_second": 2.0,
+      "observed_empty_polls": 64,
+      "observed_empty_polls_per_second": 2.133326728909751,
+      "database_transactions": {
+        "xact_commit": 191,
+        "xact_rollback": 64,
+        "tup_inserted": 0,
+        "tup_updated": 0,
+        "tup_deleted": 0
+      },
+      "database_transactions_per_second": {
+        "commits": 6.366646956590038,
+        "rollbacks": 2.133326728909751,
+        "total": 8.49997368549979
+      },
+      "database_connections": {
+        "before": 5,
+        "after": 5
+      },
+      "polling_query_latency": {
+        "calls": 120,
+        "total_exec_time_ms": 3.388153,
+        "mean_exec_time_ms": 0.028234608333333334
+      },
+      "resources": {
+        "sample_count": 15,
+        "postgres_cpu_percent": {
+          "count": 15,
+          "mean": 0.46199999999999997,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 2.34,
+          "p50": 0.0,
+          "p95": 2.34
+        },
+        "postgres_memory_mib": {
+          "count": 15,
+          "mean": 32.482,
+          "median": 32.46,
+          "min": 32.45,
+          "max": 32.61,
+          "p50": 32.46,
+          "p95": 32.61
+        },
+        "worker_cpu_percent_total": {
+          "count": 15,
+          "mean": 0.011333333333333334,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.17,
+          "p50": 0.0,
+          "p95": 0.17
+        },
+        "worker_memory_mib_total": {
+          "count": 15,
+          "mean": 195.7746666666667,
+          "median": 195.78000000000003,
+          "min": 195.75,
+          "max": 195.78000000000003,
+          "p50": 195.78000000000003,
+          "p95": 195.78000000000003
+        }
+      },
+      "polling_transaction_overhead_per_second": 8.066641434182584
+    },
+    {
+      "workers": 8,
+      "poll_interval_seconds": 2.0,
+      "duration_seconds": 30.00006833599764,
+      "expected_polls_per_second": 4.0,
+      "observed_empty_polls": 128,
+      "observed_empty_polls_per_second": 4.266656947791363,
+      "database_transactions": {
+        "xact_commit": 377,
+        "xact_rollback": 128,
+        "tup_inserted": 0,
+        "tup_updated": 0,
+        "tup_deleted": 0
+      },
+      "database_transactions_per_second": {
+        "commits": 12.566638041541749,
+        "rollbacks": 4.266656947791363,
+        "total": 16.833294989333112
+      },
+      "database_connections": {
+        "before": 9,
+        "after": 9
+      },
+      "polling_query_latency": {
+        "calls": 244,
+        "total_exec_time_ms": 7.37871,
+        "mean_exec_time_ms": 0.03024061475409836
+      },
+      "resources": {
+        "sample_count": 15,
+        "postgres_cpu_percent": {
+          "count": 15,
+          "mean": 0.6973333333333332,
+          "median": 0.25,
+          "min": 0.14,
+          "max": 2.58,
+          "p50": 0.25,
+          "p95": 2.58
+        },
+        "postgres_memory_mib": {
+          "count": 15,
+          "mean": 40.29266666666667,
+          "median": 40.27,
+          "min": 40.25,
+          "max": 40.39,
+          "p50": 40.27,
+          "p95": 40.39
+        },
+        "worker_cpu_percent_total": {
+          "count": 15,
+          "mean": 0.5313333333333333,
+          "median": 0.51,
+          "min": 0.3,
+          "max": 0.7999999999999999,
+          "p50": 0.51,
+          "p95": 0.7999999999999999
+        },
+        "worker_memory_mib_total": {
+          "count": 15,
+          "mean": 391.5853333333334,
+          "median": 391.59000000000003,
+          "min": 391.56000000000006,
+          "max": 391.59000000000003,
+          "p50": 391.59000000000003,
+          "p95": 391.59000000000003
+        }
+      },
+      "polling_transaction_overhead_per_second": 16.399962738015905
+    },
+    {
+      "workers": 8,
+      "poll_interval_seconds": 1.0,
+      "duration_seconds": 30.000085133004177,
+      "expected_polls_per_second": 8.0,
+      "observed_empty_polls": 240,
+      "observed_empty_polls_per_second": 7.999977297929976,
+      "database_transactions": {
+        "xact_commit": 729,
+        "xact_rollback": 240,
+        "tup_inserted": 0,
+        "tup_updated": 0,
+        "tup_deleted": 0
+      },
+      "database_transactions_per_second": {
+        "commits": 24.2999310424623,
+        "rollbacks": 7.999977297929976,
+        "total": 32.29990834039228
+      },
+      "database_connections": {
+        "before": 9,
+        "after": 9
+      },
+      "polling_query_latency": {
+        "calls": 480,
+        "total_exec_time_ms": 16.533436000000002,
+        "mean_exec_time_ms": 0.034444658333333336
+      },
+      "resources": {
+        "sample_count": 15,
+        "postgres_cpu_percent": {
+          "count": 15,
+          "mean": 1.2086666666666666,
+          "median": 0.81,
+          "min": 0.57,
+          "max": 3.13,
+          "p50": 0.81,
+          "p95": 3.13
+        },
+        "postgres_memory_mib": {
+          "count": 15,
+          "mean": 40.431333333333335,
+          "median": 40.39,
+          "min": 40.27,
+          "max": 40.71,
+          "p50": 40.39,
+          "p95": 40.71
+        },
+        "worker_cpu_percent_total": {
+          "count": 15,
+          "mean": 1.6099999999999999,
+          "median": 1.5899999999999996,
+          "min": 1.22,
+          "max": 2.07,
+          "p50": 1.5899999999999996,
+          "p95": 2.07
+        },
+        "worker_memory_mib_total": {
+          "count": 15,
+          "mean": 391.698,
+          "median": 391.7,
+          "min": 391.66999999999996,
+          "max": 391.7,
+          "p50": 391.7,
+          "p95": 391.7
+        }
+      },
+      "polling_transaction_overhead_per_second": 31.86657608907507
+    },
+    {
+      "workers": 8,
+      "poll_interval_seconds": 0.5,
+      "duration_seconds": 30.00009610700363,
+      "expected_polls_per_second": 16.0,
+      "observed_empty_polls": 482,
+      "observed_empty_polls_per_second": 16.066615196191833,
+      "database_transactions": {
+        "xact_commit": 1456,
+        "xact_rollback": 482,
+        "tup_inserted": 0,
+        "tup_updated": 0,
+        "tup_deleted": 0
+      },
+      "database_transactions_per_second": {
+        "commits": 48.53317785405666,
+        "rollbacks": 16.066615196191833,
+        "total": 64.5997930502485
+      },
+      "database_connections": {
+        "before": 9,
+        "after": 9
+      },
+      "polling_query_latency": {
+        "calls": 962,
+        "total_exec_time_ms": 34.001896,
+        "mean_exec_time_ms": 0.03534500623700624
+      },
+      "resources": {
+        "sample_count": 15,
+        "postgres_cpu_percent": {
+          "count": 15,
+          "mean": 2.1366666666666663,
+          "median": 1.69,
+          "min": 1.14,
+          "max": 4.39,
+          "p50": 1.69,
+          "p95": 4.39
+        },
+        "postgres_memory_mib": {
+          "count": 15,
+          "mean": 40.47866666666667,
+          "median": 40.47,
+          "min": 40.36,
+          "max": 40.62,
+          "p50": 40.47,
+          "p95": 40.62
+        },
+        "worker_cpu_percent_total": {
+          "count": 15,
+          "mean": 3.4566666666666666,
+          "median": 3.3399999999999994,
+          "min": 2.49,
+          "max": 5.42,
+          "p50": 3.3399999999999994,
+          "p95": 5.42
+        },
+        "worker_memory_mib_total": {
+          "count": 15,
+          "mean": 391.63,
+          "median": 391.63,
+          "min": 391.63,
+          "max": 391.63,
+          "p50": 391.63,
+          "p95": 391.63
+        }
+      },
+      "polling_transaction_overhead_per_second": 64.16646079893128
+    },
+    {
+      "workers": 8,
+      "poll_interval_seconds": 0.1,
+      "duration_seconds": 30.00006899699656,
+      "expected_polls_per_second": 80.0,
+      "observed_empty_polls": 2340,
+      "observed_empty_polls_per_second": 77.99982060822153,
+      "database_transactions": {
+        "xact_commit": 7031,
+        "xact_rollback": 2340,
+        "tup_inserted": 0,
+        "tup_updated": 0,
+        "tup_deleted": 0
+      },
+      "database_transactions_per_second": {
+        "commits": 234.36612764803655,
+        "rollbacks": 77.99982060822153,
+        "total": 312.3659482562581
+      },
+      "database_connections": {
+        "before": 9,
+        "after": 9
+      },
+      "polling_query_latency": {
+        "calls": 4690,
+        "total_exec_time_ms": 140.46805999999984,
+        "mean_exec_time_ms": 0.02995054584221745
+      },
+      "resources": {
+        "sample_count": 15,
+        "postgres_cpu_percent": {
+          "count": 15,
+          "mean": 7.272666666666667,
+          "median": 7.25,
+          "min": 5.87,
+          "max": 8.82,
+          "p50": 7.25,
+          "p95": 8.82
+        },
+        "postgres_memory_mib": {
+          "count": 15,
+          "mean": 40.708,
+          "median": 40.74,
+          "min": 40.43,
+          "max": 41.0,
+          "p50": 40.74,
+          "p95": 41.0
+        },
+        "worker_cpu_percent_total": {
+          "count": 15,
+          "mean": 16.456666666666667,
+          "median": 15.679999999999998,
+          "min": 13.77,
+          "max": 22.049999999999997,
+          "p50": 15.679999999999998,
+          "p95": 22.049999999999997
+        },
+        "worker_memory_mib_total": {
+          "count": 15,
+          "mean": 391.7413333333333,
+          "median": 391.73999999999995,
+          "min": 391.73999999999995,
+          "max": 391.75,
+          "p50": 391.73999999999995,
+          "p95": 391.75
+        }
+      },
+      "polling_transaction_overhead_per_second": 311.9326160049409
+    },
+    {
+      "workers": 4,
+      "poll_interval_seconds": 0.1,
+      "duration_seconds": 30.00006893200043,
+      "expected_polls_per_second": 40.0,
+      "observed_empty_polls": 1160,
+      "observed_empty_polls_per_second": 38.66657782118136,
+      "database_transactions": {
+        "xact_commit": 3489,
+        "xact_rollback": 1160,
+        "tup_inserted": 0,
+        "tup_updated": 0,
+        "tup_deleted": 0
+      },
+      "database_transactions_per_second": {
+        "commits": 116.29973277422567,
+        "rollbacks": 38.66657782118136,
+        "total": 154.96631059540704
+      },
+      "database_connections": {
+        "before": 5,
+        "after": 5
+      },
+      "polling_query_latency": {
+        "calls": 2344,
+        "total_exec_time_ms": 67.78345900000005,
+        "mean_exec_time_ms": 0.028917857935153606
+      },
+      "resources": {
+        "sample_count": 15,
+        "postgres_cpu_percent": {
+          "count": 15,
+          "mean": 3.7853333333333334,
+          "median": 3.55,
+          "min": 2.89,
+          "max": 5.63,
+          "p50": 3.55,
+          "p95": 5.63
+        },
+        "postgres_memory_mib": {
+          "count": 15,
+          "mean": 32.964666666666666,
+          "median": 32.96,
+          "min": 32.8,
+          "max": 33.16,
+          "p50": 32.96,
+          "p95": 33.16
+        },
+        "worker_cpu_percent_total": {
+          "count": 15,
+          "mean": 7.621333333333333,
+          "median": 7.33,
+          "min": 6.41,
+          "max": 9.99,
+          "p50": 7.33,
+          "p95": 9.99
+        },
+        "worker_memory_mib_total": {
+          "count": 15,
+          "mean": 195.74200000000002,
+          "median": 195.74,
+          "min": 195.74,
+          "max": 195.75,
+          "p50": 195.74,
+          "p95": 195.75
+        }
+      },
+      "polling_transaction_overhead_per_second": 154.53297834408983
+    },
+    {
+      "workers": 4,
+      "poll_interval_seconds": 0.5,
+      "duration_seconds": 30.000068920002377,
+      "expected_polls_per_second": 8.0,
+      "observed_empty_polls": 240,
+      "observed_empty_polls_per_second": 7.999981621374921,
+      "database_transactions": {
+        "xact_commit": 729,
+        "xact_rollback": 240,
+        "tup_inserted": 0,
+        "tup_updated": 0,
+        "tup_deleted": 0
+      },
+      "database_transactions_per_second": {
+        "commits": 24.299944174926324,
+        "rollbacks": 7.999981621374921,
+        "total": 32.299925796301245
+      },
+      "database_connections": {
+        "before": 5,
+        "after": 5
+      },
+      "polling_query_latency": {
+        "calls": 480,
+        "total_exec_time_ms": 13.947864000000001,
+        "mean_exec_time_ms": 0.029058050000000002
+      },
+      "resources": {
+        "sample_count": 15,
+        "postgres_cpu_percent": {
+          "count": 15,
+          "mean": 1.162,
+          "median": 0.69,
+          "min": 0.58,
+          "max": 3.28,
+          "p50": 0.69,
+          "p95": 3.28
+        },
+        "postgres_memory_mib": {
+          "count": 15,
+          "mean": 32.81333333333333,
+          "median": 32.83,
+          "min": 32.7,
+          "max": 32.96,
+          "p50": 32.83,
+          "p95": 32.96
+        },
+        "worker_cpu_percent_total": {
+          "count": 15,
+          "mean": 1.464,
+          "median": 1.3599999999999999,
+          "min": 1.29,
+          "max": 2.0,
+          "p50": 1.3599999999999999,
+          "p95": 2.0
+        },
+        "worker_memory_mib_total": {
+          "count": 15,
+          "mean": 195.89999999999998,
+          "median": 195.89999999999998,
+          "min": 195.89999999999998,
+          "max": 195.89999999999998,
+          "p50": 195.89999999999998,
+          "p95": 195.89999999999998
+        }
+      },
+      "polling_transaction_overhead_per_second": 31.86659354498404
+    },
+    {
+      "workers": 4,
+      "poll_interval_seconds": 1.0,
+      "duration_seconds": 30.00006893200043,
+      "expected_polls_per_second": 4.0,
+      "observed_empty_polls": 120,
+      "observed_empty_polls_per_second": 3.9999908090877274,
+      "database_transactions": {
+        "xact_commit": 371,
+        "xact_rollback": 120,
+        "tup_inserted": 0,
+        "tup_updated": 0,
+        "tup_deleted": 0
+      },
+      "database_transactions_per_second": {
+        "commits": 12.366638251429558,
+        "rollbacks": 3.9999908090877274,
+        "total": 16.366629060517283
+      },
+      "database_connections": {
+        "before": 5,
+        "after": 5
+      },
+      "polling_query_latency": {
+        "calls": 240,
+        "total_exec_time_ms": 9.393623,
+        "mean_exec_time_ms": 0.03914009583333333
+      },
+      "resources": {
+        "sample_count": 15,
+        "postgres_cpu_percent": {
+          "count": 15,
+          "mean": 0.9773333333333334,
+          "median": 0.58,
+          "min": 0.29,
+          "max": 2.83,
+          "p50": 0.58,
+          "p95": 2.83
+        },
+        "postgres_memory_mib": {
+          "count": 15,
+          "mean": 32.80333333333333,
+          "median": 32.8,
+          "min": 32.66,
+          "max": 33.05,
+          "p50": 32.8,
+          "p95": 33.05
+        },
+        "worker_cpu_percent_total": {
+          "count": 15,
+          "mean": 0.9813333333333333,
+          "median": 0.97,
+          "min": 0.62,
+          "max": 1.5,
+          "p50": 0.97,
+          "p95": 1.5
+        },
+        "worker_memory_mib_total": {
+          "count": 15,
+          "mean": 195.86933333333334,
+          "median": 195.87,
+          "min": 195.86,
+          "max": 195.87,
+          "p50": 195.87,
+          "p95": 195.87
+        }
+      },
+      "polling_transaction_overhead_per_second": 15.933296809200078
+    },
+    {
+      "workers": 4,
+      "poll_interval_seconds": 5.0,
+      "duration_seconds": 30.000090219000413,
+      "expected_polls_per_second": 0.8,
+      "observed_empty_polls": 28,
+      "observed_empty_polls_per_second": 0.9333305265284281,
+      "database_transactions": {
+        "xact_commit": 83,
+        "xact_rollback": 28,
+        "tup_inserted": 0,
+        "tup_updated": 0,
+        "tup_deleted": 0
+      },
+      "database_transactions_per_second": {
+        "commits": 2.766658346494983,
+        "rollbacks": 0.9333305265284281,
+        "total": 3.699988873023411
+      },
+      "database_connections": {
+        "before": 5,
+        "after": 5
+      },
+      "polling_query_latency": {
+        "calls": 48,
+        "total_exec_time_ms": 1.8510880000000003,
+        "mean_exec_time_ms": 0.03856433333333334
+      },
+      "resources": {
+        "sample_count": 15,
+        "postgres_cpu_percent": {
+          "count": 15,
+          "mean": 0.5713333333333334,
+          "median": 0.01,
+          "min": 0.0,
+          "max": 2.37,
+          "p50": 0.01,
+          "p95": 2.37
+        },
+        "postgres_memory_mib": {
+          "count": 15,
+          "mean": 32.672666666666665,
+          "median": 32.66,
+          "min": 32.66,
+          "max": 32.79,
+          "p50": 32.66,
+          "p95": 32.79
+        },
+        "worker_cpu_percent_total": {
+          "count": 15,
+          "mean": 0.16999999999999998,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 1.1099999999999999,
+          "p50": 0.0,
+          "p95": 1.1099999999999999
+        },
+        "worker_memory_mib_total": {
+          "count": 15,
+          "mean": 195.87133333333338,
+          "median": 195.87000000000003,
+          "min": 195.82999999999998,
+          "max": 195.88000000000002,
+          "p50": 195.87000000000003,
+          "p95": 195.88000000000002
+        }
+      },
+      "polling_transaction_overhead_per_second": 3.2666566217062054
+    }
+  ]
+}

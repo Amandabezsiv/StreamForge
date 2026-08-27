@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgres:17-alpine
+    command: postgres -c shared_preload_libraries=pg_stat_statements
     environment:
       POSTGRES_DB: streamforge
       POSTGRES_USER: streamforge
@@ -17,7 +18,7 @@ services:
 
   worker:
     build: .
-    command: streamforge-worker
+    command: streamforge-worker --poll-interval ${WORKER_POLL_INTERVAL:-2}
     environment:
       DATABASE_URL: postgresql+psycopg://streamforge:streamforge@postgres:5432/streamforge
       STORAGE_PATH: /app/storage
