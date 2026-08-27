@@ -128,6 +128,13 @@ Verify automatic recovery of an expired worker lease:
 uv run python scripts/benchmark_lease_recovery.py
 ```
 
+Verify lease behavior during PostgreSQL loss and after a post-publication crash:
+
+```bash
+uv run python scripts/benchmark_database_loss_recovery.py
+uv run python scripts/benchmark_post_publish_crash.py
+```
+
 The result is stored in
 `experiments/001-single-worker-baseline/results.json`. See the experiment
 README for the environment, fixture, metric definitions, and interpretation.

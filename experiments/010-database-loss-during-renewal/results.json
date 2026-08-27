@@ -1,0 +1,64 @@
+{
+  "experiment": "010-database-loss-during-lease-renewal",
+  "recorded_at": "2026-08-27T02:21:33.182920+00:00",
+  "configuration": {
+    "lease_seconds": 6.0,
+    "renewal_seconds": 2.0,
+    "database_outage_seconds": 8.0
+  },
+  "database_outage": {
+    "started_at": "2026-08-27T02:21:01.384787+00:00",
+    "ended_at": "2026-08-27T02:21:09.543223+00:00"
+  },
+  "recovery": {
+    "video_status": "READY",
+    "jobs": [
+      {
+        "id": "7dceb5f2-7cab-424e-8f22-5e9574d3f8dd",
+        "attempt": 1,
+        "status": "FAILED",
+        "error_code": "WorkerLeaseExpired",
+        "claimed_by": null,
+        "lease_expires_at": null
+      },
+      {
+        "id": "bf3d6188-5a5e-4a7f-ad0e-589b0a495200",
+        "attempt": 2,
+        "status": "COMPLETED",
+        "error_code": null,
+        "claimed_by": null,
+        "lease_expires_at": null
+      }
+    ],
+    "events": [
+      "JOB_CREATED",
+      "JOB_STARTED",
+      "METADATA_EXTRACTED",
+      "THUMBNAIL_CREATED",
+      "TRANSCODING_STARTED",
+      "JOB_ABANDONED",
+      "JOB_CREATED",
+      "JOB_STARTED",
+      "METADATA_EXTRACTED",
+      "THUMBNAIL_CREATED",
+      "TRANSCODING_STARTED",
+      "TRANSCODING_COMPLETED",
+      "JOB_COMPLETED"
+    ],
+    "outputs": [
+      {
+        "type": "THUMBNAIL",
+        "storage_key": "videos/baf96a9e-1a0a-4af7-80a9-4688d968c00f/thumbnail.jpg",
+        "size_bytes": 73325
+      },
+      {
+        "type": "TRANSCODED_VIDEO",
+        "storage_key": "videos/baf96a9e-1a0a-4af7-80a9-4688d968c00f/720p.mp4",
+        "size_bytes": 11287689
+      }
+    ]
+  },
+  "temporary_files_after_recovery": [],
+  "lease_renewal_failure_logged": false,
+  "passed": true
+}

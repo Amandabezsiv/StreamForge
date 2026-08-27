@@ -1,0 +1,121 @@
+{
+  "experiment": "011-post-publication-pre-commit-crash",
+  "recorded_at": "2026-08-27T02:22:44.697641+00:00",
+  "configuration": {
+    "lease_seconds": 6.0,
+    "renewal_seconds": 2.0,
+    "publish_commit_delay_seconds": 30.0
+  },
+  "published_at": "2026-08-27T02:22:27.673083+00:00",
+  "failure_snapshot": {
+    "database": {
+      "video_id": "72201cd4-945b-471c-a76e-747136990d11",
+      "video_status": "PROCESSING",
+      "metadata": {
+        "duration_seconds": 60.0,
+        "width": 1920,
+        "height": 1080,
+        "codec": "h264",
+        "bitrate": 5469816,
+        "fps": 30.0
+      },
+      "job_id": "b7301007-6cbb-4618-ad6c-5febdca0a6ae",
+      "job_status": "PROCESSING",
+      "started_at": "2026-08-27T02:22:16.887162+00:00",
+      "finished_at": null,
+      "error_code": null,
+      "error_message": null,
+      "events": [
+        "JOB_CREATED",
+        "JOB_STARTED",
+        "METADATA_EXTRACTED",
+        "THUMBNAIL_CREATED",
+        "TRANSCODING_STARTED"
+      ],
+      "outputs": [
+        {
+          "type": "THUMBNAIL",
+          "resolution": null,
+          "storage_key": "videos/72201cd4-945b-471c-a76e-747136990d11/thumbnail.jpg",
+          "size_bytes": 73325
+        }
+      ]
+    },
+    "filesystem": {
+      "directory": "storage/videos/72201cd4-945b-471c-a76e-747136990d11",
+      "files": [
+        {
+          "path": "storage/videos/72201cd4-945b-471c-a76e-747136990d11/720p.mp4",
+          "exists": true,
+          "size_bytes": 11287689,
+          "ffprobe_valid": true,
+          "ffprobe_error": null
+        },
+        {
+          "path": "storage/videos/72201cd4-945b-471c-a76e-747136990d11/original.mp4",
+          "exists": true,
+          "size_bytes": 41609128,
+          "ffprobe_valid": true,
+          "ffprobe_error": null
+        },
+        {
+          "path": "storage/videos/72201cd4-945b-471c-a76e-747136990d11/thumbnail.jpg",
+          "exists": true,
+          "size_bytes": 73325,
+          "ffprobe_valid": true,
+          "ffprobe_error": null
+        }
+      ]
+    }
+  },
+  "recovery": {
+    "video_status": "READY",
+    "jobs": [
+      {
+        "id": "b7301007-6cbb-4618-ad6c-5febdca0a6ae",
+        "attempt": 1,
+        "status": "FAILED",
+        "error_code": "WorkerLeaseExpired",
+        "claimed_by": null,
+        "lease_expires_at": null
+      },
+      {
+        "id": "af1f24f4-4a58-42cf-84d5-cf93f2eeb508",
+        "attempt": 2,
+        "status": "COMPLETED",
+        "error_code": null,
+        "claimed_by": null,
+        "lease_expires_at": null
+      }
+    ],
+    "events": [
+      "JOB_CREATED",
+      "JOB_STARTED",
+      "METADATA_EXTRACTED",
+      "THUMBNAIL_CREATED",
+      "TRANSCODING_STARTED",
+      "JOB_ABANDONED",
+      "JOB_CREATED",
+      "JOB_STARTED",
+      "METADATA_EXTRACTED",
+      "THUMBNAIL_CREATED",
+      "TRANSCODING_STARTED",
+      "TRANSCODING_COMPLETED",
+      "JOB_COMPLETED"
+    ],
+    "outputs": [
+      {
+        "type": "THUMBNAIL",
+        "storage_key": "videos/72201cd4-945b-471c-a76e-747136990d11/thumbnail.jpg",
+        "size_bytes": 73325
+      },
+      {
+        "type": "TRANSCODED_VIDEO",
+        "storage_key": "videos/72201cd4-945b-471c-a76e-747136990d11/720p.mp4",
+        "size_bytes": 11287689
+      }
+    ]
+  },
+  "temporary_files_after_recovery": [],
+  "passed": true
+}

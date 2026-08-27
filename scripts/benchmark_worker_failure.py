@@ -26,13 +26,18 @@ DEFAULT_OUTPUT = Path("experiments/007-worker-failure/results.json")
 def compose(
     *arguments: str, env: dict[str, str] | None = None
 ) -> subprocess.CompletedProcess:
-    return subprocess.run(
-        ["docker", "compose", *arguments],
-        check=True,
-        text=True,
-        capture_output=True,
-        env=env,
-    )
+    command = ["docker", "compose", *arguments]
+    try:
+        return subprocess.run(
+            command,
+            check=True,
+            text=True,
+            capture_output=True,
+            env=env,
+        )
+    except subprocess.CalledProcessError as exc:
+        detail = exc.stderr.strip() or exc.stdout.strip() or str(exc)
+        raise RuntimeError(f"Docker Compose command failed: {detail}") from exc
 
 
 def wait_for_api(client: httpx.Client, timeout: float) -> None:

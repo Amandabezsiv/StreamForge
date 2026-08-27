@@ -318,6 +318,12 @@ def process_job(
             settings.ffmpeg_threads,
             verify_ownership,
         )
+        if settings.diagnostic_publish_commit_delay_seconds > 0:
+            logger.warning(
+                "diagnostic pause after output publication",
+                extra={"job_id": str(job_id)},
+            )
+            time.sleep(settings.diagnostic_publish_commit_delay_seconds)
         job.transcoding_duration_seconds = time.perf_counter() - stage_started
         register_output(
             db,

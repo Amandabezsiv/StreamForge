@@ -16,6 +16,8 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Worker processing leases with ownership checks, heartbeat renewal, abandoned
   attempt recovery, idempotent retry output registration, and temporary cleanup.
 - Experiment 009 worker lease crash-recovery verification.
+- Experiments 010 and 011 for database loss during renewal and a crash between
+  atomic output publication and database commit.
 
 ### Planned
 
