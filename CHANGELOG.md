@@ -8,6 +8,12 @@ conclusions belong in `experiments/` and `docs/adr/`.
 
 ## [Unreleased]
 
+### Added
+
+- Atomic publication of FFmpeg outputs through same-directory temporary files,
+  preventing partial thumbnails or transcodes from appearing at final paths.
+- Experiment 008 crash verification for atomic FFmpeg output publication.
+
 ### Planned
 
 - Manual retry endpoint for failed processing jobs

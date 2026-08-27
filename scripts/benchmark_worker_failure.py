@@ -160,12 +160,25 @@ def main() -> None:
     parser.add_argument("--api-url", default="http://localhost:8000")
     parser.add_argument("--video", type=Path, default=DEFAULT_FIXTURE)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument(
+        "--experiment-name", default="007-worker-failure-during-processing"
+    )
     parser.add_argument("--timeout", type=float, default=120.0)
     parser.add_argument("--restore-workers", type=int, default=4)
     parser.add_argument("--ffmpeg-threads", default="3")
     args = parser.parse_args()
     if not args.video.is_file():
         parser.error(f"fixture does not exist: {args.video}")
+
+    worker_env = os.environ.copy()
+    worker_env["FFMPEG_THREADS"] = args.ffmpeg_threads
+
+    print("Resetting the Compose network (database volume is preserved)", flush=True)
+    compose("down", "--remove-orphans")
+    print("Starting PostgreSQL and API", flush=True)
+    compose("up", "-d", "postgres", "api")
+    with httpx.Client(base_url=args.api_url, timeout=10.0) as client:
+        wait_for_api(client, args.timeout)
 
     with SessionLocal() as db:
         pending = db.scalar(
@@ -176,11 +189,9 @@ def main() -> None:
     if pending is not None:
         raise RuntimeError("Refusing to run while an unrelated PENDING job exists")
 
-    worker_env = os.environ.copy()
-    worker_env["FFMPEG_THREADS"] = args.ffmpeg_threads
     video_id: uuid.UUID | None = None
-    compose("stop", "worker")
     try:
+        print("Starting one isolated worker", flush=True)
         compose("up", "-d", "--scale", "worker=1", "worker", env=worker_env)
         with httpx.Client(base_url=args.api_url, timeout=120.0) as client:
             wait_for_api(client, args.timeout)
@@ -192,14 +203,16 @@ def main() -> None:
             response.raise_for_status()
             video_id = uuid.UUID(response.json()["video_id"])
 
+        print(f"Waiting for {video_id} to begin transcoding", flush=True)
         wait_for_event(video_id, "TRANSCODING_STARTED", args.timeout)
         observed_at = datetime.now(UTC)
+        print("Transcoding started; killing the worker with SIGKILL", flush=True)
         compose("kill", "-s", "SIGKILL", "worker")
         compose("stop", "worker")
         time.sleep(0.5)
         state = inspect_state(video_id, Path("storage"))
         result = {
-            "experiment": "007-worker-failure-during-processing",
+            "experiment": args.experiment_name,
             "recorded_at": datetime.now(UTC).isoformat(),
             "failure_injection": {
                 "signal": "SIGKILL",
@@ -217,6 +230,7 @@ def main() -> None:
         print(json.dumps(result, indent=2))
     finally:
         if args.restore_workers > 0:
+            print(f"Restoring {args.restore_workers} workers", flush=True)
             compose(
                 "up",
                 "-d",
