@@ -18,6 +18,7 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Experiment 009 worker lease crash-recovery verification.
 - Experiments 010 and 011 for database loss during renewal and a crash between
   atomic output publication and database commit.
+- Experiment 012 PostgreSQL queue acquisition concurrency and saturation sweep.
 
 ### Planned
 

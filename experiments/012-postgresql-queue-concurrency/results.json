@@ -1,0 +1,1110 @@
+{
+  "experiment": "012-postgresql-queue-concurrency",
+  "recorded_at": "2026-08-27T02:46:35.908430+00:00",
+  "configuration": {
+    "jobs_per_run": 1000,
+    "runs_per_level": 3,
+    "concurrency_levels": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "postgresql_max_connections": 100,
+    "claim_strategy": "SELECT FOR UPDATE SKIP LOCKED",
+    "media_processing": false
+  },
+  "saturation_knee": {
+    "concurrency": 8,
+    "previous_concurrency": 4,
+    "throughput_gain_fraction": -0.03513115931607225,
+    "p95_latency_growth_factor": 2.0999770354294625,
+    "definition": "throughput gain <10% while p95 latency grows >25%"
+  },
+  "summary_by_concurrency": [
+    {
+      "concurrency": 1,
+      "runs": 3,
+      "claims_per_second_mean": 179.75706225013607,
+      "claims_per_second_min": 178.12879838796647,
+      "claims_per_second_max": 181.87511170430562,
+      "claim_latency_p95_mean_seconds": 0.0065613146653049625,
+      "claim_latency_p99_mean_seconds": 0.007096913667434516,
+      "peak_benchmark_connections": 2,
+      "errors": 0,
+      "duplicate_claims": 0,
+      "passed": true
+    },
+    {
+      "concurrency": 2,
+      "runs": 3,
+      "claims_per_second_mean": 319.2358267928899,
+      "claims_per_second_min": 316.7967741458305,
+      "claims_per_second_max": 320.6002577592174,
+      "claim_latency_p95_mean_seconds": 0.007471182999627975,
+      "claim_latency_p99_mean_seconds": 0.008187103332602419,
+      "peak_benchmark_connections": 3,
+      "errors": 0,
+      "duplicate_claims": 0,
+      "passed": true
+    },
+    {
+      "concurrency": 4,
+      "runs": 3,
+      "claims_per_second_mean": 390.52310362238404,
+      "claims_per_second_min": 388.9786686014077,
+      "claims_per_second_max": 392.5668310632794,
+      "claim_latency_p95_mean_seconds": 0.013358060998143628,
+      "claim_latency_p99_mean_seconds": 0.015233504668382617,
+      "peak_benchmark_connections": 5,
+      "errors": 0,
+      "duplicate_claims": 0,
+      "passed": true
+    },
+    {
+      "concurrency": 8,
+      "runs": 3,
+      "claims_per_second_mean": 376.8035742524191,
+      "claims_per_second_min": 362.9676328615353,
+      "claims_per_second_max": 384.1847373150973,
+      "claim_latency_p95_mean_seconds": 0.028051621333967585,
+      "claim_latency_p99_mean_seconds": 0.03510501533310162,
+      "peak_benchmark_connections": 9,
+      "errors": 0,
+      "duplicate_claims": 0,
+      "passed": true
+    },
+    {
+      "concurrency": 16,
+      "runs": 3,
+      "claims_per_second_mean": 374.4751468728029,
+      "claims_per_second_min": 373.3526617907609,
+      "claims_per_second_max": 376.5714090008891,
+      "claim_latency_p95_mean_seconds": 0.059093837665083505,
+      "claim_latency_p99_mean_seconds": 0.07465868300156824,
+      "peak_benchmark_connections": 17,
+      "errors": 0,
+      "duplicate_claims": 0,
+      "passed": true
+    },
+    {
+      "concurrency": 32,
+      "runs": 3,
+      "claims_per_second_mean": 369.06860923864133,
+      "claims_per_second_min": 367.80195645431365,
+      "claims_per_second_max": 370.3111491141834,
+      "claim_latency_p95_mean_seconds": 0.11926283099698291,
+      "claim_latency_p99_mean_seconds": 0.14067604033334646,
+      "peak_benchmark_connections": 33,
+      "errors": 0,
+      "duplicate_claims": 0,
+      "passed": true
+    },
+    {
+      "concurrency": 64,
+      "runs": 3,
+      "claims_per_second_mean": 353.20684648328023,
+      "claims_per_second_min": 341.3456641001877,
+      "claims_per_second_max": 359.4406385502425,
+      "claim_latency_p95_mean_seconds": 0.24668149300123332,
+      "claim_latency_p99_mean_seconds": 0.2943916006649185,
+      "peak_benchmark_connections": 65,
+      "errors": 0,
+      "duplicate_claims": 0,
+      "passed": true
+    }
+  ],
+  "runs": [
+    {
+      "concurrency": 1,
+      "jobs": 1000,
+      "batch_duration_seconds": 5.613915374997305,
+      "claims_per_second": 178.12879838796647,
+      "successful_claims": 1000,
+      "empty_claims": 1,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.005606678342053783,
+        "median": 0.0054616190027445555,
+        "min": 0.004182917000434827,
+        "max": 0.025192257002345286,
+        "p50": 0.005459123000036925,
+        "p95": 0.006752984998456668,
+        "p99": 0.007236919998831581
+      },
+      "empty_claim_latency_seconds": {
+        "count": 1,
+        "mean": 0.0014813540037721395,
+        "median": 0.0014813540037721395,
+        "min": 0.0014813540037721395,
+        "max": 0.0014813540037721395,
+        "p50": 0.0014813540037721395,
+        "p95": 0.0014813540037721395,
+        "p99": 0.0014813540037721395
+      },
+      "peak_benchmark_connections": 2,
+      "database_counter_delta": {
+        "xact_commit": 2018,
+        "blks_read": 30,
+        "blks_hit": 80039,
+        "tup_inserted": 2878,
+        "tup_updated": 1756,
+        "tup_deleted": 0
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 1
+    },
+    {
+      "concurrency": 1,
+      "jobs": 1000,
+      "batch_duration_seconds": 5.578262907998578,
+      "claims_per_second": 179.26727665813613,
+      "successful_claims": 1000,
+      "empty_claims": 1,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.005571231791087485,
+        "median": 0.005557496504479786,
+        "min": 0.00409754100110149,
+        "max": 0.01410518999909982,
+        "p50": 0.005556681004236452,
+        "p95": 0.006524854994495399,
+        "p99": 0.007282416001544334
+      },
+      "empty_claim_latency_seconds": {
+        "count": 1,
+        "mean": 0.001457703001506161,
+        "median": 0.001457703001506161,
+        "min": 0.001457703001506161,
+        "max": 0.001457703001506161,
+        "p50": 0.001457703001506161,
+        "p95": 0.001457703001506161,
+        "p99": 0.001457703001506161
+      },
+      "peak_benchmark_connections": 2,
+      "database_counter_delta": {
+        "xact_commit": 2421,
+        "blks_read": 35,
+        "blks_hit": 112987,
+        "tup_inserted": 3051,
+        "tup_updated": 2102,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 2
+    },
+    {
+      "concurrency": 1,
+      "jobs": 1000,
+      "batch_duration_seconds": 5.49827840999933,
+      "claims_per_second": 181.87511170430562,
+      "successful_claims": 1000,
+      "empty_claims": 1,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.005491439583041938,
+        "median": 0.005475801503052935,
+        "min": 0.004198485999950208,
+        "max": 0.011380306001228746,
+        "p50": 0.005475385005411226,
+        "p95": 0.00640610400296282,
+        "p99": 0.006771405001927633
+      },
+      "empty_claim_latency_seconds": {
+        "count": 1,
+        "mean": 0.0012814540023100562,
+        "median": 0.0012814540023100562,
+        "min": 0.0012814540023100562,
+        "max": 0.0012814540023100562,
+        "p50": 0.0012814540023100562,
+        "p95": 0.0012814540023100562,
+        "p99": 0.0012814540023100562
+      },
+      "peak_benchmark_connections": 2,
+      "database_counter_delta": {
+        "xact_commit": 2218,
+        "blks_read": 0,
+        "blks_hit": 107458,
+        "tup_inserted": 2969,
+        "tup_updated": 1938,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 3
+    },
+    {
+      "concurrency": 2,
+      "jobs": 1000,
+      "batch_duration_seconds": 3.156597799003066,
+      "claims_per_second": 316.7967741458305,
+      "successful_claims": 1000,
+      "empty_claims": 2,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.006302937445921998,
+        "median": 0.006287465999776032,
+        "min": 0.004384448002383579,
+        "max": 0.016438453996670432,
+        "p50": 0.0062865220024832524,
+        "p95": 0.0075135459992452525,
+        "p99": 0.008194182999432087
+      },
+      "empty_claim_latency_seconds": {
+        "count": 2,
+        "mean": 0.0011536860001797322,
+        "median": 0.0011536860001797322,
+        "min": 0.0009904800026561134,
+        "max": 0.001316891997703351,
+        "p50": 0.0009904800026561134,
+        "p95": 0.001316891997703351,
+        "p99": 0.001316891997703351
+      },
+      "peak_benchmark_connections": 3,
+      "database_counter_delta": {
+        "xact_commit": 2031,
+        "blks_read": 0,
+        "blks_hit": 107223,
+        "tup_inserted": 2917,
+        "tup_updated": 1834,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 1
+    },
+    {
+      "concurrency": 2,
+      "jobs": 1000,
+      "batch_duration_seconds": 3.1191490830024122,
+      "claims_per_second": 320.6002577592174,
+      "successful_claims": 1000,
+      "empty_claims": 2,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.006225687181897229,
+        "median": 0.00617231500291382,
+        "min": 0.004421530000399798,
+        "max": 0.009503962995950133,
+        "p50": 0.006171111002913676,
+        "p95": 0.00749302299664123,
+        "p99": 0.008107225003186613
+      },
+      "empty_claim_latency_seconds": {
+        "count": 2,
+        "mean": 0.001737156002491247,
+        "median": 0.001737156002491247,
+        "min": 0.001137629005825147,
+        "max": 0.002336682999157347,
+        "p50": 0.001137629005825147,
+        "p95": 0.002336682999157347,
+        "p99": 0.002336682999157347
+      },
+      "peak_benchmark_connections": 3,
+      "database_counter_delta": {
+        "xact_commit": 1961,
+        "blks_read": 0,
+        "blks_hit": 104133,
+        "tup_inserted": 2884,
+        "tup_updated": 1768,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 2
+    },
+    {
+      "concurrency": 2,
+      "jobs": 1000,
+      "batch_duration_seconds": 3.1219712150050327,
+      "claims_per_second": 320.3104484736218,
+      "successful_claims": 1000,
+      "empty_claims": 2,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.00623202710802434,
+        "median": 0.006242188002943294,
+        "min": 0.0044560620008269325,
+        "max": 0.010737809003330767,
+        "p50": 0.00624052100465633,
+        "p95": 0.007406980002997443,
+        "p99": 0.008259901995188557
+      },
+      "empty_claim_latency_seconds": {
+        "count": 2,
+        "mean": 0.0013157380017219111,
+        "median": 0.0013157380017219111,
+        "min": 0.0011548860056791455,
+        "max": 0.0014765899977646768,
+        "p50": 0.0011548860056791455,
+        "p95": 0.0014765899977646768,
+        "p99": 0.0014765899977646768
+      },
+      "peak_benchmark_connections": 3,
+      "database_counter_delta": {
+        "xact_commit": 2051,
+        "blks_read": 0,
+        "blks_hit": 107087,
+        "tup_inserted": 2924,
+        "tup_updated": 1848,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 3
+    },
+    {
+      "concurrency": 4,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.5639460240054177,
+      "claims_per_second": 390.0238112024651,
+      "successful_claims": 1000,
+      "empty_claims": 4,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.010233789650104881,
+        "median": 0.009976589499274269,
+        "min": 0.006323577996226959,
+        "max": 0.02148287099407753,
+        "p50": 0.009975720000511501,
+        "p95": 0.013600480997411069,
+        "p99": 0.016422983004304115
+      },
+      "empty_claim_latency_seconds": {
+        "count": 4,
+        "mean": 0.0015137672489800025,
+        "median": 0.0014062244990782347,
+        "min": 0.0008736180025152862,
+        "max": 0.0023690019952482544,
+        "p50": 0.001196712997625582,
+        "p95": 0.0023690019952482544,
+        "p99": 0.0023690019952482544
+      },
+      "peak_benchmark_connections": 5,
+      "database_counter_delta": {
+        "xact_commit": 2006,
+        "blks_read": 0,
+        "blks_hit": 112252,
+        "tup_inserted": 2918,
+        "tup_updated": 1836,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 1
+    },
+    {
+      "concurrency": 4,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.570835063001141,
+      "claims_per_second": 388.9786686014077,
+      "successful_claims": 1000,
+      "empty_claims": 4,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.010260654768906533,
+        "median": 0.010074229001475032,
+        "min": 0.005900051997741684,
+        "max": 0.01750833499681903,
+        "p50": 0.010074181998788845,
+        "p95": 0.013270351999381091,
+        "p99": 0.014624934003222734
+      },
+      "empty_claim_latency_seconds": {
+        "count": 4,
+        "mean": 0.001655204750932171,
+        "median": 0.0012545105018944014,
+        "min": 0.0010943110028165393,
+        "max": 0.003017486997123342,
+        "p50": 0.0012210140048409812,
+        "p95": 0.003017486997123342,
+        "p99": 0.003017486997123342
+      },
+      "peak_benchmark_connections": 5,
+      "database_counter_delta": {
+        "xact_commit": 2213,
+        "blks_read": 0,
+        "blks_hit": 116049,
+        "tup_inserted": 3013,
+        "tup_updated": 2026,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 2
+    },
+    {
+      "concurrency": 4,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.5473369649989763,
+      "claims_per_second": 392.5668310632794,
+      "successful_claims": 1000,
+      "empty_claims": 4,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.010167964962063706,
+        "median": 0.010060866501589771,
+        "min": 0.006148073996882886,
+        "max": 0.0169382649983163,
+        "p50": 0.01006017599866027,
+        "p95": 0.013203349997638725,
+        "p99": 0.014652596997621004
+      },
+      "empty_claim_latency_seconds": {
+        "count": 4,
+        "mean": 0.0018448697501298739,
+        "median": 0.0019497015018714592,
+        "min": 0.0011118420006823726,
+        "max": 0.0023682339960942045,
+        "p50": 0.001704100999631919,
+        "p95": 0.0023682339960942045,
+        "p99": 0.0023682339960942045
+      },
+      "peak_benchmark_connections": 5,
+      "database_counter_delta": {
+        "xact_commit": 2416,
+        "blks_read": 0,
+        "blks_hit": 121204,
+        "tup_inserted": 3113,
+        "tup_updated": 2226,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 3
+    },
+    {
+      "concurrency": 8,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.6092060179944383,
+      "claims_per_second": 383.2583525806246,
+      "successful_claims": 1000,
+      "empty_claims": 8,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.020765860584964685,
+        "median": 0.02033323149953503,
+        "min": 0.010127986999577843,
+        "max": 0.03861455700098304,
+        "p50": 0.020329598999524023,
+        "p95": 0.027983616004348733,
+        "p99": 0.034610207003424875
+      },
+      "empty_claim_latency_seconds": {
+        "count": 8,
+        "mean": 0.006849809498817194,
+        "median": 0.00578238749949378,
+        "min": 0.000914688003831543,
+        "max": 0.014851878993795253,
+        "p50": 0.004518907000601757,
+        "p95": 0.014851878993795253,
+        "p99": 0.014851878993795253
+      },
+      "peak_benchmark_connections": 9,
+      "database_counter_delta": {
+        "xact_commit": 1707,
+        "blks_read": 0,
+        "blks_hit": 107808,
+        "tup_inserted": 2792,
+        "tup_updated": 1584,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 1
+    },
+    {
+      "concurrency": 8,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.6029144389976864,
+      "claims_per_second": 384.1847373150973,
+      "successful_claims": 1000,
+      "empty_claims": 8,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.020727998246897188,
+        "median": 0.020336528497864492,
+        "min": 0.010750457004178315,
+        "max": 0.042570992998662405,
+        "p50": 0.020334401000582147,
+        "p95": 0.027346144001057837,
+        "p99": 0.03208288199675735
+      },
+      "empty_claim_latency_seconds": {
+        "count": 8,
+        "mean": 0.004783650999343081,
+        "median": 0.0039590234991919715,
+        "min": 0.0011262659972999245,
+        "max": 0.011870866997924168,
+        "p50": 0.0035586539961514063,
+        "p95": 0.011870866997924168,
+        "p99": 0.011870866997924168
+      },
+      "peak_benchmark_connections": 9,
+      "database_counter_delta": {
+        "xact_commit": 2249,
+        "blks_read": 0,
+        "blks_hit": 121098,
+        "tup_inserted": 3049,
+        "tup_updated": 2098,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 2
+    },
+    {
+      "concurrency": 8,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.7550665939998,
+      "claims_per_second": 362.9676328615353,
+      "successful_claims": 1000,
+      "empty_claims": 8,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.02198102409388957,
+        "median": 0.020655343996622832,
+        "min": 0.011621511999692302,
+        "max": 0.1493712230003439,
+        "p50": 0.020654265994380694,
+        "p95": 0.028825103996496182,
+        "p99": 0.03862195699912263
+      },
+      "empty_claim_latency_seconds": {
+        "count": 8,
+        "mean": 0.003768398623833491,
+        "median": 0.003850491495541064,
+        "min": 0.0021217870016698726,
+        "max": 0.005138213993632235,
+        "p50": 0.003587255996535532,
+        "p95": 0.005138213993632235,
+        "p99": 0.005138213993632235
+      },
+      "peak_benchmark_connections": 9,
+      "database_counter_delta": {
+        "xact_commit": 2201,
+        "blks_read": 7,
+        "blks_hit": 127716,
+        "tup_inserted": 3018,
+        "tup_updated": 2070,
+        "tup_deleted": 3005
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 3
+    },
+    {
+      "concurrency": 16,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.6784327589994064,
+      "claims_per_second": 373.3526617907609,
+      "successful_claims": 1000,
+      "empty_claims": 16,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.042555750959953,
+        "median": 0.041017740997631336,
+        "min": 0.020773288000782486,
+        "max": 0.08792877299856627,
+        "p50": 0.0410151699979906,
+        "p95": 0.06096285999956308,
+        "p99": 0.07845056000223849
+      },
+      "empty_claim_latency_seconds": {
+        "count": 16,
+        "mean": 0.010453299311848241,
+        "median": 0.008383293501537992,
+        "min": 0.0011229240044485778,
+        "max": 0.024189263000153005,
+        "p50": 0.008363503002328798,
+        "p95": 0.024189263000153005,
+        "p99": 0.024189263000153005
+      },
+      "peak_benchmark_connections": 17,
+      "database_counter_delta": {
+        "xact_commit": 2086,
+        "blks_read": 0,
+        "blks_hit": 135639,
+        "tup_inserted": 2976,
+        "tup_updated": 1952,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 1
+    },
+    {
+      "concurrency": 16,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.677366351999808,
+      "claims_per_second": 373.50136982675866,
+      "successful_claims": 1000,
+      "empty_claims": 16,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.04254196150795178,
+        "median": 0.041155506998620695,
+        "min": 0.023490995001338888,
+        "max": 0.08535999800369609,
+        "p50": 0.04114879999542609,
+        "p95": 0.058498125996266026,
+        "p99": 0.07260202900215518
+      },
+      "empty_claim_latency_seconds": {
+        "count": 16,
+        "mean": 0.010466017625731183,
+        "median": 0.008554332500352757,
+        "min": 0.0016941560024861246,
+        "max": 0.023599681997438893,
+        "p50": 0.008408856003370602,
+        "p95": 0.023599681997438893,
+        "p99": 0.023599681997438893
+      },
+      "peak_benchmark_connections": 17,
+      "database_counter_delta": {
+        "xact_commit": 2286,
+        "blks_read": 0,
+        "blks_hit": 334694,
+        "tup_inserted": 3069,
+        "tup_updated": 2138,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 2
+    },
+    {
+      "concurrency": 16,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.6555388330016285,
+      "claims_per_second": 376.5714090008891,
+      "successful_claims": 1000,
+      "empty_claims": 16,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.04220325576703181,
+        "median": 0.04149825200147461,
+        "min": 0.02243621500383597,
+        "max": 0.0850883570019505,
+        "p50": 0.04149110500293318,
+        "p95": 0.05782052699942142,
+        "p99": 0.07292346000031102
+      },
+      "empty_claim_latency_seconds": {
+        "count": 16,
+        "mean": 0.010383430563706497,
+        "median": 0.00876721050371998,
+        "min": 0.0031978209954104386,
+        "max": 0.025545202995999716,
+        "p50": 0.008571982005378231,
+        "p95": 0.025545202995999716,
+        "p99": 0.025545202995999716
+      },
+      "peak_benchmark_connections": 17,
+      "database_counter_delta": {
+        "xact_commit": 2039,
+        "blks_read": 0,
+        "blks_hit": 343765,
+        "tup_inserted": 2956,
+        "tup_updated": 1912,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 3
+    },
+    {
+      "concurrency": 32,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.718854487997305,
+      "claims_per_second": 367.80195645431365,
+      "successful_claims": 1000,
+      "empty_claims": 32,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.08571163246195647,
+        "median": 0.08352171450314927,
+        "min": 0.03975908499705838,
+        "max": 0.21197947899781866,
+        "p50": 0.0835042370017618,
+        "p95": 0.11836821999895619,
+        "p99": 0.14590147499984596
+      },
+      "empty_claim_latency_seconds": {
+        "count": 32,
+        "mean": 0.023887888499757537,
+        "median": 0.0244678164999641,
+        "min": 0.001239757999428548,
+        "max": 0.07494972700078506,
+        "p50": 0.023534230000223033,
+        "p95": 0.0461667550043785,
+        "p99": 0.07494972700078506
+      },
+      "peak_benchmark_connections": 33,
+      "database_counter_delta": {
+        "xact_commit": 2010,
+        "blks_read": 0,
+        "blks_hit": 370402,
+        "tup_inserted": 2959,
+        "tup_updated": 1918,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 1
+    },
+    {
+      "concurrency": 32,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.7004317920000176,
+      "claims_per_second": 370.3111491141834,
+      "successful_claims": 1000,
+      "empty_claims": 32,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.08523635643901799,
+        "median": 0.08349853699837695,
+        "min": 0.03891431700321846,
+        "max": 0.15707728100096574,
+        "p50": 0.08348216299782507,
+        "p95": 0.11982161199557595,
+        "p99": 0.1375572370016016
+      },
+      "empty_claim_latency_seconds": {
+        "count": 32,
+        "mean": 0.023760655312571544,
+        "median": 0.02117215600083,
+        "min": 0.005853795002622064,
+        "max": 0.06302307800069684,
+        "p50": 0.02004502300405875,
+        "p95": 0.0471711790014524,
+        "p99": 0.06302307800069684
+      },
+      "peak_benchmark_connections": 33,
+      "database_counter_delta": {
+        "xact_commit": 2111,
+        "blks_read": 0,
+        "blks_hit": 371707,
+        "tup_inserted": 2994,
+        "tup_updated": 1988,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 2
+    },
+    {
+      "concurrency": 32,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.709346297000593,
+      "claims_per_second": 369.09272214742697,
+      "successful_claims": 1000,
+      "empty_claims": 32,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.08542019122895726,
+        "median": 0.0836001124989707,
+        "min": 0.03916359699360328,
+        "max": 0.1808263610000722,
+        "p50": 0.08356287299830001,
+        "p95": 0.11959866099641658,
+        "p99": 0.13856940899859183
+      },
+      "empty_claim_latency_seconds": {
+        "count": 32,
+        "mean": 0.024496057124679282,
+        "median": 0.02145868099978543,
+        "min": 0.002019393003138248,
+        "max": 0.05954477899649646,
+        "p50": 0.02094315300200833,
+        "p95": 0.05587094299698947,
+        "p99": 0.05954477899649646
+      },
+      "peak_benchmark_connections": 33,
+      "database_counter_delta": {
+        "xact_commit": 2174,
+        "blks_read": 0,
+        "blks_hit": 379985,
+        "tup_inserted": 3022,
+        "tup_updated": 2044,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 3
+    },
+    {
+      "concurrency": 64,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.9295816680023563,
+      "claims_per_second": 341.3456641001877,
+      "successful_claims": 1000,
+      "empty_claims": 64,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.18227928260195767,
+        "median": 0.17569765299776918,
+        "min": 0.09556747900205664,
+        "max": 0.35226403799606487,
+        "p50": 0.1756368839996867,
+        "p95": 0.25594989499950316,
+        "p99": 0.31687556100223446
+      },
+      "empty_claim_latency_seconds": {
+        "count": 64,
+        "mean": 0.0514308909380361,
+        "median": 0.0509265155014873,
+        "min": 0.0046548860045732,
+        "max": 0.1304350689970306,
+        "p50": 0.05060944599972572,
+        "p95": 0.10851791100139963,
+        "p99": 0.1304350689970306
+      },
+      "peak_benchmark_connections": 65,
+      "database_counter_delta": {
+        "xact_commit": 2086,
+        "blks_read": 0,
+        "blks_hit": 416674,
+        "tup_inserted": 2988,
+        "tup_updated": 1976,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 1
+    },
+    {
+      "concurrency": 64,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.7868020870009786,
+      "claims_per_second": 358.8342367994103,
+      "successful_claims": 1000,
+      "empty_claims": 64,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.17311620214604773,
+        "median": 0.16929725000227336,
+        "min": 0.08077510099974461,
+        "max": 0.34033215999807,
+        "p50": 0.1692347870048252,
+        "p95": 0.24153242800093722,
+        "p99": 0.2847362929969677
+      },
+      "empty_claim_latency_seconds": {
+        "count": 64,
+        "mean": 0.053386270890314336,
+        "median": 0.04793737950240029,
+        "min": 0.006405467000149656,
+        "max": 0.13229336699441774,
+        "p50": 0.04792402800376294,
+        "p95": 0.11803775299631525,
+        "p99": 0.13229336699441774
+      },
+      "peak_benchmark_connections": 65,
+      "database_counter_delta": {
+        "xact_commit": 2261,
+        "blks_read": 0,
+        "blks_hit": 421905,
+        "tup_inserted": 3053,
+        "tup_updated": 2106,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 2
+    },
+    {
+      "concurrency": 64,
+      "jobs": 1000,
+      "batch_duration_seconds": 2.782100554999488,
+      "claims_per_second": 359.4406385502425,
+      "successful_claims": 1000,
+      "empty_claims": 64,
+      "claim_latency_seconds": {
+        "count": 1000,
+        "mean": 0.17302872699000726,
+        "median": 0.16989797599671874,
+        "min": 0.08685583499755012,
+        "max": 0.38318087899824604,
+        "p50": 0.16984046599827707,
+        "p95": 0.2425621560032596,
+        "p99": 0.28156294799555326
+      },
+      "empty_claim_latency_seconds": {
+        "count": 64,
+        "mean": 0.05123308581266883,
+        "median": 0.04539763649881934,
+        "min": 0.002423420999548398,
+        "max": 0.12703633199998876,
+        "p50": 0.043746572999225464,
+        "p95": 0.10215514899755362,
+        "p99": 0.12703633199998876
+      },
+      "peak_benchmark_connections": 65,
+      "database_counter_delta": {
+        "xact_commit": 2164,
+        "blks_read": 0,
+        "blks_hit": 404460,
+        "tup_inserted": 2997,
+        "tup_updated": 1994,
+        "tup_deleted": 3000
+      },
+      "errors": [],
+      "duplicate_claims": 0,
+      "audit": {
+        "status_counts": {
+          "PROCESSING": 1000
+        },
+        "jobs_with_duplicate_started_events": 0
+      },
+      "passed": true,
+      "run": 3
+    }
+  ],
+  "passed": true
+}
