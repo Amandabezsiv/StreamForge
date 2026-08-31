@@ -1,0 +1,40 @@
+{
+  "experiment": "016-listen-notify-failure-recovery",
+  "recorded_at": "2026-08-31T02:36:11.833613+00:00",
+  "configuration": {
+    "worker_count": 1,
+    "fallback_interval_seconds": 5.0,
+    "fixture": "storage/benchmark-fixtures/baseline-small.mp4",
+    "fixture_size_bytes": 1340597
+  },
+  "failure": {
+    "terminated_listener_pid": 3151,
+    "listeners_present_when_job_created": 0,
+    "replacement_listener_pid": 3167
+  },
+  "recovery": {
+    "video_id": "2bf767cc-3fad-431b-9b51-3438543fd857",
+    "queue_wait_seconds": 4.991452,
+    "wall_time_until_ready_seconds": 7.385259328999382,
+    "job_count": 1,
+    "job_statuses": [
+      "COMPLETED"
+    ],
+    "job_attempts": [
+      1
+    ],
+    "output_types": [
+      "THUMBNAIL",
+      "TRANSCODED_VIDEO"
+    ],
+    "job_started_events": 1,
+    "job_completed_events": 1,
+    "duplicate_processing_detected": false
+  },
+  "checks": {
+    "notification_was_missed": true,
+    "claimed_within_fallback_bound": true,
+    "completed_once": true,
+    "listener_reconnected": true
+  }
+}

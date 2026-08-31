@@ -9,6 +9,7 @@ from sqlalchemy.engine import make_url
 logger = logging.getLogger("streamforge.worker.notifications")
 
 NEW_JOBS_CHANNEL = "streamforge_new_jobs"
+LISTENER_APPLICATION_NAME = "streamforge-worker-listener"
 
 
 def psycopg_dsn(database_url: str) -> str:
@@ -57,5 +58,9 @@ class JobNotificationListener:
     def _ensure_connected(self) -> None:
         if self._connection is not None and not self._connection.closed:
             return
-        self._connection = self._connection_factory(self._dsn, autocommit=True)
+        self._connection = self._connection_factory(
+            self._dsn,
+            autocommit=True,
+            application_name=LISTENER_APPLICATION_NAME,
+        )
         self._connection.execute(f"LISTEN {NEW_JOBS_CHANNEL}")

@@ -2,6 +2,7 @@ from types import SimpleNamespace
 
 from streamforge.workers import processor
 from streamforge.workers.notifications import (
+    LISTENER_APPLICATION_NAME,
     NEW_JOBS_CHANNEL,
     JobNotificationListener,
     psycopg_dsn,
@@ -29,8 +30,8 @@ def test_listener_receives_new_job_notification() -> None:
     connection = FakeConnection([SimpleNamespace(payload="job-id")])
     calls = []
 
-    def connect(dsn: str, *, autocommit: bool):
-        calls.append((dsn, autocommit))
+    def connect(dsn: str, *, autocommit: bool, application_name: str):
+        calls.append((dsn, autocommit, application_name))
         return connection
 
     listener = JobNotificationListener(
@@ -40,7 +41,13 @@ def test_listener_receives_new_job_notification() -> None:
 
     assert listener.start() is True
     assert listener.wait(2.0) is True
-    assert calls == [("postgresql://user:secret@database:5432/streamforge", True)]
+    assert calls == [
+        (
+            "postgresql://user:secret@database:5432/streamforge",
+            True,
+            LISTENER_APPLICATION_NAME,
+        )
+    ]
     assert connection.executed == [f"LISTEN {NEW_JOBS_CHANNEL}"]
 
 
