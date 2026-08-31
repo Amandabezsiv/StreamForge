@@ -21,6 +21,9 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Experiment 012 PostgreSQL queue acquisition concurrency and saturation sweep.
 - Experiment 013 PostgreSQL and worker overhead from polling an empty queue.
 - Experiment 014 job pickup latency versus PostgreSQL idle-polling cost.
+- PostgreSQL `LISTEN/NOTIFY` worker wake-ups with polling fallback.
+- Experiment 015 `LISTEN/NOTIFY` versus polling latency and database cost.
+- Experiment 016 recovery after a notification is missed during listener loss.
 
 ### Planned
 

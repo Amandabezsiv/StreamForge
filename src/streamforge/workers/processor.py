@@ -20,6 +20,7 @@ from streamforge.models.processing_job import ProcessingJob
 from streamforge.models.types import JobStatus, OutputType, VideoStatus
 from streamforge.models.video import Video
 from streamforge.models.video_output import VideoOutput
+from streamforge.workers.notifications import JobNotificationListener
 
 logger = logging.getLogger("streamforge.worker")
 
@@ -381,34 +382,54 @@ def process_job(
             heartbeat.stop()
 
 
-def run_worker(once: bool = False, poll_interval: float = 2.0) -> None:
+def wait_for_new_job(
+    listener: JobNotificationListener | None, poll_interval: float
+) -> bool:
+    if listener is None:
+        time.sleep(poll_interval)
+        return False
+    return listener.wait(poll_interval)
+
+
+def run_worker(once: bool = False, poll_interval: float = 30.0) -> None:
     settings = get_settings()
     if settings.job_lease_renewal_seconds >= settings.job_lease_seconds:
         raise ValueError(
             "JOB_LEASE_RENEWAL_SECONDS must be less than JOB_LEASE_SECONDS"
         )
     worker_id = f"{socket.gethostname()}-{uuid.uuid4().hex[:12]}"
+    listener = (
+        JobNotificationListener(settings.database_url)
+        if settings.job_notifications_enabled and not once
+        else None
+    )
+    if listener is not None:
+        listener.start()
     logger.info("worker started", extra={"worker_id": worker_id})
-    while True:
-        with SessionLocal() as db:
-            recover_expired_jobs(db, settings)
-            job_id = acquire_pending_job(
-                db,
-                worker_id=worker_id,
-                lease_seconds=settings.job_lease_seconds,
-            )
-            if job_id is not None:
-                process_job(db, job_id, settings, worker_id)
-        if once:
-            return
-        if job_id is None:
-            time.sleep(poll_interval)
+    try:
+        while True:
+            with SessionLocal() as db:
+                recover_expired_jobs(db, settings)
+                job_id = acquire_pending_job(
+                    db,
+                    worker_id=worker_id,
+                    lease_seconds=settings.job_lease_seconds,
+                )
+                if job_id is not None:
+                    process_job(db, job_id, settings, worker_id)
+            if once:
+                return
+            if job_id is None:
+                wait_for_new_job(listener, poll_interval)
+    finally:
+        if listener is not None:
+            listener.close()
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Process pending StreamForge videos")
     parser.add_argument("--once", action="store_true", help="Check once and exit")
-    parser.add_argument("--poll-interval", type=float, default=2.0)
+    parser.add_argument("--poll-interval", type=float, default=30.0)
     args = parser.parse_args()
     logging.basicConfig(
         level=logging.INFO,
