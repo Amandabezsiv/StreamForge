@@ -926,16 +926,20 @@ The HTTP request must not wait for FFmpeg processing to finish.
 
 # Processing Flow
 
-The initial worker uses PostgreSQL to discover pending work.
+The worker uses PostgreSQL `LISTEN/NOTIFY` to wake when pending work is
+inserted. Notification is only a wake-up hint: PostgreSQL remains the source of
+truth, and the worker periodically polls as a fallback.
 
 Conceptually:
 
 ```text
 Worker
    │
-   ├── search for PENDING job
+   ├── LISTEN streamforge_new_jobs
    │
-   ├── acquire job
+   ├── notification or fallback timeout
+   │
+   ├── atomically claim a PENDING job
    │
    ├── set PROCESSING
    │
@@ -974,17 +978,24 @@ The exact failure strategy may evolve in future versions.
 
 StreamForge v0.1 intentionally uses PostgreSQL as its job queue.
 
-The initial worker will conceptually search for work using a query similar to:
+Every job insert triggers `pg_notify('streamforge_new_jobs', job_id)`. An
+awakened worker still claims work using a query equivalent to:
 
 ```sql
 SELECT *
 FROM processing_jobs
 WHERE status = 'PENDING'
 ORDER BY created_at
-LIMIT 1;
+LIMIT 1
+FOR UPDATE SKIP LOCKED;
 ```
 
-This design is expected to expose limitations.
+The notification does not reserve a job, so concurrent workers remain safe even
+when the same notification wakes all of them. A 30-second fallback poll covers
+missed notifications, listener connection failures, startup races, and expired
+lease recovery.
+
+This design still has limitations.
 
 Potential problems include:
 
@@ -998,18 +1009,12 @@ Potential problems include:
 
 These limitations are intentional learning opportunities.
 
-Future experiments may introduce:
+Implemented queue protections include:
 
 ```text
-SELECT ... FOR UPDATE
-
-SKIP LOCKED
-
-leases
-
-heartbeats
-
-Kafka
+LISTEN / NOTIFY
+SELECT ... FOR UPDATE SKIP LOCKED
+leases and heartbeats
 ```
 
 Kafka should only be introduced after the limitations of the current architecture can be demonstrated.

@@ -183,6 +183,7 @@ def configure_workers(count: int, interval: float) -> None:
     environment.update(
         {
             "WORKER_POLL_INTERVAL": str(interval),
+            "JOB_NOTIFICATIONS_ENABLED": "false",
             "JOB_LEASE_SECONDS": "30",
             "JOB_LEASE_RENEWAL_SECONDS": "10",
             "FFMPEG_THREADS": "3",
