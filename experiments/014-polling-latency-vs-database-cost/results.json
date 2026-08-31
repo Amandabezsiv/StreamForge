@@ -1,0 +1,884 @@
+{
+  "experiment": "014-polling-latency-vs-database-cost",
+  "recorded_at": "2026-08-27T21:25:02.798642+00:00",
+  "configuration": {
+    "worker_count": 1,
+    "poll_intervals_seconds": [
+      2.0,
+      1.0,
+      0.5,
+      0.1
+    ],
+    "pickup_trials_per_interval": 20,
+    "idle_cost_duration_seconds": 30.0,
+    "random_seed": 1401,
+    "fixture": "storage/benchmark-fixtures/baseline-small.mp4",
+    "fixture_size_bytes": 1340597
+  },
+  "runs": [
+    {
+      "poll_interval_seconds": 2.0,
+      "idle_database_cost": {
+        "duration_seconds": 30.000086783998995,
+        "empty_polls": 16,
+        "empty_polls_per_second": 0.5333317905111477,
+        "database_transactions": {
+          "commits": 57,
+          "rollbacks": 16,
+          "total": 73
+        },
+        "database_transactions_per_second": 2.4333262942071108,
+        "polling_query_latency": {
+          "calls": 30,
+          "total_exec_time_ms": 1.3141280000000002,
+          "mean_exec_time_ms": 0.043804266666666675
+        },
+        "database_connections": {
+          "before": 3,
+          "after": 3
+        },
+        "resources": {
+          "sample_count": 15,
+          "postgres_cpu_percent": {
+            "count": 15,
+            "mean": 0.5413333333333333,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 2.97,
+            "p50": 0.0,
+            "p95": 2.97
+          },
+          "postgres_memory_mib": {
+            "count": 15,
+            "mean": 57.20466666666666,
+            "median": 57.19,
+            "min": 57.19,
+            "max": 57.3,
+            "p50": 57.19,
+            "p95": 57.3
+          },
+          "worker_cpu_percent_total": {
+            "count": 15,
+            "mean": 0.02666666666666667,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.4,
+            "p50": 0.0,
+            "p95": 0.4
+          },
+          "worker_memory_mib_total": {
+            "count": 15,
+            "mean": 48.98800000000001,
+            "median": 48.99,
+            "min": 48.98,
+            "max": 48.99,
+            "p50": 48.99,
+            "p95": 48.99
+          }
+        }
+      },
+      "job_pickup_latency": {
+        "trials": 20,
+        "queue_wait_seconds": {
+          "count": 20,
+          "mean": 1.0604449,
+          "median": 1.0793275,
+          "min": 0.198287,
+          "max": 1.902136,
+          "p50": 1.063547,
+          "p95": 1.772536
+        },
+        "samples": [
+          {
+            "trial": 1,
+            "video_id": "5ddb35a5-9249-4ca4-824d-cbb00c5c75a4",
+            "upload_duration_seconds": 0.02247461899969494,
+            "queue_wait_seconds": 1.021415,
+            "pre_submission_delay_seconds": 1.4632321430345299
+          },
+          {
+            "trial": 2,
+            "video_id": "918e0e09-d9f0-4ab7-a654-7cccf216a738",
+            "upload_duration_seconds": 0.016593623004155234,
+            "queue_wait_seconds": 1.107073,
+            "pre_submission_delay_seconds": 0.8839253022740718
+          },
+          {
+            "trial": 3,
+            "video_id": "024c0ba3-8c18-4be0-847c-f3d4376f97b9",
+            "upload_duration_seconds": 0.13409074499941198,
+            "queue_wait_seconds": 1.902136,
+            "pre_submission_delay_seconds": 0.08743845997793653
+          },
+          {
+            "trial": 4,
+            "video_id": "4314b734-e920-48da-be9f-4990af728eba",
+            "upload_duration_seconds": 0.016725805995520204,
+            "queue_wait_seconds": 1.662669,
+            "pre_submission_delay_seconds": 0.3200048580427879
+          },
+          {
+            "trial": 5,
+            "video_id": "e0dcc45a-b695-429a-a2d7-07e1c3f35026",
+            "upload_duration_seconds": 0.014619831999880262,
+            "queue_wait_seconds": 1.095108,
+            "pre_submission_delay_seconds": 0.8479429603016921
+          },
+          {
+            "trial": 6,
+            "video_id": "3a6f6c58-820b-482e-a630-7e479736371a",
+            "upload_duration_seconds": 0.014300296999863349,
+            "queue_wait_seconds": 0.793063,
+            "pre_submission_delay_seconds": 1.1396266219893485
+          },
+          {
+            "trial": 7,
+            "video_id": "2eb359ec-00fa-4333-ae78-189ac19cd794",
+            "upload_duration_seconds": 0.01515569600451272,
+            "queue_wait_seconds": 1.602965,
+            "pre_submission_delay_seconds": 0.34145447307139243
+          },
+          {
+            "trial": 8,
+            "video_id": "727b411e-2cc5-4d6e-9c19-a047b2dc6bea",
+            "upload_duration_seconds": 0.013869320995581802,
+            "queue_wait_seconds": 1.384252,
+            "pre_submission_delay_seconds": 0.5568069216338689
+          },
+          {
+            "trial": 9,
+            "video_id": "167b4336-d78c-43da-8149-f06b09040edf",
+            "upload_duration_seconds": 0.02056833400274627,
+            "queue_wait_seconds": 0.968422,
+            "pre_submission_delay_seconds": 0.974485270006926
+          },
+          {
+            "trial": 10,
+            "video_id": "6e24c323-0a0a-4a87-bf5a-d19b5a755c19",
+            "upload_duration_seconds": 0.014734034004504792,
+            "queue_wait_seconds": 0.198287,
+            "pre_submission_delay_seconds": 1.777617898781327
+          },
+          {
+            "trial": 11,
+            "video_id": "274f0265-613c-4804-a98e-d1450aa90720",
+            "upload_duration_seconds": 0.02928175399574684,
+            "queue_wait_seconds": 1.205082,
+            "pre_submission_delay_seconds": 0.7244592871562789
+          },
+          {
+            "trial": 12,
+            "video_id": "6d4808b5-6927-4bfe-abfd-6e5e6703d926",
+            "upload_duration_seconds": 0.012079706997610629,
+            "queue_wait_seconds": 1.409818,
+            "pre_submission_delay_seconds": 0.555406177802586
+          },
+          {
+            "trial": 13,
+            "video_id": "5cebf7c7-9b32-4703-b3d9-6ea7e4c07766",
+            "upload_duration_seconds": 0.01168715899984818,
+            "queue_wait_seconds": 0.276117,
+            "pre_submission_delay_seconds": 1.6671364439944205
+          },
+          {
+            "trial": 14,
+            "video_id": "0d971a70-797b-4ce7-9796-62aac30120ac",
+            "upload_duration_seconds": 0.01632138399872929,
+            "queue_wait_seconds": 0.265665,
+            "pre_submission_delay_seconds": 1.7193527002796813
+          },
+          {
+            "trial": 15,
+            "video_id": "816b6d3a-9f92-4f17-a703-a50ea6a5cf12",
+            "upload_duration_seconds": 0.01380262800375931,
+            "queue_wait_seconds": 1.772536,
+            "pre_submission_delay_seconds": 0.19610354815368036
+          },
+          {
+            "trial": 16,
+            "video_id": "5ee396b4-f6f0-428c-9255-082faffc3484",
+            "upload_duration_seconds": 0.024190364994865377,
+            "queue_wait_seconds": 1.47294,
+            "pre_submission_delay_seconds": 0.46432334808352027
+          },
+          {
+            "trial": 17,
+            "video_id": "6b56db47-37c6-4201-a434-6b98e0d60b31",
+            "upload_duration_seconds": 0.01620456499949796,
+            "queue_wait_seconds": 0.423201,
+            "pre_submission_delay_seconds": 1.5453125509512857
+          },
+          {
+            "trial": 18,
+            "video_id": "a58bce8e-0462-458e-a884-0f6d002bebcb",
+            "upload_duration_seconds": 0.02016589500271948,
+            "queue_wait_seconds": 0.908795,
+            "pre_submission_delay_seconds": 1.0551991599119888
+          },
+          {
+            "trial": 19,
+            "video_id": "4f8d95bb-fc9a-4009-a9ae-9761a9e71fef",
+            "upload_duration_seconds": 0.019572021999920253,
+            "queue_wait_seconds": 0.675807,
+            "pre_submission_delay_seconds": 1.293859402952482
+          },
+          {
+            "trial": 20,
+            "video_id": "7b60ef7e-715c-4de7-87db-c1e488d1ef3e",
+            "upload_duration_seconds": 0.01986217800003942,
+            "queue_wait_seconds": 1.063547,
+            "pre_submission_delay_seconds": 0.8634644296499647
+          }
+        ]
+      }
+    },
+    {
+      "poll_interval_seconds": 1.0,
+      "idle_database_cost": {
+        "duration_seconds": 30.00009993000276,
+        "empty_polls": 30,
+        "empty_polls_per_second": 0.9999966690110035,
+        "database_transactions": {
+          "commits": 105,
+          "rollbacks": 30,
+          "total": 135
+        },
+        "database_transactions_per_second": 4.499985010549516,
+        "polling_query_latency": {
+          "calls": 60,
+          "total_exec_time_ms": 3.5768440000000004,
+          "mean_exec_time_ms": 0.059614066666666674
+        },
+        "database_connections": {
+          "before": 3,
+          "after": 3
+        },
+        "resources": {
+          "sample_count": 15,
+          "postgres_cpu_percent": {
+            "count": 15,
+            "mean": 0.7666666666666667,
+            "median": 0.21,
+            "min": 0.14,
+            "max": 2.55,
+            "p50": 0.21,
+            "p95": 2.55
+          },
+          "postgres_memory_mib": {
+            "count": 15,
+            "mean": 60.612,
+            "median": 60.7,
+            "min": 60.22,
+            "max": 60.82,
+            "p50": 60.7,
+            "p95": 60.82
+          },
+          "worker_cpu_percent_total": {
+            "count": 15,
+            "mean": 0.246,
+            "median": 0.21,
+            "min": 0.15,
+            "max": 0.42,
+            "p50": 0.21,
+            "p95": 0.42
+          },
+          "worker_memory_mib_total": {
+            "count": 15,
+            "mean": 48.93066666666667,
+            "median": 48.93,
+            "min": 48.93,
+            "max": 48.94,
+            "p50": 48.93,
+            "p95": 48.94
+          }
+        }
+      },
+      "job_pickup_latency": {
+        "trials": 20,
+        "queue_wait_seconds": {
+          "count": 20,
+          "mean": 0.63906345,
+          "median": 0.608548,
+          "min": 0.172994,
+          "max": 1.082325,
+          "p50": 0.60697,
+          "p95": 0.901918
+        },
+        "samples": [
+          {
+            "trial": 1,
+            "video_id": "6be9fdb8-a1f1-42a3-b414-1a938cf79d48",
+            "upload_duration_seconds": 0.01527233899832936,
+            "queue_wait_seconds": 0.858309,
+            "pre_submission_delay_seconds": 0.7620087672901781
+          },
+          {
+            "trial": 2,
+            "video_id": "0b767756-21f1-44f1-9576-107ddb8f3086",
+            "upload_duration_seconds": 0.011486188996059354,
+            "queue_wait_seconds": 0.799542,
+            "pre_submission_delay_seconds": 0.1455688948612991
+          },
+          {
+            "trial": 3,
+            "video_id": "58465d36-7b53-4d6a-b81e-bf5f3da6d333",
+            "upload_duration_seconds": 0.017664860999502707,
+            "queue_wait_seconds": 0.610126,
+            "pre_submission_delay_seconds": 0.37267493788758965
+          },
+          {
+            "trial": 4,
+            "video_id": "c379e205-ce45-4084-87c5-842640fc9d61",
+            "upload_duration_seconds": 0.013673432003997732,
+            "queue_wait_seconds": 0.901918,
+            "pre_submission_delay_seconds": 0.06928682716520584
+          },
+          {
+            "trial": 5,
+            "video_id": "1d048298-da06-4c48-aae8-fe464c685ad0",
+            "upload_duration_seconds": 0.026571012000204064,
+            "queue_wait_seconds": 0.267409,
+            "pre_submission_delay_seconds": 0.6726143194422353
+          },
+          {
+            "trial": 6,
+            "video_id": "6df12cea-8df7-4f9c-8101-927d668ab5df",
+            "upload_duration_seconds": 0.015626272004737984,
+            "queue_wait_seconds": 0.886553,
+            "pre_submission_delay_seconds": 0.0862083640829373
+          },
+          {
+            "trial": 7,
+            "video_id": "59c4c119-1bf8-477c-852c-2fb5f0f88202",
+            "upload_duration_seconds": 0.014454620002652518,
+            "queue_wait_seconds": 0.565479,
+            "pre_submission_delay_seconds": 0.4260764823216623
+          },
+          {
+            "trial": 8,
+            "video_id": "6cd8e5f3-3df1-4ac0-815a-a1301a3655de",
+            "upload_duration_seconds": 0.03479621299629798,
+            "queue_wait_seconds": 0.430347,
+            "pre_submission_delay_seconds": 0.5392288846207204
+          },
+          {
+            "trial": 9,
+            "video_id": "b54b768f-0f55-47c1-b719-40c254416e9c",
+            "upload_duration_seconds": 0.062112459003401455,
+            "queue_wait_seconds": 0.60697,
+            "pre_submission_delay_seconds": 0.35887667334304085
+          },
+          {
+            "trial": 10,
+            "video_id": "23dc062d-4fe8-431d-9a05-f666af8508e3",
+            "upload_duration_seconds": 0.014939811000658665,
+            "queue_wait_seconds": 0.536054,
+            "pre_submission_delay_seconds": 0.45731543395170204
+          },
+          {
+            "trial": 11,
+            "video_id": "31844fe1-9878-4283-9643-177d9276486a",
+            "upload_duration_seconds": 0.01704065800004173,
+            "queue_wait_seconds": 0.853476,
+            "pre_submission_delay_seconds": 0.10162816037420974
+          },
+          {
+            "trial": 12,
+            "video_id": "0074fb46-11e7-44a3-813b-5a6e8a805664",
+            "upload_duration_seconds": 0.012368310999590904,
+            "queue_wait_seconds": 0.537991,
+            "pre_submission_delay_seconds": 0.40381900278710825
+          },
+          {
+            "trial": 13,
+            "video_id": "bcb59318-484f-4422-8fbc-15c291a4c15e",
+            "upload_duration_seconds": 0.012505877995863557,
+            "queue_wait_seconds": 0.540383,
+            "pre_submission_delay_seconds": 0.4241806231380023
+          },
+          {
+            "trial": 14,
+            "video_id": "b89433a6-d413-4880-a1dc-5d317602ccb0",
+            "upload_duration_seconds": 0.011449473000539001,
+            "queue_wait_seconds": 0.218933,
+            "pre_submission_delay_seconds": 0.7539070182180486
+          },
+          {
+            "trial": 15,
+            "video_id": "0ee1ff71-fd13-4d20-83f4-ce209ed98aed",
+            "upload_duration_seconds": 0.013908166001783684,
+            "queue_wait_seconds": 0.172994,
+            "pre_submission_delay_seconds": 0.7948036186789995
+          },
+          {
+            "trial": 16,
+            "video_id": "5b025547-5c15-4413-9fbd-66e572116a68",
+            "upload_duration_seconds": 0.014206891995854676,
+            "queue_wait_seconds": 0.876208,
+            "pre_submission_delay_seconds": 0.05191406268922727
+          },
+          {
+            "trial": 17,
+            "video_id": "80a9a58f-6e12-44cc-8cfb-053fdef4df84",
+            "upload_duration_seconds": 0.09056489799695555,
+            "queue_wait_seconds": 1.082325,
+            "pre_submission_delay_seconds": 0.9146612962672358
+          },
+          {
+            "trial": 18,
+            "video_id": "19638f2b-d403-4cce-8ad8-649e74e36303",
+            "upload_duration_seconds": 0.011592871996981557,
+            "queue_wait_seconds": 0.786693,
+            "pre_submission_delay_seconds": 0.1850123083675439
+          },
+          {
+            "trial": 19,
+            "video_id": "557f044c-616b-4921-8e29-92f8506fe0b6",
+            "upload_duration_seconds": 0.05087118499795906,
+            "queue_wait_seconds": 0.8113,
+            "pre_submission_delay_seconds": 0.18566965239706956
+          },
+          {
+            "trial": 20,
+            "video_id": "1ffa3602-e07f-4f3c-aaf5-358d8b548fcf",
+            "upload_duration_seconds": 0.014347537995490711,
+            "queue_wait_seconds": 0.438259,
+            "pre_submission_delay_seconds": 0.5500851371770306
+          }
+        ]
+      }
+    },
+    {
+      "poll_interval_seconds": 0.5,
+      "idle_database_cost": {
+        "duration_seconds": 30.000067950000812,
+        "empty_polls": 60,
+        "empty_polls_per_second": 1.9999954700102063,
+        "database_transactions": {
+          "commits": 191,
+          "rollbacks": 60,
+          "total": 251
+        },
+        "database_transactions_per_second": 8.366647716209362,
+        "polling_query_latency": {
+          "calls": 120,
+          "total_exec_time_ms": 3.626456,
+          "mean_exec_time_ms": 0.030220466666666668
+        },
+        "database_connections": {
+          "before": 3,
+          "after": 3
+        },
+        "resources": {
+          "sample_count": 15,
+          "postgres_cpu_percent": {
+            "count": 15,
+            "mean": 0.7966666666666666,
+            "median": 0.39,
+            "min": 0.14,
+            "max": 2.7,
+            "p50": 0.39,
+            "p95": 2.7
+          },
+          "postgres_memory_mib": {
+            "count": 15,
+            "mean": 63.337333333333326,
+            "median": 63.28,
+            "min": 63.21,
+            "max": 63.57,
+            "p50": 63.28,
+            "p95": 63.57
+          },
+          "worker_cpu_percent_total": {
+            "count": 15,
+            "mean": 0.656,
+            "median": 0.67,
+            "min": 0.3,
+            "max": 1.05,
+            "p50": 0.67,
+            "p95": 1.05
+          },
+          "worker_memory_mib_total": {
+            "count": 15,
+            "mean": 48.93999999999999,
+            "median": 48.94,
+            "min": 48.94,
+            "max": 48.94,
+            "p50": 48.94,
+            "p95": 48.94
+          }
+        }
+      },
+      "job_pickup_latency": {
+        "trials": 20,
+        "queue_wait_seconds": {
+          "count": 20,
+          "mean": 0.3073844,
+          "median": 0.3346875,
+          "min": 0.0321,
+          "max": 0.503233,
+          "p50": 0.279296,
+          "p95": 0.499823
+        },
+        "samples": [
+          {
+            "trial": 1,
+            "video_id": "cd16caee-35db-4e06-9265-47fc58a2b774",
+            "upload_duration_seconds": 0.011277113000687677,
+            "queue_wait_seconds": 0.467552,
+            "pre_submission_delay_seconds": 0.3272944427916606
+          },
+          {
+            "trial": 2,
+            "video_id": "3cd540ea-5ffd-432f-830a-96110d7e6d9c",
+            "upload_duration_seconds": 0.012283924006624147,
+            "queue_wait_seconds": 0.24711,
+            "pre_submission_delay_seconds": 0.21899799589428298
+          },
+          {
+            "trial": 3,
+            "video_id": "2fdd7fe0-f04d-4bd1-be6d-9e0423a03aa8",
+            "upload_duration_seconds": 0.012216025999805424,
+            "queue_wait_seconds": 0.13667,
+            "pre_submission_delay_seconds": 0.321181314401098
+          },
+          {
+            "trial": 4,
+            "video_id": "c65ca217-6289-4d7f-a3d8-33cb03914ce8",
+            "upload_duration_seconds": 0.011383313001715578,
+            "queue_wait_seconds": 0.503233,
+            "pre_submission_delay_seconds": 0.4766524524196019
+          },
+          {
+            "trial": 5,
+            "video_id": "99120597-d2bf-4f9a-a1be-0afefeea3a6d",
+            "upload_duration_seconds": 0.015431220002938062,
+            "queue_wait_seconds": 0.390079,
+            "pre_submission_delay_seconds": 0.07906095016768933
+          },
+          {
+            "trial": 6,
+            "video_id": "de0718a7-e26a-400e-a9f2-6eb99dff9cfb",
+            "upload_duration_seconds": 0.055374894000124186,
+            "queue_wait_seconds": 0.111105,
+            "pre_submission_delay_seconds": 0.3484216120157548
+          },
+          {
+            "trial": 7,
+            "video_id": "a0705934-6b7b-44ce-a407-8fd5e43fb3f4",
+            "upload_duration_seconds": 0.012517224000475835,
+            "queue_wait_seconds": 0.484568,
+            "pre_submission_delay_seconds": 0.4849234415066965
+          },
+          {
+            "trial": 8,
+            "video_id": "520b637e-faba-412c-8d1b-609861d3bd8b",
+            "upload_duration_seconds": 0.03583068900479702,
+            "queue_wait_seconds": 0.279296,
+            "pre_submission_delay_seconds": 0.19815136651587056
+          },
+          {
+            "trial": 9,
+            "video_id": "f4d79b67-95ab-40fb-b96b-95aae14c3d06",
+            "upload_duration_seconds": 0.012852728999860119,
+            "queue_wait_seconds": 0.41914,
+            "pre_submission_delay_seconds": 0.03106819913408626
+          },
+          {
+            "trial": 10,
+            "video_id": "ba0d04e0-7402-4f43-8ae2-27db84353890",
+            "upload_duration_seconds": 0.020785936998436227,
+            "queue_wait_seconds": 0.099347,
+            "pre_submission_delay_seconds": 0.35806111628651094
+          },
+          {
+            "trial": 11,
+            "video_id": "0f3d6644-2c83-47d9-ba09-5c14e8089e10",
+            "upload_duration_seconds": 0.01034756100125378,
+            "queue_wait_seconds": 0.073669,
+            "pre_submission_delay_seconds": 0.39453343625967235
+          },
+          {
+            "trial": 12,
+            "video_id": "44926444-db1e-4fed-b50b-914af791cbd3",
+            "upload_duration_seconds": 0.013430011000309605,
+            "queue_wait_seconds": 0.499823,
+            "pre_submission_delay_seconds": 0.4854163023946466
+          },
+          {
+            "trial": 13,
+            "video_id": "b544e92d-ec99-44d0-bce5-6fa15c9b1f4e",
+            "upload_duration_seconds": 0.015575185003399383,
+            "queue_wait_seconds": 0.208919,
+            "pre_submission_delay_seconds": 0.2256253127193501
+          },
+          {
+            "trial": 14,
+            "video_id": "f896ab30-b6d3-4ef1-bd1f-91d602f18e51",
+            "upload_duration_seconds": 0.013467523000144865,
+            "queue_wait_seconds": 0.226869,
+            "pre_submission_delay_seconds": 0.24686833138723413
+          },
+          {
+            "trial": 15,
+            "video_id": "de575399-9967-472a-82be-5183241ef6a1",
+            "upload_duration_seconds": 0.0139240820062696,
+            "queue_wait_seconds": 0.485883,
+            "pre_submission_delay_seconds": 0.45967240631373296
+          },
+          {
+            "trial": 16,
+            "video_id": "f2cfecb9-3ee7-4c23-853e-390b650e6db7",
+            "upload_duration_seconds": 0.02095355399796972,
+            "queue_wait_seconds": 0.455333,
+            "pre_submission_delay_seconds": 0.03485268572850575
+          },
+          {
+            "trial": 17,
+            "video_id": "1ee37548-4cb7-42f4-8155-254c3b6d52f7",
+            "upload_duration_seconds": 0.08677241300028982,
+            "queue_wait_seconds": 0.196144,
+            "pre_submission_delay_seconds": 0.2829697126692457
+          },
+          {
+            "trial": 18,
+            "video_id": "d8be90f2-a32d-4e6b-b01d-49af5900c8bc",
+            "upload_duration_seconds": 0.016081036999821663,
+            "queue_wait_seconds": 0.435152,
+            "pre_submission_delay_seconds": 0.055556405112971496
+          },
+          {
+            "trial": 19,
+            "video_id": "9e38f98c-8be9-412f-a695-70017f90919d",
+            "upload_duration_seconds": 0.017903100997500587,
+            "queue_wait_seconds": 0.0321,
+            "pre_submission_delay_seconds": 0.4505167804398862
+          },
+          {
+            "trial": 20,
+            "video_id": "7d3dd053-8b00-4e73-8c0f-4290a7c2f4aa",
+            "upload_duration_seconds": 0.026995959000487346,
+            "queue_wait_seconds": 0.395696,
+            "pre_submission_delay_seconds": 0.09194838522435261
+          }
+        ]
+      }
+    },
+    {
+      "poll_interval_seconds": 0.1,
+      "idle_database_cost": {
+        "duration_seconds": 30.00012641500507,
+        "empty_polls": 290,
+        "empty_polls_per_second": 9.666625933114455,
+        "database_transactions": {
+          "commits": 879,
+          "rollbacks": 290,
+          "total": 1169
+        },
+        "database_transactions_per_second": 38.966502468313095,
+        "polling_query_latency": {
+          "calls": 574,
+          "total_exec_time_ms": 18.985778999999994,
+          "mean_exec_time_ms": 0.033076270034843196
+        },
+        "database_connections": {
+          "before": 3,
+          "after": 3
+        },
+        "resources": {
+          "sample_count": 15,
+          "postgres_cpu_percent": {
+            "count": 15,
+            "mean": 1.966,
+            "median": 1.64,
+            "min": 1.15,
+            "max": 3.84,
+            "p50": 1.64,
+            "p95": 3.84
+          },
+          "postgres_memory_mib": {
+            "count": 15,
+            "mean": 63.76533333333334,
+            "median": 63.77,
+            "min": 63.63,
+            "max": 63.98,
+            "p50": 63.77,
+            "p95": 63.98
+          },
+          "worker_cpu_percent_total": {
+            "count": 15,
+            "mean": 3.2546666666666666,
+            "median": 3.38,
+            "min": 2.48,
+            "max": 4.02,
+            "p50": 3.38,
+            "p95": 4.02
+          },
+          "worker_memory_mib_total": {
+            "count": 15,
+            "mean": 48.96,
+            "median": 48.96,
+            "min": 48.96,
+            "max": 48.96,
+            "p50": 48.96,
+            "p95": 48.96
+          }
+        }
+      },
+      "job_pickup_latency": {
+        "trials": 20,
+        "queue_wait_seconds": {
+          "count": 20,
+          "mean": 0.08050589999999999,
+          "median": 0.074641,
+          "min": 0.012702,
+          "max": 0.197169,
+          "p50": 0.074418,
+          "p95": 0.172598
+        },
+        "samples": [
+          {
+            "trial": 1,
+            "video_id": "7536df06-1365-40c5-9113-93445994bc0b",
+            "upload_duration_seconds": 0.012228478000906762,
+            "queue_wait_seconds": 0.012702,
+            "pre_submission_delay_seconds": 0.0528999910485095
+          },
+          {
+            "trial": 2,
+            "video_id": "26440820-bee9-4184-a5ef-f5d5e251cb37",
+            "upload_duration_seconds": 0.01829845599422697,
+            "queue_wait_seconds": 0.072667,
+            "pre_submission_delay_seconds": 0.08238617396929517
+          },
+          {
+            "trial": 3,
+            "video_id": "0a005ebe-631a-487e-a05c-3d80f60f96c3",
+            "upload_duration_seconds": 0.014133034004771616,
+            "queue_wait_seconds": 0.060179,
+            "pre_submission_delay_seconds": 0.09845072663834098
+          },
+          {
+            "trial": 4,
+            "video_id": "72a5826c-3364-4771-930f-1c926d95c927",
+            "upload_duration_seconds": 0.027313988997775596,
+            "queue_wait_seconds": 0.109552,
+            "pre_submission_delay_seconds": 0.05283790515878493
+          },
+          {
+            "trial": 5,
+            "video_id": "06671c40-276d-4c8f-9778-4d4858298e8e",
+            "upload_duration_seconds": 0.06358086300315335,
+            "queue_wait_seconds": 0.127547,
+            "pre_submission_delay_seconds": 0.058337706398595146
+          },
+          {
+            "trial": 6,
+            "video_id": "41616f58-4674-44dd-a1bd-1fa0e9443567",
+            "upload_duration_seconds": 0.019157759998051915,
+            "queue_wait_seconds": 0.104808,
+            "pre_submission_delay_seconds": 0.08411745754255419
+          },
+          {
+            "trial": 7,
+            "video_id": "63036217-665c-4fc8-8cd3-7cd968dcc334",
+            "upload_duration_seconds": 0.008775431000685785,
+            "queue_wait_seconds": 0.074418,
+            "pre_submission_delay_seconds": 0.014955691174639818
+          },
+          {
+            "trial": 8,
+            "video_id": "5d3e6316-f3b7-42a7-b3b1-be2dfb9eafaa",
+            "upload_duration_seconds": 0.012666349997743964,
+            "queue_wait_seconds": 0.019138,
+            "pre_submission_delay_seconds": 0.07653735985748553
+          },
+          {
+            "trial": 9,
+            "video_id": "272e42f0-1b1a-4582-a181-42ecadfb4c3a",
+            "upload_duration_seconds": 0.012648635005461983,
+            "queue_wait_seconds": 0.031864,
+            "pre_submission_delay_seconds": 0.014794444277566366
+          },
+          {
+            "trial": 10,
+            "video_id": "0b0dce8d-6f50-4776-88ba-1555d18a85e6",
+            "upload_duration_seconds": 0.016633166997053195,
+            "queue_wait_seconds": 0.102119,
+            "pre_submission_delay_seconds": 0.09145335927831733
+          },
+          {
+            "trial": 11,
+            "video_id": "b4d333c5-4185-40ea-a47d-a2baf6bcef98",
+            "upload_duration_seconds": 0.009376501002407167,
+            "queue_wait_seconds": 0.087593,
+            "pre_submission_delay_seconds": 0.005198242075161386
+          },
+          {
+            "trial": 12,
+            "video_id": "2129c7ef-dad9-4754-a999-b0bc6f7e8a5d",
+            "upload_duration_seconds": 0.01267424600519007,
+            "queue_wait_seconds": 0.030854,
+            "pre_submission_delay_seconds": 0.013567174480999223
+          },
+          {
+            "trial": 13,
+            "video_id": "f6143319-adc4-4f41-9984-c5c124036686",
+            "upload_duration_seconds": 0.11109135399601655,
+            "queue_wait_seconds": 0.197169,
+            "pre_submission_delay_seconds": 0.06387413426602727
+          },
+          {
+            "trial": 14,
+            "video_id": "7a8a4974-0883-423b-84cf-f4e39eae111a",
+            "upload_duration_seconds": 0.00827753000339726,
+            "queue_wait_seconds": 0.078043,
+            "pre_submission_delay_seconds": 0.01221975962839792
+          },
+          {
+            "trial": 15,
+            "video_id": "3a903b71-16ab-4772-b552-dcbff43394c1",
+            "upload_duration_seconds": 0.0844647280027857,
+            "queue_wait_seconds": 0.172598,
+            "pre_submission_delay_seconds": 0.08679079529488641
+          },
+          {
+            "trial": 16,
+            "video_id": "4be07190-8ce9-43de-812c-c15d052b3581",
+            "upload_duration_seconds": 0.013195065999752842,
+            "queue_wait_seconds": 0.058557,
+            "pre_submission_delay_seconds": 0.02200143638711114
+          },
+          {
+            "trial": 17,
+            "video_id": "73a51860-bcf9-48aa-93c4-9da9ee282f68",
+            "upload_duration_seconds": 0.014917712003807537,
+            "queue_wait_seconds": 0.092994,
+            "pre_submission_delay_seconds": 0.06488594358666894
+          },
+          {
+            "trial": 18,
+            "video_id": "243ac90e-b4c7-4df2-b0ec-34de88d11839",
+            "upload_duration_seconds": 0.013713440996070858,
+            "queue_wait_seconds": 0.046449,
+            "pre_submission_delay_seconds": 0.020851484650204234
+          },
+          {
+            "trial": 19,
+            "video_id": "40b4fb88-3940-4ec9-b4c6-b7146d728435",
+            "upload_duration_seconds": 0.014351122001244221,
+            "queue_wait_seconds": 0.074864,
+            "pre_submission_delay_seconds": 0.09880167154818832
+          },
+          {
+            "trial": 20,
+            "video_id": "9981bd8e-c572-4ca2-a21f-c7e88af6bf46",
+            "upload_duration_seconds": 0.012702779000392184,
+            "queue_wait_seconds": 0.056003,
+            "pre_submission_delay_seconds": 0.0916586717260181
+          }
+        ]
+      }
+    }
+  ]
+}

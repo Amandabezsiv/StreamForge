@@ -13,6 +13,9 @@ class Settings(BaseSettings):
     storage_path: Path = Path("storage")
     max_upload_size_bytes: int = 1024 * 1024 * 1024
     ffmpeg_threads: int = 0
+    job_lease_seconds: float = 30.0
+    job_lease_renewal_seconds: float = 10.0
+    diagnostic_publish_commit_delay_seconds: float = 0.0
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 

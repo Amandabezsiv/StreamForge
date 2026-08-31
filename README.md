@@ -122,6 +122,25 @@ Kill a worker during transcoding and inspect PostgreSQL and local storage:
 uv run python scripts/benchmark_worker_failure.py
 ```
 
+Verify automatic recovery of an expired worker lease:
+
+```bash
+uv run python scripts/benchmark_lease_recovery.py
+```
+
+Verify lease behavior during PostgreSQL loss and after a post-publication crash:
+
+```bash
+uv run python scripts/benchmark_database_loss_recovery.py
+uv run python scripts/benchmark_post_publish_crash.py
+```
+
+Measure PostgreSQL queue acquisition saturation:
+
+```bash
+uv run python scripts/benchmark_postgres_queue_concurrency.py
+```
+
 The result is stored in
 `experiments/001-single-worker-baseline/results.json`. See the experiment
 README for the environment, fixture, metric definitions, and interpretation.

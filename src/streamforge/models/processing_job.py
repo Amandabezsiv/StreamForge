@@ -25,6 +25,10 @@ class ProcessingJob(Base):
         String(20), default=JobStatus.PENDING, index=True
     )
     attempt: Mapped[int] = mapped_column(Integer, default=1)
+    claimed_by: Mapped[str | None] = mapped_column(String(255), index=True)
+    lease_expires_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), index=True
+    )
     started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     error_code: Mapped[str | None] = mapped_column(String(100))

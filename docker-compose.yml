@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgres:17-alpine
+    command: postgres -c shared_preload_libraries=pg_stat_statements
     environment:
       POSTGRES_DB: streamforge
       POSTGRES_USER: streamforge
@@ -17,11 +18,14 @@ services:
 
   worker:
     build: .
-    command: streamforge-worker
+    command: streamforge-worker --poll-interval ${WORKER_POLL_INTERVAL:-2}
     environment:
       DATABASE_URL: postgresql+psycopg://streamforge:streamforge@postgres:5432/streamforge
       STORAGE_PATH: /app/storage
       FFMPEG_THREADS: ${FFMPEG_THREADS:-0}
+      JOB_LEASE_SECONDS: ${JOB_LEASE_SECONDS:-30}
+      JOB_LEASE_RENEWAL_SECONDS: ${JOB_LEASE_RENEWAL_SECONDS:-10}
+      DIAGNOSTIC_PUBLISH_COMMIT_DELAY_SECONDS: ${DIAGNOSTIC_PUBLISH_COMMIT_DELAY_SECONDS:-0}
     volumes:
       - ./storage:/app/storage
     depends_on:
