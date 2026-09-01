@@ -24,6 +24,9 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - PostgreSQL `LISTEN/NOTIFY` worker wake-ups with polling fallback.
 - Experiment 015 `LISTEN/NOTIFY` versus polling latency and database cost.
 - Experiment 016 recovery after a notification is missed during listener loss.
+- Prometheus API and worker instrumentation, Docker DNS worker discovery,
+  Compose deployment, and ADR-002 observability metric semantics.
+- Experiment 017 end-to-end Prometheus target, series, and live-job validation.
 
 ### Planned
 
