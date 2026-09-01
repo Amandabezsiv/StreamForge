@@ -33,6 +33,8 @@ conclusions belong in `experiments/` and `docs/adr/`.
   videos.
 - Experiment 020 sustained arrival-rate sweep against four-worker processing
   capacity.
+- Experiment 021 four-worker sustained-load comparison with a one-CPU limit per
+  worker container.
 
 ### Planned
 

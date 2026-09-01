@@ -286,12 +286,25 @@ def main() -> None:
     parser.add_argument("--rates", default="12,16,18,20,22")
     parser.add_argument("--duration", type=float, default=60.0)
     parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument(
+        "--worker-cpu-limit",
+        type=float,
+        default=0,
+        help="CPU cores available to each worker container; 0 means unlimited",
+    )
+    parser.add_argument("--experiment-name", default="020-sustained-arrival-capacity")
     parser.add_argument("--timeout", type=float, default=600.0)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
     rates = [float(value) for value in args.rates.split(",")]
-    if args.duration <= 0 or args.workers < 1 or not rates or min(rates) <= 0:
-        parser.error("duration, workers, and rates must be positive")
+    if (
+        args.duration <= 0
+        or args.workers < 1
+        or args.worker_cpu_limit < 0
+        or not rates
+        or min(rates) <= 0
+    ):
+        parser.error("duration, workers, rates, and CPU limit must be valid")
 
     profile = FIXTURES["medium"]
     if not DEFAULT_FIXTURE.exists():
@@ -303,7 +316,7 @@ def main() -> None:
             video_bitrate=profile["video_bitrate"],
         )
 
-    configure_stack(args.workers, 0)
+    configure_stack(args.workers, 0, args.worker_cpu_limit)
     with httpx.Client(base_url=args.api_url, timeout=30.0) as client:
         wait_for_api(client, args.timeout)
     time.sleep(10.0)
@@ -351,10 +364,14 @@ def main() -> None:
         if not result["queue"]["classified_stable"]
     ]
     output = {
-        "experiment": "020-sustained-arrival-capacity",
+        "experiment": args.experiment_name,
         "recorded_at": datetime.now(UTC).isoformat(),
         "configuration": {
             "workers": args.workers,
+            "worker_cpu_limit_cores": args.worker_cpu_limit or None,
+            "total_worker_cpu_limit_cores": (
+                args.workers * args.worker_cpu_limit if args.worker_cpu_limit else None
+            ),
             "rates_videos_per_minute": rates,
             "arrival_duration_seconds_per_rate": args.duration,
             "fixture": str(DEFAULT_FIXTURE),

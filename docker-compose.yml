@@ -18,6 +18,7 @@ services:
 
   worker:
     build: .
+    cpus: "${WORKER_CPU_LIMIT:-0}"
     command: streamforge-worker --poll-interval ${WORKER_POLL_INTERVAL:-30}
     environment:
       DATABASE_URL: postgresql+psycopg://streamforge:streamforge@postgres:5432/streamforge

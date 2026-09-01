@@ -50,7 +50,11 @@ RESOURCE_ERRORS = (
 )
 
 
-def configure_stack(worker_count: int, ffmpeg_threads: int) -> None:
+def configure_stack(
+    worker_count: int,
+    ffmpeg_threads: int,
+    worker_cpu_limit: float = 0,
+) -> None:
     environment = os.environ.copy()
     environment.update(
         {
@@ -59,6 +63,7 @@ def configure_stack(worker_count: int, ffmpeg_threads: int) -> None:
             "WORKER_POLL_INTERVAL": "30",
             "JOB_LEASE_SECONDS": "30",
             "JOB_LEASE_RENEWAL_SECONDS": "10",
+            "WORKER_CPU_LIMIT": str(worker_cpu_limit),
         }
     )
     compose(
