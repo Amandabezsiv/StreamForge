@@ -18,7 +18,9 @@ PostgreSQL or local files a shared Prometheus counter store.
 ## Decision
 
 Adopt the Prometheus text exposition format through `prometheus-client` and run
-a pinned Prometheus server in Docker Compose.
+a pinned Prometheus server in Docker Compose. Provision a pinned Grafana server,
+Prometheus datasource, and version-controlled StreamForge dashboard through
+Docker Compose mounts.
 
 The API exposes `/metrics` on port 8000. Its queue gauges query PostgreSQL when
 scraped, making the durable job table the source of truth:
@@ -39,6 +41,10 @@ Prometheus uses DNS service discovery for `worker`, allowing every scaled
 container to be scraped. Worker counters and histogram buckets are aggregated
 across instances with PromQL. The API gauges must not be summed with worker
 copies because they are exposed only by the API target.
+
+The Grafana dashboard is a presentation layer over Prometheus and does not query
+application databases directly. Local development enables anonymous Viewer
+access; external environments must add authentication and network controls.
 
 ## Metric Semantics
 
@@ -90,8 +96,11 @@ Scraping each worker directly is simpler and preserves instance labels.
   durable business totals.
 - Prometheus DNS discovery may briefly retain terminated worker targets until
   its refresh interval expires.
+- Provisioned dashboards are reviewed as code and restored from the repository
+  on container recreation.
 - Metrics currently have no authentication because they are intended for the
-  local development network. External deployments must restrict access.
+  local development network. External deployments must restrict Prometheus and
+  Grafana access.
 
 ## Revisit When
 
