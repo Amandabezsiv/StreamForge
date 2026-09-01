@@ -213,9 +213,10 @@ v0.2.x — KUBERNETES (planned)
      └── queue-based
 ```
 
-The first v0.2 milestone will reproduce v0.1 behavior in a local Kubernetes
-cluster before changing application behavior. Kubernetes manifests and HPA are
-not implemented yet.
+The first v0.2 milestone reproduces v0.1 behavior in a local Kind cluster before
+changing application behavior. See
+[Experiment 022](experiments/022-kubernetes-local-deployment/README.md) for the
+deployment and parity validation. HPA is not implemented yet.
 
 The main architectural question is shared media storage: API and worker pods
 must see the same files. A local PersistentVolume can establish single-node
@@ -231,7 +232,7 @@ storage.
 - Failed jobs do not yet have a public manual-retry endpoint.
 - Storage publication and database commit cannot form one atomic transaction.
 - Metrics endpoints have no authentication in the local environment.
-- Kubernetes, HPA, object storage, and multi-node operation are not implemented.
+- HPA, object storage, and multi-node Kubernetes operation are not implemented.
 
 ## Documentation
 

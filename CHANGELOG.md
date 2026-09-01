@@ -15,6 +15,12 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Reorganized the main README as a concise operational overview and moved the
   detailed v0.1 specification and study notes into `docs/v0.1-study-reference.md`.
 
+### Added
+
+- Experiment 022 Kind deployment manifests and end-to-end Kubernetes parity
+  validation for the API, PostgreSQL, shared media storage, migrations, and four
+  worker pods.
+
 ## [0.1.0] - 2026-09-01
 
 ### Added

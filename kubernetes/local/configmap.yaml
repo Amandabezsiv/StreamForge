@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: streamforge-config
+  namespace: streamforge
+data:
+  STORAGE_PATH: /app/storage
+  MAX_UPLOAD_SIZE_BYTES: "1073741824"
+  FFMPEG_THREADS: "0"
+  JOB_LEASE_SECONDS: "30"
+  JOB_LEASE_RENEWAL_SECONDS: "10"
+  JOB_NOTIFICATIONS_ENABLED: "true"
+  WORKER_METRICS_PORT: "9000"
+  WORKER_POLL_INTERVAL: "30"
+  DIAGNOSTIC_PUBLISH_COMMIT_DELAY_SECONDS: "0"

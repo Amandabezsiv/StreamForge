@@ -1,0 +1,113 @@
+{
+  "experiment": "022-kubernetes-local-deployment",
+  "recorded_at": "2026-09-01T16:01:45.739758+00:00",
+  "elapsed_seconds": 7.291254202000346,
+  "video": {
+    "id": "f1725d62-4b7d-469c-bbce-be3e36f7ea64",
+    "original_filename": "baseline-small.mp4",
+    "size_bytes": 1340597,
+    "status": "READY",
+    "duration_seconds": 10.0,
+    "width": 640,
+    "height": 360,
+    "fps": 30.0,
+    "codec": "h264",
+    "bitrate": 993328,
+    "created_at": "2026-09-01T16:01:38.577102Z",
+    "updated_at": "2026-09-01T16:01:45.230536Z"
+  },
+  "outputs": [
+    {
+      "id": "7a98521a-9226-4df4-ae9d-8bc632150d2e",
+      "type": "THUMBNAIL",
+      "resolution": null,
+      "storage_key": "videos/f1725d62-4b7d-469c-bbce-be3e36f7ea64/thumbnail.jpg",
+      "size_bytes": 17956,
+      "created_at": "2026-09-01T16:01:38.824724Z"
+    },
+    {
+      "id": "f041b763-3c34-45f7-acf1-0a1235b20ca3",
+      "type": "TRANSCODED_VIDEO",
+      "resolution": "720p",
+      "storage_key": "videos/f1725d62-4b7d-469c-bbce-be3e36f7ea64/720p.mp4",
+      "size_bytes": 2157435,
+      "created_at": "2026-09-01T16:01:45.230536Z"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "529887d2-8605-4989-bbbf-4d6a929662a9",
+      "type": "PROCESS_VIDEO",
+      "status": "COMPLETED",
+      "attempt": 1,
+      "claimed_by": null,
+      "lease_expires_at": null,
+      "started_at": "2026-09-01T16:01:38.588444Z",
+      "finished_at": "2026-09-01T16:01:45.232561Z",
+      "error_code": null,
+      "error_message": null,
+      "queue_wait_seconds": 0.011342,
+      "processing_duration_seconds": 6.631821523998951,
+      "metadata_duration_seconds": 0.061883708000095794,
+      "thumbnail_duration_seconds": 0.1313163690010697,
+      "transcoding_duration_seconds": 6.360003153000434,
+      "total_time_to_ready_seconds": 6.655459,
+      "created_at": "2026-09-01T16:01:38.577102Z",
+      "updated_at": "2026-09-01T16:01:45.230536Z"
+    }
+  ],
+  "cluster": {
+    "namespace": "streamforge",
+    "pods": [
+      {
+        "name": "postgres-0",
+        "phase": "Running",
+        "ready": true,
+        "node": "streamforge-control-plane"
+      },
+      {
+        "name": "streamforge-api-6fddbfb88b-gl7jl",
+        "phase": "Running",
+        "ready": true,
+        "node": "streamforge-control-plane"
+      },
+      {
+        "name": "streamforge-migrate-2b247",
+        "phase": "Succeeded",
+        "ready": false,
+        "node": "streamforge-control-plane"
+      },
+      {
+        "name": "streamforge-worker-5f9fd69754-4tcdh",
+        "phase": "Running",
+        "ready": true,
+        "node": "streamforge-control-plane"
+      },
+      {
+        "name": "streamforge-worker-5f9fd69754-gxh7b",
+        "phase": "Running",
+        "ready": true,
+        "node": "streamforge-control-plane"
+      },
+      {
+        "name": "streamforge-worker-5f9fd69754-mzrx5",
+        "phase": "Running",
+        "ready": true,
+        "node": "streamforge-control-plane"
+      },
+      {
+        "name": "streamforge-worker-5f9fd69754-z69h6",
+        "phase": "Running",
+        "ready": true,
+        "node": "streamforge-control-plane"
+      }
+    ]
+  },
+  "validation": {
+    "video_ready": true,
+    "metadata_complete": true,
+    "thumbnail_registered": true,
+    "transcode_registered": true,
+    "job_completed": true
+  }
+}
