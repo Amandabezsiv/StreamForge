@@ -54,6 +54,32 @@ def test_health_check() -> None:
     assert response.json() == {"status": "ok"}
 
 
+def test_metrics_exposes_database_backed_queue_gauges() -> None:
+    with TestingSession() as session:
+        pending_video = create_video(session)
+        processing_video = create_video(session)
+        session.add_all(
+            [
+                ProcessingJob(
+                    video_id=pending_video.id,
+                    status=JobStatus.PENDING,
+                ),
+                ProcessingJob(
+                    video_id=processing_video.id,
+                    status=JobStatus.PROCESSING,
+                ),
+            ]
+        )
+        session.commit()
+
+    response = client.get("/metrics")
+
+    assert response.status_code == 200
+    assert response.headers["content-type"].startswith("text/plain")
+    assert "streamforge_jobs_pending 1.0" in response.text
+    assert "streamforge_jobs_processing 1.0" in response.text
+
+
 def test_get_unknown_video_returns_404() -> None:
     response = client.get(f"/api/v1/videos/{uuid.uuid4()}")
 
