@@ -1558,6 +1558,56 @@ This experiment becomes the baseline for future comparisons.
 
 ---
 
+# Prometheus Observability
+
+Start the application, workers, and Prometheus:
+
+```bash
+docker compose up -d --build --scale worker=4
+```
+
+Endpoints:
+
+- StreamForge API metrics: <http://localhost:8000/metrics>
+- Prometheus UI and query API: <http://localhost:9090>
+
+The API exposes PostgreSQL-backed queue gauges:
+
+| Metric | Type | Meaning |
+| --- | --- | --- |
+| `streamforge_jobs_pending` | Gauge | Durable jobs waiting to be claimed |
+| `streamforge_jobs_processing` | Gauge | Durable jobs currently owned by workers |
+
+Each worker exposes these metrics internally on port 9000:
+
+| Metric | Type | Meaning |
+| --- | --- | --- |
+| `streamforge_jobs_completed_total` | Counter | Attempts completed by that worker process |
+| `streamforge_jobs_failed_total` | Counter | Attempts registered as failed by that worker process |
+| `streamforge_job_pickup_duration_seconds` | Histogram | Time from job creation to atomic claim |
+| `streamforge_job_processing_duration_seconds` | Histogram | Time spent processing a claimed attempt |
+| `streamforge_worker_lease_expired_total` | Counter | Abandoned attempts detected through expired leases |
+| `streamforge_job_retries_total` | Counter | Recovery attempts created after expired leases |
+
+Prometheus discovers all scaled worker containers through Docker DNS. Aggregate
+worker counters and histogram buckets instead of reading only one instance:
+
+```promql
+sum(rate(streamforge_jobs_completed_total[5m]))
+
+histogram_quantile(
+  0.95,
+  sum by (le) (rate(streamforge_job_processing_duration_seconds_bucket[5m]))
+)
+```
+
+Worker counters reset on container restart. Queue gauges are database-backed
+and therefore represent current durable state. Full semantics and alternatives
+are documented in
+[`ADR-002`](docs/adr/ADR-002-prometheus-observability.md).
+
+---
+
 # Architecture Decision Records
 
 Important architecture decisions should be documented using ADRs.
