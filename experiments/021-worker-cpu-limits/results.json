@@ -1,0 +1,7052 @@
+{
+  "experiment": "021-worker-cpu-limits",
+  "recorded_at": "2026-09-01T02:42:03.475469+00:00",
+  "configuration": {
+    "workers": 4,
+    "worker_cpu_limit_cores": 1.0,
+    "total_worker_cpu_limit_cores": 4.0,
+    "rates_videos_per_minute": [
+      2.0,
+      3.0,
+      4.0,
+      5.0
+    ],
+    "arrival_duration_seconds_per_rate": 120.0,
+    "fixture": "storage/benchmark-fixtures/baseline-medium.mp4",
+    "fixture_size_bytes": 11033920,
+    "listen_notify_enabled": true,
+    "lease_recovery_enabled": true,
+    "prometheus_enabled": true,
+    "grafana_enabled": true
+  },
+  "capacity_bound": {
+    "highest_stable_tested_rate": 3.0,
+    "lowest_unstable_tested_rate": 4.0
+  },
+  "rates": [
+    {
+      "target_arrival_rate_videos_per_minute": 2.0,
+      "actual_arrival_rate_videos_per_minute": 1.999998755784131,
+      "scheduled_videos": 4,
+      "arrival_duration_seconds": 120.00007465299859,
+      "total_duration_until_drained_seconds": 145.75336058999528,
+      "post_arrival_drain_seconds": 25.75328593699669,
+      "queue": {
+        "pending_at_arrival_end": 0,
+        "maximum_pending": 0,
+        "growth_slope_jobs_per_minute": 0.0,
+        "classified_stable": true,
+        "samples": [
+          {
+            "elapsed_seconds": 0.10089266399882035,
+            "submitted": 0,
+            "pending": 0,
+            "processing": 0,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 1.1142259560001548,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 2.120372227000189,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 3.1232194260010147,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 4.129407688000356,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 5.135529863000556,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 6.14087952599948,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 7.147196762998647,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 8.148977149998245,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 9.1554136679988,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 10.16266369799996,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 11.165638578000653,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 12.168041033997724,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 13.171133274998283,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 14.176525517003029,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 15.17802754999866,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 16.179693414000212,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 17.183170247000817,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 18.187913337998907,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 19.19417830200109,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 20.196937389002414,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 21.200360534996435,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 22.205933432000165,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 23.211822327997652,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 24.217129103002662,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 25.223955911998928,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 26.229381331002514,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 27.235413916998368,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 28.237272122998547,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 29.242716496999492,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 30.244974282999465,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 31.24777473499853,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 32.25009852399671,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 33.25356449300307,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 34.25605540499964,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 35.262782548998075,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 36.26618611100275,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 37.267821804998675,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 38.269779939997534,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 39.2728771080001,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 40.2746291509975,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 41.277261873998214,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 42.280355176997546,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 43.28337715900125,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 44.28864343299938,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 45.29494458500267,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 46.29734901100164,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 47.30319263000274,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 48.30939165499876,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 49.31598187200143,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 50.32024048900348,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 51.32726413199998,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 52.332284696996794,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 53.34035878400027,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 54.34515138799907,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 55.34789766900212,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 1,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 56.34987922899745,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 1,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 57.351363150002726,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 1,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 58.356214478000766,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 1,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 59.36025775499729,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 1,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 60.36204523299966,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 61.36611893100053,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 62.370582263996766,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 63.37736171099823,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 64.38416076899739,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 65.38846383999771,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 66.39460577599675,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 67.39822073999676,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 68.40423202700185,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 69.41170774499915,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 70.4172258969993,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 71.42044453400013,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 72.42371982899931,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 73.42714892899676,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 74.42881959200167,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 75.4309190779968,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 76.43266324800061,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 77.43817999799649,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 78.4432194559995,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 79.4453447190026,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 80.44821580799908,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 81.45003861199802,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 82.45173777799937,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 2,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 83.45635961199878,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 1,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 84.46257259599952,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 1,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 85.46915895200073,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 1,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 86.47549358299875,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 1,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 87.48030682600074,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 1,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 88.48758361300133,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 1,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 89.4941642699996,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 1,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 90.49887751699862,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 91.50376727600087,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 92.51141672000085,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 93.51811728699977,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 94.52070266300143,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 95.52235807899706,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 96.52466703700338,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 97.52800848100014,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 98.53129386899673,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 99.53633533600077,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 100.54257881199737,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 101.54492626299907,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 102.54761171300197,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 103.54912420800247,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 104.55130717500288,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 105.55329940500087,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 106.55618857099762,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 107.55913239000074,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 108.56455664199893,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 109.56629973900272,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 110.5698548099972,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 111.57530848400347,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 112.58121738000045,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 113.58774327800347,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 114.59445580600004,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 115.59951469000225,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 116.60573653799656,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 117.61425158399652,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 118.6191943829981,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 119.62202976599656,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 120.10255310500361,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 120.62411883800087,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 121.65045452799677,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 122.65342347099795,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 123.65598840500024,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 124.66149169600249,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 125.66742780299683,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 126.67313003099844,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 127.6748673539987,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 128.67904022100265,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 129.6854777339977,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 130.69189370099775,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 131.6973527470036,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 132.7056018689982,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 133.71172537899838,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 134.71788879700034,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 135.7226570510029,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 136.72872096700303,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 137.735735399001,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 138.74419475600007,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 139.74622414899932,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 140.74952190899785,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 141.75110421099816,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 142.7537207130008,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 143.75876146300288,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 144.76313216400013,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 145.76459851300024,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 1,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 146.77127656299854,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 0,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 147.4196314150031,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 0,
+            "completed": 4,
+            "failed": 0
+          }
+        ]
+      },
+      "jobs": {
+        "completed": 4,
+        "failed": 0,
+        "queue_wait_seconds": {
+          "count": 4,
+          "mean": 0.01035,
+          "median": 0.010355,
+          "min": 0.010086,
+          "max": 0.010604,
+          "p50": 0.010275,
+          "p95": 0.010604
+        },
+        "processing_duration_seconds": {
+          "count": 4,
+          "mean": 56.06830477924814,
+          "median": 55.23471792399505,
+          "min": 53.21119507399999,
+          "max": 60.59258819500246,
+          "p50": 54.852454682993994,
+          "p95": 60.59258819500246
+        },
+        "errors": []
+      },
+      "uploads": {
+        "duration_seconds": {
+          "count": 4,
+          "mean": 0.05943594599921198,
+          "median": 0.043387270998209715,
+          "min": 0.03774192600394599,
+          "max": 0.1132273159964825,
+          "p50": 0.04276011500041932,
+          "p95": 0.1132273159964825
+        },
+        "samples": [
+          {
+            "number": 1,
+            "video_id": "ec469d68-95e8-46c2-a7c4-16e6400b0eb6",
+            "upload_duration_seconds": 0.1132273159964825,
+            "submitted_at_seconds": 0.12936345899652224
+          },
+          {
+            "number": 2,
+            "video_id": "0b7eba51-a913-4156-aaa3-f60bdf5da23b",
+            "upload_duration_seconds": 0.03774192600394599,
+            "submitted_at_seconds": 30.037874955996813
+          },
+          {
+            "number": 3,
+            "video_id": "7f7c8fc6-94ea-4a74-95ee-2543af7ef255",
+            "upload_duration_seconds": 0.04401442699600011,
+            "submitted_at_seconds": 60.04413079699589
+          },
+          {
+            "number": 4,
+            "video_id": "deaaea00-1139-49da-a082-f340968c48c3",
+            "upload_duration_seconds": 0.04276011500041932,
+            "submitted_at_seconds": 90.04287026499514
+          }
+        ]
+      },
+      "resources": {
+        "sample_count": 73,
+        "sampling_errors": [],
+        "by_service": {
+          "worker": {
+            "cpu_percent": {
+              "count": 73,
+              "mean": 153.9904109589041,
+              "median": 198.73,
+              "min": 0.48,
+              "max": 208.96999999999997,
+              "p50": 198.73,
+              "p95": 208.17
+            },
+            "memory_mib": {
+              "count": 73,
+              "mean": 888.9598630136986,
+              "median": 905.4399999999999,
+              "min": 209.32,
+              "max": 1131.9599999999998,
+              "p50": 905.4399999999999,
+              "p95": 1131.26
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 68100000.0
+            }
+          },
+          "api": {
+            "cpu_percent": {
+              "count": 73,
+              "mean": 0.4812328767123288,
+              "median": 0.28,
+              "min": 0.16,
+              "max": 3.77,
+              "p50": 0.28,
+              "p95": 1.07
+            },
+            "memory_mib": {
+              "count": 73,
+              "mean": 102.54657534246574,
+              "median": 102.5,
+              "min": 101.7,
+              "max": 103.2,
+              "p50": 102.5,
+              "p95": 103.2
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 44100000.0
+            }
+          },
+          "postgres": {
+            "cpu_percent": {
+              "count": 73,
+              "mean": 0.7465753424657534,
+              "median": 0.26,
+              "min": 0.05,
+              "max": 3.39,
+              "p50": 0.26,
+              "p95": 2.91
+            },
+            "memory_mib": {
+              "count": 73,
+              "mean": 51.53397260273972,
+              "median": 51.29,
+              "min": 50.44,
+              "max": 54.45,
+              "p50": 51.29,
+              "p95": 53.43
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 600000.0
+            }
+          },
+          "prometheus": {
+            "cpu_percent": {
+              "count": 73,
+              "mean": 1.4961643835616438,
+              "median": 0.53,
+              "min": 0.12,
+              "max": 6.01,
+              "p50": 0.53,
+              "p95": 5.61
+            },
+            "memory_mib": {
+              "count": 73,
+              "mean": 37.08205479452055,
+              "median": 37.31,
+              "min": 32.02,
+              "max": 41.2,
+              "p50": 37.31,
+              "p95": 40.96
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 193000.0
+            }
+          },
+          "grafana": {
+            "cpu_percent": {
+              "count": 73,
+              "mean": 3.0524657534246575,
+              "median": 1.18,
+              "min": 0.68,
+              "max": 15.1,
+              "p50": 1.18,
+              "p95": 13.84
+            },
+            "memory_mib": {
+              "count": 73,
+              "mean": 480.67123287671234,
+              "median": 485.3,
+              "min": 264.0,
+              "max": 641.8,
+              "p50": 485.3,
+              "p95": 641.4
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 82000.0
+            }
+          }
+        }
+      },
+      "disk": {
+        "free_bytes_before": 8707301376,
+        "free_bytes_after": 8618909696,
+        "consumed_bytes": 88391680
+      },
+      "prometheus_counter_delta": {
+        "streamforge_jobs_completed_total": 4.0,
+        "streamforge_jobs_failed_total": 0.0,
+        "streamforge_job_pickup_duration_seconds_count": 4.0,
+        "streamforge_job_processing_duration_seconds_count": 4.0,
+        "streamforge_worker_lease_expired_total": 0.0,
+        "streamforge_job_retries_total": 0.0
+      },
+      "duplicate_processing": {
+        "detected": false,
+        "duplicate_job_starts": [],
+        "duplicate_outputs": [],
+        "multiple_jobs_for_video": [],
+        "jobs_audited": 4
+      }
+    },
+    {
+      "target_arrival_rate_videos_per_minute": 3.0,
+      "actual_arrival_rate_videos_per_minute": 2.999997494602122,
+      "scheduled_videos": 6,
+      "arrival_duration_seconds": 120.00010021599883,
+      "total_duration_until_drained_seconds": 168.49039678599365,
+      "post_arrival_drain_seconds": 48.490296569994825,
+      "queue": {
+        "pending_at_arrival_end": 0,
+        "maximum_pending": 0,
+        "growth_slope_jobs_per_minute": 0.0,
+        "classified_stable": true,
+        "samples": [
+          {
+            "elapsed_seconds": 0.09861695599829545,
+            "submitted": 0,
+            "pending": 0,
+            "processing": 0,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 1.1049769579985877,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 2.1085392300010426,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 3.115401880997524,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 4.118620816996554,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 5.12475219299813,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 6.130163164998521,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 7.1365558769975905,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 8.142683739999484,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 9.149040559997957,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 10.15488282500155,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 11.159790794998116,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 12.167825898999581,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 13.170433389001118,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 14.172210056996846,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 15.174706182995578,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 16.17624587300088,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 17.17859736600076,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 18.181901609001216,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 19.183525562002615,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 20.185583933001908,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 21.18723356100236,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 22.18887655599974,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 23.19031053299841,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 24.191905473002407,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 25.193785014998866,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 26.19563670000207,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 27.197407214000123,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 28.199006331997225,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 29.201209218997974,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 30.20393215299555,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 31.20633846599958,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 32.20976936900115,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 33.213166989000456,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 34.21513950699591,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 35.21885354299593,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 36.223154722996696,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 37.22887595299835,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 38.23531704900233,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 39.23867978800263,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 40.24018717299623,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 41.24640723699849,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 42.24929865599552,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 43.25564138699701,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 44.26146416700067,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 45.26928148899606,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 46.27747764399828,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 47.28608913700009,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 48.30024848700123,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 49.3070299309984,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 50.31489320399851,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 51.32273494399851,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 52.32884011999704,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 53.33049724799639,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 54.338361845999316,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 55.34401568899921,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 56.350960894997115,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 57.355415193000226,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 58.356890905997716,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 59.36641012499604,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 60.37058980800066,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 61.38316444499651,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 62.389917047999916,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 63.39379341199674,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 64.39987095299875,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 65.40482643600262,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 66.41330205299892,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 3,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 67.42009355699702,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 3,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 68.42395755500183,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 69.42570101800084,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 70.4306717829968,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 71.43243203599559,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 72.43476366699906,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 73.43653392599663,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 74.4422989329978,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 75.44380254000134,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 76.45059491499705,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 77.4520540989979,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 78.45868985199922,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 79.46529079700122,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 2,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 80.47114481699828,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 81.48173637299624,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 82.49031632400147,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 83.50406594599917,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 84.51211970800068,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 85.52157648499997,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 86.52802306199737,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 87.53403302299557,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 88.54085933299939,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 89.54715063999902,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 90.5533919849986,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 91.55500754500099,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 92.5611693460014,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 93.56971995200001,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 94.57247053700121,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 95.57583422199968,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 96.583759207002,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 97.59146352899552,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 98.59889224799554,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 99.60111617799703,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 3,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 100.60604018999584,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 101.61228041099821,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 102.62283375400148,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 103.62854982099816,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 104.63410206000117,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 105.64088469999842,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 106.64726061600231,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 107.65315493100206,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 108.65967046900187,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 109.66969891700137,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 110.67567517799762,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 111.68245497799944,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 112.69083176999993,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 113.69996405299753,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 114.70152014999621,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 115.7056967919998,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 116.71168984100223,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 117.71621973199944,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 118.72227427700273,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 119.72822191200248,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 120.10406555300142,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 120.7345540699971,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 121.74136936099967,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 122.74774514599994,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 123.75413414999639,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 124.76145651900151,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 125.77061463100108,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 126.77514839099604,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 127.78580746700027,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 128.79354080100165,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 129.7997605060009,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 3,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 130.8015985489983,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 2,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 131.80768167699716,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 2,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 132.81330848499783,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 2,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 133.81505926200043,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 2,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 134.8182569269993,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 2,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 135.82003711899597,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 2,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 136.82490072099608,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 2,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 137.82691309099755,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 2,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 138.8312579830017,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 2,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 139.83770684499905,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 2,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 140.84386459399684,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 2,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 141.851525899001,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 142.85742799199943,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 143.86469322899939,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 144.86981175300025,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 145.8741048439988,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 146.87584610500198,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 147.8775879349996,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 148.87983747499675,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 149.88361063699995,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 150.88837963699916,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 151.89354710000043,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 152.9006204640027,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 153.90706023800158,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 154.91336949000106,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 155.9201670659968,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 156.92713232200185,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 157.93315535000147,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 158.93989486499777,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 159.94629935499688,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 160.95226184200146,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 161.95810927899583,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 162.96062547699694,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 163.96461400800035,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 164.96935413799656,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 165.97434197799885,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 166.97644781800045,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 167.97970196099777,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 1,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 168.9815685479989,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 0,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 169.9836782479979,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 0,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 170.98789460199623,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 0,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 171.9631349880001,
+            "submitted": 6,
+            "pending": 0,
+            "processing": 0,
+            "completed": 6,
+            "failed": 0
+          }
+        ]
+      },
+      "jobs": {
+        "completed": 6,
+        "failed": 0,
+        "queue_wait_seconds": {
+          "count": 6,
+          "mean": 0.0092605,
+          "median": 0.0090365,
+          "min": 0.007934,
+          "max": 0.01124,
+          "p50": 0.00876,
+          "p95": 0.01124
+        },
+        "processing_duration_seconds": {
+          "count": 6,
+          "mean": 63.604249968168006,
+          "median": 67.04541798450009,
+          "min": 47.94522068500373,
+          "max": 69.70157133699831,
+          "p50": 65.74566716700065,
+          "p95": 69.70157133699831
+        },
+        "errors": []
+      },
+      "uploads": {
+        "duration_seconds": {
+          "count": 6,
+          "mean": 0.03291165533422221,
+          "median": 0.03247280550203868,
+          "min": 0.027504268000484444,
+          "max": 0.038536234002094716,
+          "p50": 0.029977693004184403,
+          "p95": 0.038536234002094716
+        },
+        "samples": [
+          {
+            "number": 1,
+            "video_id": "4171feb0-0f67-432a-bba5-6352639d75b2",
+            "upload_duration_seconds": 0.028854949996457435,
+            "submitted_at_seconds": 0.044178054995427374
+          },
+          {
+            "number": 2,
+            "video_id": "c47007d1-a467-4faa-af82-f04ef888ebd3",
+            "upload_duration_seconds": 0.029977693004184403,
+            "submitted_at_seconds": 20.030073825997533
+          },
+          {
+            "number": 3,
+            "video_id": "17b78932-a5ca-4646-a787-da7bbec89113",
+            "upload_duration_seconds": 0.027504268000484444,
+            "submitted_at_seconds": 40.027588787997956
+          },
+          {
+            "number": 4,
+            "video_id": "1c452ede-d9ce-464c-a26a-291fb2f4376c",
+            "upload_duration_seconds": 0.03496791799989296,
+            "submitted_at_seconds": 60.03509103899705
+          },
+          {
+            "number": 5,
+            "video_id": "b97a1887-e1d9-4f95-aa9d-cbb539ab6d82",
+            "upload_duration_seconds": 0.03762886900221929,
+            "submitted_at_seconds": 80.03774046999752
+          },
+          {
+            "number": 6,
+            "video_id": "72362081-4f9f-434c-97e5-b2448650a977",
+            "upload_duration_seconds": 0.038536234002094716,
+            "submitted_at_seconds": 100.03864235399669
+          }
+        ]
+      },
+      "resources": {
+        "sample_count": 85,
+        "sampling_errors": [],
+        "by_service": {
+          "worker": {
+            "cpu_percent": {
+              "count": 85,
+              "mean": 223.26035294117648,
+              "median": 204.29,
+              "min": 1.4,
+              "max": 409.56,
+              "p50": 204.29,
+              "p95": 399.19
+            },
+            "memory_mib": {
+              "count": 85,
+              "mean": 1196.6080000000002,
+              "median": 1133.69,
+              "min": 212.19,
+              "max": 2036.6,
+              "p50": 1133.69,
+              "p95": 1787.0
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 121300000.0
+            }
+          },
+          "api": {
+            "cpu_percent": {
+              "count": 85,
+              "mean": 0.536,
+              "median": 0.31,
+              "min": 0.18,
+              "max": 3.31,
+              "p50": 0.31,
+              "p95": 1.36
+            },
+            "memory_mib": {
+              "count": 85,
+              "mean": 104.20588235294117,
+              "median": 104.5,
+              "min": 103.0,
+              "max": 105.0,
+              "p50": 104.5,
+              "p95": 105.0
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 65900000.0
+            }
+          },
+          "postgres": {
+            "cpu_percent": {
+              "count": 85,
+              "mean": 0.9,
+              "median": 0.38,
+              "min": 0.04,
+              "max": 4.31,
+              "p50": 0.38,
+              "p95": 3.25
+            },
+            "memory_mib": {
+              "count": 85,
+              "mean": 54.05894117647059,
+              "median": 54.05,
+              "min": 53.55,
+              "max": 56.15,
+              "p50": 54.05,
+              "p95": 54.28
+            },
+            "block_io_bytes": {
+              "read_delta": 10000.0,
+              "write_delta": 2100000.0
+            }
+          },
+          "prometheus": {
+            "cpu_percent": {
+              "count": 85,
+              "mean": 1.5371764705882351,
+              "median": 0.56,
+              "min": 0.13,
+              "max": 9.98,
+              "p50": 0.56,
+              "p95": 6.0
+            },
+            "memory_mib": {
+              "count": 85,
+              "mean": 40.87141176470588,
+              "median": 40.73,
+              "min": 38.27,
+              "max": 43.55,
+              "p50": 40.73,
+              "p95": 43.53
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 208000.0
+            }
+          },
+          "grafana": {
+            "cpu_percent": {
+              "count": 85,
+              "mean": 3.106588235294118,
+              "median": 1.46,
+              "min": 0.78,
+              "max": 27.26,
+              "p50": 1.46,
+              "p95": 12.28
+            },
+            "memory_mib": {
+              "count": 85,
+              "mean": 764.9058823529411,
+              "median": 770.2,
+              "min": 641.6,
+              "max": 854.3,
+              "p50": 770.2,
+              "p95": 854.3
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 147000.0
+            }
+          }
+        }
+      },
+      "disk": {
+        "free_bytes_before": 8618905600,
+        "free_bytes_after": 8481845248,
+        "consumed_bytes": 137060352
+      },
+      "prometheus_counter_delta": {
+        "streamforge_jobs_completed_total": 6.0,
+        "streamforge_jobs_failed_total": 0.0,
+        "streamforge_job_pickup_duration_seconds_count": 6.0,
+        "streamforge_job_processing_duration_seconds_count": 6.0,
+        "streamforge_worker_lease_expired_total": 0.0,
+        "streamforge_job_retries_total": 0.0
+      },
+      "duplicate_processing": {
+        "detected": false,
+        "duplicate_job_starts": [],
+        "duplicate_outputs": [],
+        "multiple_jobs_for_video": [],
+        "jobs_audited": 6
+      }
+    },
+    {
+      "target_arrival_rate_videos_per_minute": 4.0,
+      "actual_arrival_rate_videos_per_minute": 3.999996615802909,
+      "scheduled_videos": 8,
+      "arrival_duration_seconds": 120.00010152599862,
+      "total_duration_until_drained_seconds": 210.13653714599786,
+      "post_arrival_drain_seconds": 90.13643561999925,
+      "queue": {
+        "pending_at_arrival_end": 1,
+        "maximum_pending": 2,
+        "growth_slope_jobs_per_minute": 1.209418386599463,
+        "classified_stable": false,
+        "samples": [
+          {
+            "elapsed_seconds": 0.1025731710033142,
+            "submitted": 0,
+            "pending": 0,
+            "processing": 0,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 1.1078309030053788,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 2.109734561003279,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 3.1145261690035113,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 4.119560899001954,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 5.122774435003521,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 6.1282197540058405,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 7.133505592006259,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 8.139459885001997,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 9.14575238800171,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 10.15265472500323,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 11.155396581001696,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 12.161116699004197,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 13.162637299006747,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 14.168988542005536,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 15.172154355001112,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 16.17892753000342,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 17.184756793001725,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 18.188289406003605,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 19.191022751001583,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 20.19805340000312,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 21.202401675000146,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 22.205752389003464,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 23.208437569002854,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 24.21283157000289,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 25.21436397600337,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 26.2197639540027,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 27.226032190003025,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 28.234029384002497,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 29.237555841005815,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 30.239085289002105,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 31.24522845500178,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 32.24698176500533,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 33.251779225000064,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 34.257756053004414,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 35.25944505700318,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 36.26124893500673,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 37.268226762003906,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 38.27498414400179,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 39.28287215599994,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 40.28652396300458,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 41.292581006004184,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 42.29836782000348,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 43.305213876999915,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 44.314640343000065,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 45.316346922001685,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 46.3212995280046,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 47.32619686200633,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 48.33548574100132,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 49.34129250600381,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 50.34460392300389,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 51.35032786600641,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 52.35718124700361,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 53.3637235280039,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 54.370062133006286,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 55.373556234000716,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 56.38089835500432,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 57.38928008100629,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 58.39867662400502,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 59.40091770500294,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 60.4091592610057,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 61.41529894600535,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 62.42098810700554,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 63.43005785400601,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 64.43791550700553,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 65.4438170650028,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 66.44950751800206,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 67.45536468100181,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 68.46181040100055,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 69.46810805700079,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 70.47756449600274,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 71.48702638900431,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 72.49589097400167,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 73.50587906800502,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 74.51460828800191,
+            "submitted": 5,
+            "pending": 0,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 75.52025283100375,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 76.52525422800682,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 77.53555556000356,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 78.54181973700179,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 79.54896163500234,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 80.5554089310026,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 81.56084913100494,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 82.56723605600564,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 83.57366456000454,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 84.58066525300092,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 85.58864103200176,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 86.59852395500639,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 87.6062761380017,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 88.61338717600302,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 89.6189306830056,
+            "submitted": 6,
+            "pending": 1,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 90.62632760400447,
+            "submitted": 7,
+            "pending": 2,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 91.62976185400476,
+            "submitted": 7,
+            "pending": 2,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 92.63904340700537,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 93.64593833300023,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 94.65229874900251,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 95.65848694200395,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 96.66067375000421,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 97.66416326000035,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 98.67035283300356,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 99.67334830900654,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 100.681211987001,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 101.68495897000685,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 102.69435935200454,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 103.70221729100012,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 104.706306210006,
+            "submitted": 7,
+            "pending": 1,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 105.71418087000347,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 106.71648828100297,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 107.72055608700612,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 108.72729335400072,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 109.73832774100447,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 110.74461413000245,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 111.74672840400308,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 112.75161166500038,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 113.75860645700595,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 114.76590457300335,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 115.77184018900152,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 116.77390973400179,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 117.78184033300204,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 118.79179347000172,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 119.80017605600005,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 120.11077036400093,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 120.80811710200214,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 121.81740324300335,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 122.82090604700352,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 123.8282363400067,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 124.83842475700658,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 125.84500364800624,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 126.85052059800364,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 127.8575282640013,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 128.8639360790039,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 129.870076625004,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 130.8781589900027,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 131.88857789900067,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 132.90086783900188,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 133.90753844800201,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 134.91490498000348,
+            "submitted": 8,
+            "pending": 1,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 135.9248623800013,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 136.93640289300674,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 137.9405310390066,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 138.94649574800133,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 139.9533960990011,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 140.96042409200163,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 141.96791214700352,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 142.97382274600386,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 143.9831561700048,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 144.99772596600087,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 146.00443142000586,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 147.01322578200052,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 148.02012077900145,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 149.02676623700245,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 150.0364520430012,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 151.04024168400065,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 152.04284546100098,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 153.04555385800631,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 154.05258512900036,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 155.05893136900704,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 156.0607943530049,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 157.06486417999986,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 158.07143778900354,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 159.07291512500524,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 160.08033594200242,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 161.0878896130016,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 162.0905389200052,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 163.0989472500005,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 164.10594885400496,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 165.11474765000457,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 166.12066922600206,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 167.1274511800002,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 168.1373161970041,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 169.14391039300244,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 170.15034635300253,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 171.1568176800065,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 172.16320539200387,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 173.17007444800402,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 174.17683803300315,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 3,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 175.17921474600007,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 2,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 176.18472916900646,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 2,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 177.19104103600694,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 2,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 178.1985887100018,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 2,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 179.20156744400447,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 2,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 180.20411795700056,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 2,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 181.20753269300621,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 2,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 182.21027131700248,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 2,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 183.2128470950047,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 2,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 184.2181077750065,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 185.21987538800022,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 186.22414498900616,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 187.22919859000103,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 188.23310359500465,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 189.23947221400158,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 190.24127638600476,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 191.24733872900106,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 192.25127211800282,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 193.25606840900582,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 194.26254550100566,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 195.26802596200287,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 196.27484458300023,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 197.27961669700017,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 198.28659930900176,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 199.29438763600047,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 200.2999786090004,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 201.30215179700463,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 202.30497626300348,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 203.30648409200512,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 204.31095182300487,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 205.3162565080056,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 206.3210442930067,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 207.32658318700123,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 208.33026940800482,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 209.3361972210041,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 1,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 210.34269593200588,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 0,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 211.34921313500672,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 0,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 212.35601165300614,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 0,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 213.15385769600107,
+            "submitted": 8,
+            "pending": 0,
+            "processing": 0,
+            "completed": 8,
+            "failed": 0
+          }
+        ]
+      },
+      "jobs": {
+        "completed": 8,
+        "failed": 0,
+        "queue_wait_seconds": {
+          "count": 8,
+          "mean": 10.305664875,
+          "median": 5.099773999999999,
+          "min": 0.007805,
+          "max": 30.219164,
+          "p50": 0.010542,
+          "p95": 30.219164
+        },
+        "processing_duration_seconds": {
+          "count": 8,
+          "mean": 78.73260162300085,
+          "median": 79.23718487450242,
+          "min": 68.46199134799826,
+          "max": 90.20278252199932,
+          "p50": 76.80826663799962,
+          "p95": 90.20278252199932
+        },
+        "errors": []
+      },
+      "uploads": {
+        "duration_seconds": {
+          "count": 8,
+          "mean": 0.05203354262539506,
+          "median": 0.04591983049976989,
+          "min": 0.025928367002052255,
+          "max": 0.11021639600221533,
+          "p50": 0.042936461002682336,
+          "p95": 0.11021639600221533
+        },
+        "samples": [
+          {
+            "number": 1,
+            "video_id": "25a28305-bdff-4e31-9cdd-f418a4ee6b1f",
+            "upload_duration_seconds": 0.025928367002052255,
+            "submitted_at_seconds": 0.0415780090042972
+          },
+          {
+            "number": 2,
+            "video_id": "80468d47-3a5e-4386-9c69-65f21d3a9e3d",
+            "upload_duration_seconds": 0.02853501400386449,
+            "submitted_at_seconds": 15.028715191998344
+          },
+          {
+            "number": 3,
+            "video_id": "06ce5865-32e0-4367-87ff-b050fcb16da8",
+            "upload_duration_seconds": 0.031755087002238724,
+            "submitted_at_seconds": 30.031895054002234
+          },
+          {
+            "number": 4,
+            "video_id": "959bef11-9e90-46e1-ba70-50f5673f334e",
+            "upload_duration_seconds": 0.042936461002682336,
+            "submitted_at_seconds": 45.042977010998584
+          },
+          {
+            "number": 5,
+            "video_id": "3369d2a1-f853-4b19-a1dd-b9faa6ce1bca",
+            "upload_duration_seconds": 0.04890319999685744,
+            "submitted_at_seconds": 60.049046421998355
+          },
+          {
+            "number": 6,
+            "video_id": "699fbebe-9018-47ca-8eba-75059de65663",
+            "upload_duration_seconds": 0.11021639600221533,
+            "submitted_at_seconds": 75.11034556799859
+          },
+          {
+            "number": 7,
+            "video_id": "19d5a3d3-d58e-45e6-a498-2396e4a57bad",
+            "upload_duration_seconds": 0.06426552999619162,
+            "submitted_at_seconds": 90.06439866500295
+          },
+          {
+            "number": 8,
+            "video_id": "e25650cf-9892-4fb7-b77c-4cfe732531cd",
+            "upload_duration_seconds": 0.06372828599705826,
+            "submitted_at_seconds": 105.06384774699836
+          }
+        ]
+      },
+      "resources": {
+        "sample_count": 105,
+        "sampling_errors": [],
+        "by_service": {
+          "worker": {
+            "cpu_percent": {
+              "count": 105,
+              "mean": 297.288,
+              "median": 354.23,
+              "min": 1.02,
+              "max": 416.11999999999995,
+              "p50": 354.23,
+              "p95": 409.64
+            },
+            "memory_mib": {
+              "count": 105,
+              "mean": 1526.2087619047618,
+              "median": 1597.8199999999997,
+              "min": 214.7,
+              "max": 2056.1,
+              "p50": 1597.8199999999997,
+              "p95": 2055.7000000000003
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 159200000.0
+            }
+          },
+          "api": {
+            "cpu_percent": {
+              "count": 105,
+              "mean": 0.5953333333333333,
+              "median": 0.33,
+              "min": 0.18,
+              "max": 5.58,
+              "p50": 0.33,
+              "p95": 1.37
+            },
+            "memory_mib": {
+              "count": 105,
+              "mean": 107.64952380952381,
+              "median": 108.8,
+              "min": 105.3,
+              "max": 108.9,
+              "p50": 108.8,
+              "p95": 108.8
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 89000000.0
+            }
+          },
+          "postgres": {
+            "cpu_percent": {
+              "count": 105,
+              "mean": 1.0645714285714285,
+              "median": 0.59,
+              "min": 0.09,
+              "max": 5.05,
+              "p50": 0.59,
+              "p95": 3.86
+            },
+            "memory_mib": {
+              "count": 105,
+              "mean": 54.45619047619047,
+              "median": 54.44,
+              "min": 54.32,
+              "max": 54.84,
+              "p50": 54.44,
+              "p95": 54.62
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 2300000.0
+            }
+          },
+          "prometheus": {
+            "cpu_percent": {
+              "count": 105,
+              "mean": 1.7966666666666666,
+              "median": 0.64,
+              "min": 0.2,
+              "max": 8.92,
+              "p50": 0.64,
+              "p95": 7.25
+            },
+            "memory_mib": {
+              "count": 105,
+              "mean": 41.89180952380953,
+              "median": 41.89,
+              "min": 39.62,
+              "max": 44.13,
+              "p50": 41.89,
+              "p95": 44.11
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 241000.0
+            }
+          },
+          "grafana": {
+            "cpu_percent": {
+              "count": 105,
+              "mean": 3.494380952380953,
+              "median": 1.49,
+              "min": 0.78,
+              "max": 20.53,
+              "p50": 1.49,
+              "p95": 13.41
+            },
+            "memory_mib": {
+              "count": 105,
+              "mean": 906.5295238095239,
+              "median": 910.8,
+              "min": 854.4,
+              "max": 933.1,
+              "p50": 910.8,
+              "p95": 932.7
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 115000.0
+            }
+          }
+        }
+      },
+      "disk": {
+        "free_bytes_before": 8481845248,
+        "free_bytes_after": 8309612544,
+        "consumed_bytes": 172232704
+      },
+      "prometheus_counter_delta": {
+        "streamforge_jobs_completed_total": 8.0,
+        "streamforge_jobs_failed_total": 0.0,
+        "streamforge_job_pickup_duration_seconds_count": 8.0,
+        "streamforge_job_processing_duration_seconds_count": 8.0,
+        "streamforge_worker_lease_expired_total": 0.0,
+        "streamforge_job_retries_total": 0.0
+      },
+      "duplicate_processing": {
+        "detected": false,
+        "duplicate_job_starts": [],
+        "duplicate_outputs": [],
+        "multiple_jobs_for_video": [],
+        "jobs_audited": 8
+      }
+    },
+    {
+      "target_arrival_rate_videos_per_minute": 5.0,
+      "actual_arrival_rate_videos_per_minute": 4.999995922461788,
+      "scheduled_videos": 10,
+      "arrival_duration_seconds": 120.0000978609969,
+      "total_duration_until_drained_seconds": 219.71389929299767,
+      "post_arrival_drain_seconds": 99.71380143200076,
+      "queue": {
+        "pending_at_arrival_end": 2,
+        "maximum_pending": 3,
+        "growth_slope_jobs_per_minute": 1.8578584905816693,
+        "classified_stable": false,
+        "samples": [
+          {
+            "elapsed_seconds": 0.09661878299812088,
+            "submitted": 0,
+            "pending": 0,
+            "processing": 0,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 1.1024463180001476,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 2.1083034570037853,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 3.1142458760004956,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 4.120162163999339,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 5.1274228830006905,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 6.132606368999404,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 7.138096118003887,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 8.144776635002927,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 9.151650984000298,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 10.155825729998469,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 11.159309501999815,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 12.162425424001412,
+            "submitted": 1,
+            "pending": 0,
+            "processing": 1,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 13.165010677999817,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 14.17042662500171,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 15.176752653998847,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 16.183072355997865,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 17.18501839700184,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 18.1917041370034,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 19.195209402001637,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 20.201387779998186,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 21.204474618003587,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 22.2108346380046,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 23.216490299004363,
+            "submitted": 2,
+            "pending": 0,
+            "processing": 2,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 24.21806887799903,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 25.224256836001587,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 26.231976718001533,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 27.24002986800042,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 28.243483675003517,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 29.247960836997663,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 30.2563675900019,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 31.26242135999928,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 32.268876647998695,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 33.278110783001466,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 34.28274629700172,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 35.28833527400275,
+            "submitted": 3,
+            "pending": 0,
+            "processing": 3,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 36.29002390700043,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 37.2956935320035,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 38.298653525998816,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 39.30516259599972,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 40.31094245600252,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 41.319190330999845,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 42.32916607300285,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 43.33887878499809,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 44.345971973001724,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 45.353819395000755,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 46.35804452800221,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 47.36122945800162,
+            "submitted": 4,
+            "pending": 0,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 48.36449538799934,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 49.3716260220026,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 50.37858355500066,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 51.38375177800481,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 52.390803057001904,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 53.39681732600002,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 54.4033258749987,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 55.40480856299837,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 56.40651160800189,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 57.41412249600398,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 58.41595035199862,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 59.42482426800416,
+            "submitted": 5,
+            "pending": 1,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 60.435724898001354,
+            "submitted": 6,
+            "pending": 2,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 61.44285643799958,
+            "submitted": 6,
+            "pending": 2,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 62.4527174390023,
+            "submitted": 6,
+            "pending": 2,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 63.459062649999396,
+            "submitted": 6,
+            "pending": 2,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 64.46398733399838,
+            "submitted": 6,
+            "pending": 2,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 65.46618780000426,
+            "submitted": 6,
+            "pending": 2,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 66.47683607399813,
+            "submitted": 6,
+            "pending": 2,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 67.48393393000151,
+            "submitted": 6,
+            "pending": 2,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 68.49063678800303,
+            "submitted": 6,
+            "pending": 2,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 69.49668847800058,
+            "submitted": 6,
+            "pending": 2,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 70.50305465699785,
+            "submitted": 6,
+            "pending": 2,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 71.50869876700017,
+            "submitted": 6,
+            "pending": 2,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 72.56040023700189,
+            "submitted": 7,
+            "pending": 3,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 73.56891367600474,
+            "submitted": 7,
+            "pending": 3,
+            "processing": 4,
+            "completed": 0,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 74.57680396400247,
+            "submitted": 7,
+            "pending": 2,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 75.58303780999995,
+            "submitted": 7,
+            "pending": 2,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 76.58991664399946,
+            "submitted": 7,
+            "pending": 2,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 77.5976802810037,
+            "submitted": 7,
+            "pending": 2,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 78.60477575500408,
+            "submitted": 7,
+            "pending": 2,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 79.61133780600358,
+            "submitted": 7,
+            "pending": 2,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 80.61791650600208,
+            "submitted": 7,
+            "pending": 2,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 81.62442703200213,
+            "submitted": 7,
+            "pending": 2,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 82.63295699000446,
+            "submitted": 7,
+            "pending": 2,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 83.64033325800119,
+            "submitted": 7,
+            "pending": 2,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 84.64733140399767,
+            "submitted": 8,
+            "pending": 3,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 85.65424166800221,
+            "submitted": 8,
+            "pending": 3,
+            "processing": 4,
+            "completed": 1,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 86.65810427600081,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 87.6610683750041,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 88.66697109400411,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 89.67284846500115,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 90.68082686499838,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 91.68842284600396,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 92.69573231100367,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 93.7016780060003,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 94.70907290000468,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 95.71594491800352,
+            "submitted": 8,
+            "pending": 2,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 96.72692611099774,
+            "submitted": 9,
+            "pending": 3,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 97.7360223930009,
+            "submitted": 9,
+            "pending": 3,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 98.74518592200184,
+            "submitted": 9,
+            "pending": 3,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 99.75177074300154,
+            "submitted": 9,
+            "pending": 3,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 100.75672090199805,
+            "submitted": 9,
+            "pending": 3,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 101.7620794100003,
+            "submitted": 9,
+            "pending": 3,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 102.77115106600104,
+            "submitted": 9,
+            "pending": 3,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 103.78103710600408,
+            "submitted": 9,
+            "pending": 3,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 104.78701686500426,
+            "submitted": 9,
+            "pending": 3,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 105.79049071700138,
+            "submitted": 9,
+            "pending": 3,
+            "processing": 4,
+            "completed": 2,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 106.79230906400335,
+            "submitted": 9,
+            "pending": 2,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 107.79459532599867,
+            "submitted": 9,
+            "pending": 2,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 108.79961023500073,
+            "submitted": 10,
+            "pending": 3,
+            "processing": 4,
+            "completed": 3,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 109.80155787100375,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 110.80320638699777,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 111.80469083799835,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 112.80619442200259,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 113.80780749399855,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 114.81262211900321,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 115.81437045900384,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 116.81602517400461,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 117.82739933799894,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 118.83769740500429,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 119.84456833900185,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 120.10336267099774,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 120.84991243800323,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 121.85924151499785,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 122.86749443800363,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 123.87609208399954,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 124.88287369000318,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 125.8878748720017,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 126.89262581100047,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 127.89910224800406,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 128.9055303080022,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 129.90863302600337,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 130.91646962900268,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 131.9253747449984,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 132.93858092700248,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 133.94604406200233,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 134.95586816599825,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 135.95937225100351,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 136.9655028210036,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 137.9730826160012,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 138.98004944399872,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 139.98721427700366,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 140.99018205400353,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 141.99700380599825,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 143.00353039600304,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 144.009463331,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 145.015624448999,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 146.01885702700383,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 147.03357617900474,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 148.04102377300296,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 149.05195857400395,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 150.0595853909981,
+            "submitted": 10,
+            "pending": 2,
+            "processing": 4,
+            "completed": 4,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 151.06239433099836,
+            "submitted": 10,
+            "pending": 1,
+            "processing": 4,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 152.07218259200454,
+            "submitted": 10,
+            "pending": 1,
+            "processing": 4,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 153.08026510199852,
+            "submitted": 10,
+            "pending": 1,
+            "processing": 4,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 154.0827576810043,
+            "submitted": 10,
+            "pending": 1,
+            "processing": 4,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 155.08846825399814,
+            "submitted": 10,
+            "pending": 1,
+            "processing": 4,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 156.09282868399896,
+            "submitted": 10,
+            "pending": 1,
+            "processing": 4,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 157.09554619700066,
+            "submitted": 10,
+            "pending": 1,
+            "processing": 4,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 158.10219337099988,
+            "submitted": 10,
+            "pending": 1,
+            "processing": 4,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 159.10975631500332,
+            "submitted": 10,
+            "pending": 1,
+            "processing": 4,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 160.11607030199957,
+            "submitted": 10,
+            "pending": 1,
+            "processing": 4,
+            "completed": 5,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 161.12433355100075,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 162.13039342199772,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 163.14047438200214,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 164.14893302100245,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 165.15575370199804,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 166.16066982199845,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 167.16835524199996,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 168.1793118630012,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 169.18565179299912,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 170.19236090600316,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 171.19802124299895,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 172.20463264400314,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 173.2108039520026,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 174.21776438000234,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 175.2277789380023,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 176.23612139499892,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 177.23839551700075,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 178.2463757020014,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 179.25475199799985,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 180.2569600700008,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 4,
+            "completed": 6,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 181.26310917900264,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 3,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 182.27054271200177,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 3,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 183.27892945300118,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 3,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 184.28065475800395,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 3,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 185.2827679289985,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 3,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 186.29066562400112,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 3,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 187.29575830300018,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 3,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 188.3023157100033,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 3,
+            "completed": 7,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 189.3085309110029,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 190.31463631500083,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 191.320694576003,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 192.32250494899927,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 193.3291966770048,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 194.3357078629997,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 195.34229718799907,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 196.35100610700465,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 197.35553201400035,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 198.3570904310036,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 199.35975552799937,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 200.36346485299873,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 201.36794909799937,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 202.3730245800034,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 203.37611244399886,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 204.3782404970043,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 205.3811085960042,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 206.38309262700204,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 207.38472047100367,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 208.38656811100373,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 209.38882279000245,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 210.3908268390005,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 211.39295340300305,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 212.39482907899946,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 213.39694005800266,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 214.3987328209987,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 2,
+            "completed": 8,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 215.40579291000176,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 1,
+            "completed": 9,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 216.4105994929996,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 1,
+            "completed": 9,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 217.41656722100015,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 1,
+            "completed": 9,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 218.4226954629994,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 1,
+            "completed": 9,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 219.42736661300296,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 1,
+            "completed": 9,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 220.43380406500364,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 0,
+            "completed": 10,
+            "failed": 0
+          },
+          {
+            "elapsed_seconds": 221.3750627000045,
+            "submitted": 10,
+            "pending": 0,
+            "processing": 0,
+            "completed": 10,
+            "failed": 0
+          }
+        ]
+      },
+      "jobs": {
+        "completed": 10,
+        "failed": 0,
+        "queue_wait_seconds": {
+          "count": 10,
+          "mean": 21.9068342,
+          "median": 25.264338,
+          "min": 0.006263,
+          "max": 54.916701,
+          "p50": 25.038216,
+          "p95": 54.916701
+        },
+        "processing_duration_seconds": {
+          "count": 10,
+          "mean": 73.10517327820052,
+          "median": 73.70102036900062,
+          "min": 53.78203297399887,
+          "max": 82.63931183100067,
+          "p50": 73.45703367800161,
+          "p95": 82.63931183100067
+        },
+        "errors": []
+      },
+      "uploads": {
+        "duration_seconds": {
+          "count": 10,
+          "mean": 0.07910132819961291,
+          "median": 0.03917762499986566,
+          "min": 0.025828393001575023,
+          "max": 0.2439375019966974,
+          "p50": 0.037134685000637546,
+          "p95": 0.2439375019966974
+        },
+        "samples": [
+          {
+            "number": 1,
+            "video_id": "f7da12b6-8de4-4c1d-99aa-4128f0b57188",
+            "upload_duration_seconds": 0.028302143997279927,
+            "submitted_at_seconds": 0.04353871400235221
+          },
+          {
+            "number": 2,
+            "video_id": "8797e539-0b8d-4eeb-b5bf-59958dc9f450",
+            "upload_duration_seconds": 0.2372667010058649,
+            "submitted_at_seconds": 12.237479918003373
+          },
+          {
+            "number": 3,
+            "video_id": "3d74ab9d-52a4-4894-add0-f5554ca1aa6e",
+            "upload_duration_seconds": 0.035336105996975675,
+            "submitted_at_seconds": 24.03551649399742
+          },
+          {
+            "number": 4,
+            "video_id": "50ab32c5-33da-490d-8ae6-a9635bc0de61",
+            "upload_duration_seconds": 0.025828393001575023,
+            "submitted_at_seconds": 36.025929452996934
+          },
+          {
+            "number": 5,
+            "video_id": "bf8f8b64-f266-4ff0-9c52-f6568c0f6562",
+            "upload_duration_seconds": 0.037134685000637546,
+            "submitted_at_seconds": 48.03729033000127
+          },
+          {
+            "number": 6,
+            "video_id": "3be78f87-3f79-4734-90ea-7bd91f7a7992",
+            "upload_duration_seconds": 0.04122056499909377,
+            "submitted_at_seconds": 60.04140141500102
+          },
+          {
+            "number": 7,
+            "video_id": "93f7e6db-d437-4f27-b649-a0f169911b75",
+            "upload_duration_seconds": 0.2439375019966974,
+            "submitted_at_seconds": 72.24408060999849
+          },
+          {
+            "number": 8,
+            "video_id": "e92f04a6-a81c-4a4e-9f16-1e11c1def0f5",
+            "upload_duration_seconds": 0.04211263100296492,
+            "submitted_at_seconds": 84.04221475499799
+          },
+          {
+            "number": 9,
+            "video_id": "92b16375-17d2-473b-b68d-94e76f6667e7",
+            "upload_duration_seconds": 0.07052763200044865,
+            "submitted_at_seconds": 96.07065208000131
+          },
+          {
+            "number": 10,
+            "video_id": "e1335bcc-3241-406a-9a2a-e514dc6b2b67",
+            "upload_duration_seconds": 0.029346922994591296,
+            "submitted_at_seconds": 108.02945450900006
+          }
+        ]
+      },
+      "resources": {
+        "sample_count": 109,
+        "sampling_errors": [],
+        "by_service": {
+          "worker": {
+            "cpu_percent": {
+              "count": 109,
+              "mean": 332.4523853211009,
+              "median": 399.0,
+              "min": 0.52,
+              "max": 421.77,
+              "p50": 399.0,
+              "p95": 412.32000000000005
+            },
+            "memory_mib": {
+              "count": 109,
+              "mean": 1692.16376146789,
+              "median": 2039.8999999999999,
+              "min": 217.82999999999998,
+              "max": 2061.9,
+              "p50": 2039.8999999999999,
+              "p95": 2061.0
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 199400000.0
+            }
+          },
+          "api": {
+            "cpu_percent": {
+              "count": 109,
+              "mean": 0.6447706422018349,
+              "median": 0.34,
+              "min": 0.17,
+              "max": 6.86,
+              "p50": 0.34,
+              "p95": 2.65
+            },
+            "memory_mib": {
+              "count": 109,
+              "mean": 111.21559633027523,
+              "median": 112.0,
+              "min": 109.1,
+              "max": 112.0,
+              "p50": 112.0,
+              "p95": 112.0
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 110000000.0
+            }
+          },
+          "postgres": {
+            "cpu_percent": {
+              "count": 109,
+              "mean": 1.224862385321101,
+              "median": 0.55,
+              "min": 0.05,
+              "max": 6.59,
+              "p50": 0.55,
+              "p95": 4.83
+            },
+            "memory_mib": {
+              "count": 109,
+              "mean": 54.695137614678906,
+              "median": 54.61,
+              "min": 54.56,
+              "max": 59.1,
+              "p50": 54.61,
+              "p95": 54.93
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 1700000.0
+            }
+          },
+          "prometheus": {
+            "cpu_percent": {
+              "count": 109,
+              "mean": 1.7655963302752293,
+              "median": 0.63,
+              "min": 0.24,
+              "max": 9.31,
+              "p50": 0.63,
+              "p95": 7.78
+            },
+            "memory_mib": {
+              "count": 109,
+              "mean": 42.22495412844037,
+              "median": 42.44,
+              "min": 39.16,
+              "max": 44.53,
+              "p50": 42.44,
+              "p95": 43.83
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 266000.0
+            }
+          },
+          "grafana": {
+            "cpu_percent": {
+              "count": 109,
+              "mean": 3.291926605504587,
+              "median": 1.48,
+              "min": 0.86,
+              "max": 22.13,
+              "p50": 1.48,
+              "p95": 12.74
+            },
+            "memory_mib": {
+              "count": 109,
+              "mean": 961.9467889908257,
+              "median": 965.0,
+              "min": 932.3,
+              "max": 1013.0,
+              "p50": 965.0,
+              "p95": 989.9
+            },
+            "block_io_bytes": {
+              "read_delta": 0.0,
+              "write_delta": 197000.0
+            }
+          }
+        }
+      },
+      "disk": {
+        "free_bytes_before": 8309612544,
+        "free_bytes_after": 8090238976,
+        "consumed_bytes": 219373568
+      },
+      "prometheus_counter_delta": {
+        "streamforge_jobs_completed_total": 10.0,
+        "streamforge_jobs_failed_total": 0.0,
+        "streamforge_job_pickup_duration_seconds_count": 10.0,
+        "streamforge_job_processing_duration_seconds_count": 10.0,
+        "streamforge_worker_lease_expired_total": 0.0,
+        "streamforge_job_retries_total": 0.0
+      },
+      "duplicate_processing": {
+        "detected": false,
+        "duplicate_job_starts": [],
+        "duplicate_outputs": [],
+        "multiple_jobs_for_video": [],
+        "jobs_audited": 10
+      }
+    }
+  ]
+}

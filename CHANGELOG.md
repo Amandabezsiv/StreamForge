@@ -29,6 +29,12 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Experiment 017 end-to-end Prometheus target, series, and live-job validation.
 - Provisioned Grafana 13.2.0 Prometheus datasource and nine-panel StreamForge
   dashboard, validated in Experiment 018.
+- Experiment 019 observed end-to-end high load with four workers and 50 medium
+  videos.
+- Experiment 020 sustained arrival-rate sweep against four-worker processing
+  capacity.
+- Experiment 021 four-worker sustained-load comparison with a one-CPU limit per
+  worker container.
 
 ### Planned
 
