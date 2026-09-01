@@ -8,44 +8,14 @@ conclusions belong in `experiments/` and `docs/adr/`.
 
 ## [Unreleased]
 
-### Added
+### Changed
 
-- Atomic publication of FFmpeg outputs through same-directory temporary files,
-  preventing partial thumbnails or transcodes from appearing at final paths.
-- Experiment 008 crash verification for atomic FFmpeg output publication.
-- Worker processing leases with ownership checks, heartbeat renewal, abandoned
-  attempt recovery, idempotent retry output registration, and temporary cleanup.
-- Experiment 009 worker lease crash-recovery verification.
-- Experiments 010 and 011 for database loss during renewal and a crash between
-  atomic output publication and database commit.
-- Experiment 012 PostgreSQL queue acquisition concurrency and saturation sweep.
-- Experiment 013 PostgreSQL and worker overhead from polling an empty queue.
-- Experiment 014 job pickup latency versus PostgreSQL idle-polling cost.
-- PostgreSQL `LISTEN/NOTIFY` worker wake-ups with polling fallback.
-- Experiment 015 `LISTEN/NOTIFY` versus polling latency and database cost.
-- Experiment 016 recovery after a notification is missed during listener loss.
-- Prometheus API and worker instrumentation, Docker DNS worker discovery,
-  Compose deployment, and ADR-002 observability metric semantics.
-- Experiment 017 end-to-end Prometheus target, series, and live-job validation.
-- Provisioned Grafana 13.2.0 Prometheus datasource and nine-panel StreamForge
-  dashboard, validated in Experiment 018.
-- Experiment 019 observed end-to-end high load with four workers and 50 medium
-  videos.
-- Experiment 020 sustained arrival-rate sweep against four-worker processing
-  capacity.
-- Experiment 021 four-worker sustained-load comparison with a one-CPU limit per
-  worker container.
-- cAdvisor runtime metrics scraped by Prometheus and Grafana panels for
-  container CPU, CFS throttling, memory, network, and inferred restarts.
+- Declared v0.1.0 complete as the local distributed baseline and documented the
+  planned v0.2.x Kubernetes orchestration and elastic-scaling direction.
+- Reorganized the main README as a concise operational overview and moved the
+  detailed v0.1 specification and study notes into `docs/v0.1-study-reference.md`.
 
-### Planned
-
-- Manual retry endpoint for failed processing jobs
-- Structured request and processing logs
-- Processing-duration measurements
-- Initial API and worker capacity benchmarks
-
-## [0.1.0] - 2026-08-23
+## [0.1.0] - 2026-09-01
 
 ### Added
 
@@ -86,6 +56,33 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Failure details stored on processing jobs
 - Docker worker image containing FFmpeg and ffprobe
 - Automated tests covering the API upload flow and worker processing flow
+- Atomic publication of FFmpeg outputs through same-directory temporary files,
+  preventing partial thumbnails or transcodes from appearing at final paths.
+- Experiment 008 crash verification for atomic FFmpeg output publication.
+- Worker processing leases with ownership checks, heartbeat renewal, abandoned
+  attempt recovery, idempotent retry output registration, and temporary cleanup.
+- Experiment 009 worker lease crash-recovery verification.
+- Experiments 010 and 011 for database loss during renewal and a crash between
+  atomic output publication and database commit.
+- Experiment 012 PostgreSQL queue acquisition concurrency and saturation sweep.
+- Experiment 013 PostgreSQL and worker overhead from polling an empty queue.
+- Experiment 014 job pickup latency versus PostgreSQL idle-polling cost.
+- PostgreSQL `LISTEN/NOTIFY` worker wake-ups with polling fallback.
+- Experiment 015 `LISTEN/NOTIFY` versus polling latency and database cost.
+- Experiment 016 recovery after a notification is missed during listener loss.
+- Prometheus API and worker instrumentation, Docker DNS worker discovery,
+  Compose deployment, and ADR-002 observability metric semantics.
+- Experiment 017 end-to-end Prometheus target, series, and live-job validation.
+- Provisioned Grafana 13.2.0 Prometheus datasource and nine-panel StreamForge
+  dashboard, validated in Experiment 018.
+- Experiment 019 observed end-to-end high load with four workers and 50 medium
+  videos.
+- Experiment 020 sustained arrival-rate sweep against four-worker processing
+  capacity.
+- Experiment 021 four-worker sustained-load comparison with a one-CPU limit per
+  worker container.
+- cAdvisor runtime metrics scraped by Prometheus and Grafana panels for
+  container CPU, CFS throttling, memory, network, and inferred restarts.
 
 ### API
 
