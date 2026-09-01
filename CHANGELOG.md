@@ -27,6 +27,8 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Prometheus API and worker instrumentation, Docker DNS worker discovery,
   Compose deployment, and ADR-002 observability metric semantics.
 - Experiment 017 end-to-end Prometheus target, series, and live-job validation.
+- Provisioned Grafana 13.2.0 Prometheus datasource and nine-panel StreamForge
+  dashboard, validated in Experiment 018.
 
 ### Planned
 
