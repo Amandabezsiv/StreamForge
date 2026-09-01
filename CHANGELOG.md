@@ -35,6 +35,8 @@ conclusions belong in `experiments/` and `docs/adr/`.
   capacity.
 - Experiment 021 four-worker sustained-load comparison with a one-CPU limit per
   worker container.
+- cAdvisor runtime metrics scraped by Prometheus and Grafana panels for
+  container CPU, CFS throttling, memory, network, and inferred restarts.
 
 ### Planned
 

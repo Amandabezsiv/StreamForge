@@ -1572,6 +1572,7 @@ Endpoints:
 - Prometheus UI and query API: <http://localhost:9090>
 - Grafana StreamForge dashboard:
   <http://localhost:3000/d/streamforge-overview/streamforge-overview>
+- cAdvisor metrics, internal to Compose: `cadvisor:8080/metrics`
 
 The API exposes PostgreSQL-backed queue gauges:
 
@@ -1603,6 +1604,22 @@ histogram_quantile(
 )
 ```
 
+cAdvisor exposes Docker runtime and cgroup metrics. The dashboard groups these
+by the Docker Compose service label:
+
+| Metric | Meaning |
+| --- | --- |
+| `container_cpu_usage_seconds_total` | Container CPU time |
+| `container_cpu_cfs_throttled_seconds_total` | Time denied CPU by the CFS quota |
+| `container_memory_working_set_bytes` | Active container memory working set |
+| `container_network_receive_bytes_total` | Received network bytes |
+| `container_network_transmit_bytes_total` | Transmitted network bytes |
+| `container_start_time_seconds` | Start timestamp used as a best-effort restart signal |
+
+cAdvisor requires privileged access to Docker and host cgroup paths in this
+local Compose environment. Do not expose its endpoint publicly. The restart
+panel is inferred from start-time changes and is not a durable restart audit.
+
 Worker counters reset on container restart. Queue gauges are database-backed
 and therefore represent current durable state. Full semantics and alternatives
 are documented in
@@ -1615,7 +1632,10 @@ local development. The StreamForge Overview dashboard contains:
 - completed and failed job rates;
 - pickup and processing p95 latency;
 - lease expirations and retries;
-- videos processed per minute.
+- videos processed per minute;
+- container CPU usage and CFS throttling;
+- container memory and network traffic;
+- inferred container restarts.
 
 Anonymous access must be disabled before exposing Grafana outside the local
 development environment.

@@ -15,3 +15,8 @@ scrape_configs:
         type: A
         port: 9000
         refresh_interval: 5s
+
+  - job_name: cadvisor
+    static_configs:
+      - targets:
+          - cadvisor:8080
