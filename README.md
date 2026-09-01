@@ -1570,6 +1570,8 @@ Endpoints:
 
 - StreamForge API metrics: <http://localhost:8000/metrics>
 - Prometheus UI and query API: <http://localhost:9090>
+- Grafana StreamForge dashboard:
+  <http://localhost:3000/d/streamforge-overview/streamforge-overview>
 
 The API exposes PostgreSQL-backed queue gauges:
 
@@ -1605,6 +1607,18 @@ Worker counters reset on container restart. Queue gauges are database-backed
 and therefore represent current durable state. Full semantics and alternatives
 are documented in
 [`ADR-002`](docs/adr/ADR-002-prometheus-observability.md).
+
+Grafana is provisioned from files in `grafana/` and opens without a login for
+local development. The StreamForge Overview dashboard contains:
+
+- jobs pending and processing;
+- completed and failed job rates;
+- pickup and processing p95 latency;
+- lease expirations and retries;
+- videos processed per minute.
+
+Anonymous access must be disabled before exposing Grafana outside the local
+development environment.
 
 ---
 
