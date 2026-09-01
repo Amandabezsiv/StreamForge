@@ -200,10 +200,12 @@ class StackResourceMonitor:
 
 
 def prometheus_scalar(api_url: str, query: str) -> float:
+    active_workers = '(up{job="streamforge-worker"} == 1)'
+    active_query = f"sum({query} and on(instance) {active_workers})"
     with httpx.Client(timeout=10.0) as client:
         response = client.get(
             f"{api_url}/api/v1/query",
-            params={"query": f"sum({query})"},
+            params={"query": active_query},
         )
         response.raise_for_status()
     results = response.json()["data"]["result"]

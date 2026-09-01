@@ -31,6 +31,8 @@ conclusions belong in `experiments/` and `docs/adr/`.
   dashboard, validated in Experiment 018.
 - Experiment 019 observed end-to-end high load with four workers and 50 medium
   videos.
+- Experiment 020 sustained arrival-rate sweep against four-worker processing
+  capacity.
 
 ### Planned
 
