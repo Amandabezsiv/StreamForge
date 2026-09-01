@@ -7,6 +7,7 @@ import uuid
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
+from prometheus_client import start_http_server
 from sqlalchemy import select, update
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
@@ -20,6 +21,14 @@ from streamforge.models.processing_job import ProcessingJob
 from streamforge.models.types import JobStatus, OutputType, VideoStatus
 from streamforge.models.video import Video
 from streamforge.models.video_output import VideoOutput
+from streamforge.observability.worker_metrics import (
+    JOB_PICKUP_DURATION,
+    JOB_PROCESSING_DURATION,
+    JOB_RETRIES,
+    JOBS_COMPLETED,
+    JOBS_FAILED,
+    WORKER_LEASE_EXPIRED,
+)
 from streamforge.workers.notifications import JobNotificationListener
 
 logger = logging.getLogger("streamforge.worker")
@@ -86,6 +95,8 @@ def acquire_pending_job(
     if diagnostic_lock_hold_seconds > 0:
         time.sleep(diagnostic_lock_hold_seconds)
     db.commit()
+    if job.queue_wait_seconds is not None:
+        JOB_PICKUP_DURATION.observe(job.queue_wait_seconds)
     return job_id
 
 
@@ -221,12 +232,17 @@ def recover_expired_jobs(db: Session, settings: Settings, limit: int = 10) -> in
             (settings.storage_path / job.video.storage_key).parent
         )
     db.commit()
+    recovered_count = len(expired_jobs)
+    if recovered_count:
+        WORKER_LEASE_EXPIRED.inc(recovered_count)
+        JOB_RETRIES.inc(recovered_count)
+        JOBS_FAILED.inc(recovered_count)
 
     for directory in cleanup_directories:
         removed = cleanup_temporary_artifacts(directory)
         if removed:
             logger.info("removed abandoned temporary outputs", extra={"files": removed})
-    return len(expired_jobs)
+    return recovered_count
 
 
 def register_output(db: Session, output: VideoOutput) -> None:
@@ -351,6 +367,8 @@ def process_job(
         video.status = VideoStatus.READY
         record_event(db, job, "JOB_COMPLETED")
         db.commit()
+        JOBS_COMPLETED.inc()
+        JOB_PROCESSING_DURATION.observe(job.processing_duration_seconds)
         logger.info(
             "video processing completed",
             extra={"video_id": str(video.id), "job_id": str(job.id)},
@@ -376,6 +394,8 @@ def process_job(
             job.video.status = VideoStatus.FAILED
             record_event(db, job, "JOB_FAILED", str(exc)[:4000])
             db.commit()
+            JOBS_FAILED.inc()
+            JOB_PROCESSING_DURATION.observe(job.processing_duration_seconds)
         logger.exception("video processing failed", extra={"job_id": str(job_id)})
     finally:
         if heartbeat is not None:
@@ -436,6 +456,7 @@ def main() -> None:
         format="%(asctime)s %(levelname)s %(name)s %(message)s",
     )
     try:
+        start_http_server(get_settings().worker_metrics_port)
         run_worker(once=args.once, poll_interval=args.poll_interval)
     except KeyboardInterrupt:
         logger.info("worker stopped")

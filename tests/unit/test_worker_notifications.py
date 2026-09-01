@@ -1,5 +1,7 @@
 from types import SimpleNamespace
 
+from prometheus_client import REGISTRY
+
 from streamforge.workers import processor
 from streamforge.workers.notifications import (
     LISTENER_APPLICATION_NAME,
@@ -80,3 +82,19 @@ def test_psycopg_dsn_removes_sqlalchemy_driver_name() -> None:
         psycopg_dsn("postgresql+psycopg://user:secret@database/streamforge")
         == "postgresql://user:secret@database/streamforge"
     )
+
+
+def test_worker_prometheus_metric_names_are_registered() -> None:
+    expected = {
+        "streamforge_jobs_completed_total",
+        "streamforge_jobs_failed_total",
+        "streamforge_job_pickup_duration_seconds_count",
+        "streamforge_job_processing_duration_seconds_count",
+        "streamforge_worker_lease_expired_total",
+        "streamforge_job_retries_total",
+    }
+    registered = {
+        sample.name for metric in REGISTRY.collect() for sample in metric.samples
+    }
+
+    assert expected <= registered

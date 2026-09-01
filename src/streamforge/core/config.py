@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     job_lease_seconds: float = 30.0
     job_lease_renewal_seconds: float = 10.0
     job_notifications_enabled: bool = True
+    worker_metrics_port: int = 9000
     diagnostic_publish_commit_delay_seconds: float = 0.0
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")

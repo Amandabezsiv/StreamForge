@@ -1,0 +1,40 @@
+{
+  "experiment": "017-prometheus-observability",
+  "recorded_at": "2026-08-31T13:54:29Z",
+  "prometheus_version": "3.14.0",
+  "targets": {
+    "streamforge-api": {
+      "healthy": 1
+    },
+    "streamforge-worker": {
+      "healthy": 4
+    }
+  },
+  "series_counts": {
+    "streamforge_jobs_pending": 1,
+    "streamforge_jobs_processing": 1,
+    "streamforge_jobs_completed_total": 4,
+    "streamforge_jobs_failed_total": 4,
+    "streamforge_job_pickup_duration_seconds_count": 4,
+    "streamforge_job_processing_duration_seconds_count": 4,
+    "streamforge_worker_lease_expired_total": 4,
+    "streamforge_job_retries_total": 4
+  },
+  "smoke_job": {
+    "video_id": "0d60f525-7196-4ccf-903f-daa99afce2de",
+    "status": "READY",
+    "queue_wait_seconds": 0.024561,
+    "processing_duration_seconds": 1.7455830250000872,
+    "prometheus_completed_total": 1,
+    "prometheus_pickup_histogram_count": 1,
+    "prometheus_processing_histogram_count": 1
+  },
+  "legacy_processing_rows_visible": 9,
+  "checks": {
+    "all_targets_up": true,
+    "all_requested_series_present": true,
+    "completed_counter_incremented": true,
+    "pickup_histogram_observed": true,
+    "processing_histogram_observed": true
+  }
+}
