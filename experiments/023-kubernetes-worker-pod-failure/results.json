@@ -1,0 +1,206 @@
+{
+  "experiment": "023-kubernetes-worker-pod-failure",
+  "recorded_at": "2026-09-02T19:28:17.057725+00:00",
+  "configuration": {
+    "workers": 4,
+    "lease_seconds": 30,
+    "lease_renewal_seconds": 10,
+    "poll_fallback_seconds": 30,
+    "failure_method": "force delete owner Pod during FFmpeg transcode",
+    "fixture": "storage/benchmark-fixtures/baseline-medium.mp4",
+    "fixture_size_bytes": 11033920
+  },
+  "failed_pod": {
+    "name": "streamforge-worker-5f9fd69754-mzrx5",
+    "owner_id": "streamforge-worker-5f9fd69754-mzrx5-50579870204a",
+    "deletion_requested_at": "2026-09-02T19:27:29.573092+00:00"
+  },
+  "replacement_pod": {
+    "name": "streamforge-worker-5f9fd69754-zlw5r",
+    "creation_time": "2026-09-02T19:27:29+00:00",
+    "ready_time": "2026-09-02T19:27:29+00:00"
+  },
+  "timings_seconds": {
+    "replacement_created_after_deletion": 0.0,
+    "replacement_observed_after_deletion": 0.15138440399823594,
+    "replacement_became_ready_after_deletion": 0.0,
+    "replacement_ready_observed_after_deletion": 3.78409033799835,
+    "lease_expired_after_deletion": 31.611493,
+    "recovery_attempt_started_after_deletion": 31.63088,
+    "recovery_attempt_started_after_lease_expiry": 0.019387,
+    "video_ready_after_deletion": 45.525916899998265,
+    "total_upload_to_ready": 45.916036
+  },
+  "database": {
+    "video_id": "b91363f0-eaf3-4ef9-89d5-03853ca73b5c",
+    "final_video_state": "READY",
+    "attempt_count": 2,
+    "jobs": [
+      {
+        "id": "98656d14-0795-463d-bef3-481e36a93f85",
+        "attempt": 1,
+        "status": "FAILED",
+        "claimed_by": null,
+        "started_at": "2026-09-02T19:27:29.122077+00:00",
+        "finished_at": "2026-09-02T19:28:01.183947+00:00",
+        "error_code": "WorkerLeaseExpired",
+        "error_message": "Lease expired while owned by streamforge-worker-5f9fd69754-mzrx5-50579870204a",
+        "queue_wait_seconds": 0.007584,
+        "processing_duration_seconds": null
+      },
+      {
+        "id": "9f36241a-debc-422d-859c-a55398a9efc7",
+        "attempt": 2,
+        "status": "COMPLETED",
+        "claimed_by": null,
+        "started_at": "2026-09-02T19:28:01.203972+00:00",
+        "finished_at": "2026-09-02T19:28:15.030529+00:00",
+        "error_code": null,
+        "error_message": null,
+        "queue_wait_seconds": 0.019387,
+        "processing_duration_seconds": 13.820577562000835
+      }
+    ],
+    "events": [
+      {
+        "event_type": "JOB_CREATED",
+        "job_id": "98656d14-0795-463d-bef3-481e36a93f85",
+        "created_at": "2026-09-02T19:27:29.114493+00:00"
+      },
+      {
+        "event_type": "JOB_STARTED",
+        "job_id": "98656d14-0795-463d-bef3-481e36a93f85",
+        "created_at": "2026-09-02T19:27:29.121471+00:00"
+      },
+      {
+        "event_type": "METADATA_EXTRACTED",
+        "job_id": "98656d14-0795-463d-bef3-481e36a93f85",
+        "created_at": "2026-09-02T19:27:29.134084+00:00"
+      },
+      {
+        "event_type": "THUMBNAIL_CREATED",
+        "job_id": "98656d14-0795-463d-bef3-481e36a93f85",
+        "created_at": "2026-09-02T19:27:29.542293+00:00"
+      },
+      {
+        "event_type": "TRANSCODING_STARTED",
+        "job_id": "98656d14-0795-463d-bef3-481e36a93f85",
+        "created_at": "2026-09-02T19:27:29.551544+00:00"
+      },
+      {
+        "event_type": "JOB_ABANDONED",
+        "job_id": "98656d14-0795-463d-bef3-481e36a93f85",
+        "created_at": "2026-09-02T19:28:01.184585+00:00"
+      },
+      {
+        "event_type": "JOB_CREATED",
+        "job_id": "9f36241a-debc-422d-859c-a55398a9efc7",
+        "created_at": "2026-09-02T19:28:01.184585+00:00"
+      },
+      {
+        "event_type": "JOB_STARTED",
+        "job_id": "9f36241a-debc-422d-859c-a55398a9efc7",
+        "created_at": "2026-09-02T19:28:01.203353+00:00"
+      },
+      {
+        "event_type": "METADATA_EXTRACTED",
+        "job_id": "9f36241a-debc-422d-859c-a55398a9efc7",
+        "created_at": "2026-09-02T19:28:01.270696+00:00"
+      },
+      {
+        "event_type": "THUMBNAIL_CREATED",
+        "job_id": "9f36241a-debc-422d-859c-a55398a9efc7",
+        "created_at": "2026-09-02T19:28:01.743587+00:00"
+      },
+      {
+        "event_type": "TRANSCODING_STARTED",
+        "job_id": "9f36241a-debc-422d-859c-a55398a9efc7",
+        "created_at": "2026-09-02T19:28:01.751086+00:00"
+      },
+      {
+        "event_type": "TRANSCODING_COMPLETED",
+        "job_id": "9f36241a-debc-422d-859c-a55398a9efc7",
+        "created_at": "2026-09-02T19:28:15.028602+00:00"
+      },
+      {
+        "event_type": "JOB_COMPLETED",
+        "job_id": "9f36241a-debc-422d-859c-a55398a9efc7",
+        "created_at": "2026-09-02T19:28:15.028602+00:00"
+      }
+    ]
+  },
+  "outputs": {
+    "count": 2,
+    "types": [
+      "THUMBNAIL",
+      "TRANSCODED_VIDEO"
+    ],
+    "storage_keys": [
+      "videos/b91363f0-eaf3-4ef9-89d5-03853ca73b5c/thumbnail.jpg",
+      "videos/b91363f0-eaf3-4ef9-89d5-03853ca73b5c/720p.mp4"
+    ],
+    "duplicate_storage_keys": false,
+    "api_response": [
+      {
+        "id": "cddac6d8-e0a5-4b20-8e20-7866d89de359",
+        "type": "THUMBNAIL",
+        "resolution": null,
+        "storage_key": "videos/b91363f0-eaf3-4ef9-89d5-03853ca73b5c/thumbnail.jpg",
+        "size_bytes": 43813,
+        "created_at": "2026-09-02T19:27:29.542293Z"
+      },
+      {
+        "id": "660a8b32-8152-4459-ae02-94650763c3bf",
+        "type": "TRANSCODED_VIDEO",
+        "resolution": "720p",
+        "storage_key": "videos/b91363f0-eaf3-4ef9-89d5-03853ca73b5c/720p.mp4",
+        "size_bytes": 10802637,
+        "created_at": "2026-09-02T19:28:15.028602Z"
+      }
+    ]
+  },
+  "temporary_files": {
+    "after_crash": [
+      "/app/storage/videos/b91363f0-eaf3-4ef9-89d5-03853ca73b5c/.720p.mp4.2fa21105d508487c929fef42bec29aca.tmp"
+    ],
+    "after_recovery": []
+  },
+  "worker_metrics": {
+    "before": {
+      "streamforge_worker_lease_expired_total": 2.0,
+      "streamforge_job_retries_total": 2.0
+    },
+    "after": {
+      "streamforge_worker_lease_expired_total": 3.0,
+      "streamforge_job_retries_total": 3.0
+    },
+    "delta": {
+      "streamforge_worker_lease_expired_total": 1.0,
+      "streamforge_job_retries_total": 1.0
+    }
+  },
+  "final_worker_pods": [
+    {
+      "name": "streamforge-worker-5f9fd69754-k7q58",
+      "ready": true,
+      "uid": "de7367b7-4867-4b4f-a47b-78a8ab12447f"
+    },
+    {
+      "name": "streamforge-worker-5f9fd69754-vnrvq",
+      "ready": true,
+      "uid": "fd9d6eb5-a8cf-428f-93fd-d03140126bae"
+    },
+    {
+      "name": "streamforge-worker-5f9fd69754-z69h6",
+      "ready": true,
+      "uid": "709acd4d-7445-4df7-89d5-6ba5be1563c4"
+    },
+    {
+      "name": "streamforge-worker-5f9fd69754-zlw5r",
+      "ready": true,
+      "uid": "028dcc92-a302-4002-b191-3ed1dafc5019"
+    }
+  ],
+  "transcoding_started_at": "2026-09-02T19:27:29.551544+00:00",
+  "passed": true
+}
