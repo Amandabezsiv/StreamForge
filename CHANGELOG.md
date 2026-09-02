@@ -20,6 +20,8 @@ conclusions belong in `experiments/` and `docs/adr/`.
 - Experiment 022 Kind deployment manifests and end-to-end Kubernetes parity
   validation for the API, PostgreSQL, shared media storage, migrations, and four
   worker pods.
+- Experiment 023 measurement of Kubernetes worker-Pod replacement and
+  application lease recovery during FFmpeg transcoding.
 
 ## [0.1.0] - 2026-09-01
 
