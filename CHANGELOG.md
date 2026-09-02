@@ -22,6 +22,8 @@ conclusions belong in `experiments/` and `docs/adr/`.
   worker pods.
 - Experiment 023 measurement of Kubernetes worker-Pod replacement and
   application lease recovery during FFmpeg transcoding.
+- Experiment 024 in-cluster Prometheus, Grafana, kubelet cAdvisor scraping,
+  kube-state-metrics restart counters, Pod discovery, and provisioned dashboard.
 
 ## [0.1.0] - 2026-09-01
 

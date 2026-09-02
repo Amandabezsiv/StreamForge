@@ -166,6 +166,11 @@ See [ADR-002](docs/adr/ADR-002-prometheus-observability.md) for metric semantics
 and security considerations. cAdvisor has privileged host access for this local
 laboratory and must not be exposed publicly.
 
+The Kubernetes version runs Prometheus and Grafana in-cluster, discovers Pods,
+uses kubelet's cAdvisor endpoint, and reads restart counts from kube-state-metrics.
+See [Experiment 024](experiments/024-kubernetes-observability/README.md) and
+[ADR-003](docs/adr/ADR-003-kubernetes-observability.md).
+
 ## Tests and benchmarks
 
 ```bash

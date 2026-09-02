@@ -1,0 +1,95 @@
+{
+  "experiment": "024-kubernetes-observability",
+  "recorded_at": "2026-09-02T19:52:44.398655+00:00",
+  "targets": [
+    {
+      "job": "kube-state-metrics",
+      "pod": null,
+      "node": null,
+      "health": "up",
+      "last_error": ""
+    },
+    {
+      "job": "kubelet-cadvisor",
+      "pod": null,
+      "node": "streamforge-control-plane",
+      "health": "up",
+      "last_error": ""
+    },
+    {
+      "job": "streamforge-api",
+      "pod": "streamforge-api-6fddbfb88b-gl7jl",
+      "node": null,
+      "health": "up",
+      "last_error": ""
+    },
+    {
+      "job": "streamforge-worker",
+      "pod": "streamforge-worker-5f9fd69754-vnrvq",
+      "node": null,
+      "health": "up",
+      "last_error": ""
+    },
+    {
+      "job": "streamforge-worker",
+      "pod": "streamforge-worker-5f9fd69754-zlw5r",
+      "node": null,
+      "health": "up",
+      "last_error": ""
+    },
+    {
+      "job": "streamforge-worker",
+      "pod": "streamforge-worker-5f9fd69754-z69h6",
+      "node": null,
+      "health": "up",
+      "last_error": ""
+    },
+    {
+      "job": "streamforge-worker",
+      "pod": "streamforge-worker-5f9fd69754-k7q58",
+      "node": null,
+      "health": "up",
+      "last_error": ""
+    }
+  ],
+  "metric_series_counts": {
+    "jobs_pending": 1.0,
+    "jobs_processing": 1.0,
+    "worker_processing_histograms": 4.0,
+    "container_cpu": 14.0,
+    "container_throttling": 14.0,
+    "container_memory": 14.0,
+    "pod_network": 13.0,
+    "container_restarts": 11.0
+  },
+  "grafana": {
+    "datasource_status": "OK",
+    "datasource_message": "Successfully queried the Prometheus API.",
+    "dashboard_uid": "streamforge-kubernetes-overview",
+    "dashboard_title": "StreamForge Kubernetes Overview",
+    "panel_count": 14,
+    "panel_query_count": 15,
+    "panel_query_errors": []
+  },
+  "observability_pods": [
+    {
+      "name": "grafana-775f57dc69-7ldvl",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0
+    },
+    {
+      "name": "kube-state-metrics-b96dc5557-s7dcg",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0
+    },
+    {
+      "name": "prometheus-b44bcf8c6-j9gsn",
+      "phase": "Running",
+      "ready": true,
+      "restarts": 0
+    }
+  ],
+  "passed": true
+}
